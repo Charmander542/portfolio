@@ -54,7 +54,7 @@ const Hero = () => {
         <h1
           className={`${styles.intro} font-mono font-bold text-5xl seq`}
         >
-          Hello, <br /> I'm&nbsp;
+          Hello, <br /> I&apos;m&nbsp;
           <span
             ref={typedEl}
             className="seq text-5xl text-mush-light font-mono leading-relaxed"

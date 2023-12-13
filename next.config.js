@@ -1,26 +1,54 @@
-const withPWA = require("next-pwa");
-
-const isProd = process.env.NODE_ENV === "production";
-
+// next.config.js
 const nextConfig = {
-  pwa: {
-    dest: "public",
-    register: true,
-    skipWaiting: true,
-    disable: !isProd,
+  output: 'export',
+  distDir: 'dist',
+  images: {
+    unoptimized: true,
   },
-};
+  webpack: (config, { dev, isServer }) => {
+    // Add your custom Webpack configurations here
 
-module.exports = withPWA({
-  webpack: (config) => {
+    // JavaScript and JSX with Babel
     config.module.rules.push({
-      test: /\.(mp3|wav)$/i,
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
       use: {
-        loader: "url-loader",
+        loader: 'babel-loader',
+        options: {
+          presets: ['next/babel'],
+        },
       },
+    });
+
+
+    // Image Files
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif)$/i,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 8192, // Convert images smaller than 8kb to base64 strings
+            name: 'images/[name].[hash].[ext]',
+          },
+        },
+      ],
+    });
+
+    // SVG Files (using SVGR)
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    // Font Files
+    config.module.rules.push({
+      test: /\.(woff|woff2|eot|ttf|otf)$/i,
+      type: 'asset/resource',
     });
 
     return config;
   },
-  ...nextConfig,
-});
+};
+
+module.exports = nextConfig;
