@@ -17,7 +17,7 @@ const Hero = () => {
     typeSpeed: 50,
     startDelay: 1500,
     backSpeed: 50,
-    backDelay: 8000,
+    backDelay: 1500,
     loop: true,
   };
 

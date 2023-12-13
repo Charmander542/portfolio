@@ -72,6 +72,7 @@ const Projects = ({ isDesktop, clientHeight }) => {
       start: "bottom bottom",
       end: duration,
       scrub: 0,
+      markers:0,
       pin: true,
       animation: timeline,
       pinSpacing: "margin",
