@@ -1,0 +1,10 @@
+{
+  "theme_color": "#7000FF",
+  "background_color": "#120E16",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Portfolio | Charles Van Hook",
+  "short_name": "Charles Van Hook",
+  "description": "Charles Van Hook's Portfolio Website."
+}
