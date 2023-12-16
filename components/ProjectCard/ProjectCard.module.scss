@@ -1,0 +1,38 @@
+.projectCard {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.card {
+    cursor: pointer;
+    flex-grow: 0;
+    position: relative;
+    transition: all 300ms ease-in-out;
+    overflow: hidden;
+    
+    &:hover {
+        flex-grow: 1;
+    }// hover
+  
+}// item
+
+.projectImage {
+
+    width: 15rem !important;
+    height: unset !important;
+    min-width: unset !important;
+    max-height: unset !important;
+    object-fit: contain !important;
+    left: unset !important;
+    right: -1rem !important;
+    bottom: unset !important;
+}
+
+.techIcons {
+    transform: translateZ(2rem);
+    will-change: transform;
+}

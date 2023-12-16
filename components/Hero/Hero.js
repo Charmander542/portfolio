@@ -6,9 +6,9 @@ import { MENULINKS, TYPED_STRINGS } from "../../constants";
 import styles from "./Hero.module.scss";
 import Button from "../Button/Button";
 import Profiles from "../Profiles/Profiles";
+import useDownloader from "react-use-downloader"; 
 
 const Hero = () => {
-
   const typedEl = useRef(null);
   const targetSection = useRef(null);
 
@@ -36,6 +36,14 @@ const Hero = () => {
     return () => typed.destroy();
   }, [typedEl, targetSection]);
 
+  const { size, elapsed, percentage, download, 
+    cancel, error, isInProgress } = 
+    useDownloader(); 
+
+    const fileUrl = "/resume.pdf"; 
+    const filename = "CharlesVanHookResume.pdf"; 
+
+
   return (
     <section
       ref={targetSection}
@@ -51,33 +59,33 @@ const Hero = () => {
         `}
       </style>
       <div className="flex flex-col pt-40 md:pt-0 select-none">
-        <h1
-          className={`${styles.intro} font-mono font-bold text-5xl seq`}
-        >
+        <h1 className={`${styles.intro} font-mono font-bold text-5xl seq`}>
           Hello, <br /> I&apos;m&nbsp;
           <span
             ref={typedEl}
             className="seq text-5xl text-mush-light font-mono leading-relaxed"
           ></span>
         </h1>
-        <p>
-        </p>
+        <p></p>
         <div className="seq">
           <Profiles />
         </div>
-        <div className="seq pt-4">
+        <div className="seq flex pt-4">
           <Button href={`#${MENULINKS[3].ref}`} classes="link" type="primary">
             Let&apos;s Talk
+          </Button>
+          <Button
+            onClick={() => download(fileUrl, filename)}
+            classes="link ml-5"
+            type="primary"
+          >
+            Resume
           </Button>
         </div>
       </div>
       <div className="seq absolute pic -z-1 w-1/2 h-full">
-      <Image 
-        src="/person.png"
-        layout="fill"
-        />
+        <Image src="/person.png" layout="fill" />
       </div>
-
     </section>
   );
 };

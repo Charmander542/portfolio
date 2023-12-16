@@ -92,7 +92,7 @@ export const SKILLS = {
   ],
 };
 
-export const PROJECTS = [
+export const MAINPROJECTS = [
   {
     name: "Hexapod",
     image: "/projects/hexapod.png",
@@ -126,3 +126,50 @@ export const PROJECTS = [
     tech: ["altium", "cpp"],
   },
 ];
+
+export const PROJECTS = [
+  {
+    name: "Hexapod",
+    image: "/projects/hexapod.png",
+    description: "Robotic Hexapod with AI Controlled Arm",
+    gradient: ["#F14658", "#DC2537"],
+    url: "/projects/hexapod",
+    tech: ["python", "fusion360", "cpp", "opencv", "arduino"],
+    category: 'Engineering'
+  },
+  {
+    name: "LiDaR Robot",
+    image: "/projects/cheesebot.png",
+    description: "Nvidia Jetson Controled Robot with Autonomous Maping and Navigation",
+    gradient: ["#FFA62E", "#EA4D2C"],
+    url: "/projects/lidar_robot",
+    tech: ["fusion360", "ROS", "nvidia", "cpp"],
+    category: 'Code'
+  },
+  {
+    name: "Robotic Arm",
+    image: "/projects/arm.png",
+    description: "3D Printed 8DOF Robotic Arm with ROS Move:it controls",
+    gradient: ["#000066", "#6699FF"],
+    url: "/projects/robot_arm",
+    tech: ["fusion360", "ROS", "cpp"],
+    category: 'Engineering'
+  },
+  {
+    name: "AI Chessboard",
+    image: "/projects/chessboard.png",
+    description: "An AI Controlled Chessboard that Emulates Players",
+    gradient: ["#142D46", "#2E4964"],
+    url: "/projects/chessboard",
+    tech: ["altium", "cpp", "fusion360"],
+    category: 'Engineering'
+  },
+  {
+    name: "Electric Skateboard",
+    image: "/projects/skateboard.png",
+    description: "An AI Controlled Chessboard that Emulates Players",
+    gradient: ["#7DCE82", "#35AC3D"],
+    tech: ["altium", "fusion360"],
+    category: 'Engineering'
+  },
+]

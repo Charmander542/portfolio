@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { MENULINKS, PROJECTS } from "../../constants";
+import { MENULINKS, MAINPROJECTS } from "../../constants";
 import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ProjectTile from "./ProjectTile/ProjectTile";
@@ -110,7 +110,7 @@ const Projects = ({ isDesktop, clientHeight }) => {
             clientHeight > 650 ? "mt-12" : "mt-4"
           } flex project-wrapper w-fit seq`}
         >
-          {PROJECTS.map((project, index) => (
+          {MAINPROJECTS.map((project, index) => (
             <ProjectTile
               classes={"mr-10 xs:mr-12 sm:mr-16"}
               project={project}

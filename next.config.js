@@ -1,4 +1,3 @@
-// next.config.js
 const nextConfig = {
   output: 'export',
   distDir: 'dist',
@@ -19,7 +18,6 @@ const nextConfig = {
         },
       },
     });
-
 
     // Image Files
     config.module.rules.push({
@@ -45,6 +43,19 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.(woff|woff2|eot|ttf|otf)$/i,
       type: 'asset/resource',
+    });
+
+    // PDF Files
+    config.module.rules.push({
+      test: /\.pdf$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: 'pdf/[name].[hash].[ext]',
+          },
+        },
+      ],
     });
 
     return config;
