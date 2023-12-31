@@ -135,7 +135,8 @@ export const PROJECTS = [
     gradient: ["#F14658", "#DC2537"],
     url: "/projects/hexapod",
     tech: ["python", "fusion360", "cpp", "opencv", "arduino"],
-    category: 'Engineering'
+    category: 'Engineering',
+    markdown: "/projects/test.md"
   },
   {
     name: "LiDaR Robot",

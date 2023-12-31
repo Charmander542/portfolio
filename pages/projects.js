@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import { PROJECTS } from "../constants.js";
 import Button from '@/components/Button/Button';
-import Card from '@/components/Card/Card.js';
+import Card from '@/components/Card/car.js';
 import Meta from "@/components/Seo/Meta";
 import Loader from "@/components/Loader/Loader";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+
+
 
 const allCategories = ['All', ...new Set(PROJECTS.map(project => project.category))];
 
@@ -32,10 +36,17 @@ export default function Projects({isDesktop}) {
         const filteredData = PROJECTS.filter(project => project.category ===  button);
         setMenuItem(filteredData)
     }
+    const cardData = menuItem.map((project, id) => {
+      return (
+        <Card
+          data={project}
+          key={`card-${id}`}
+        />
+      )
+    })
 
     return (
       <>
-      <Meta>
         {isLoading ? (
           <Loader />
         ) : (
@@ -50,21 +61,34 @@ export default function Projects({isDesktop}) {
             >{category}</Button>
             ))}
           </div>
-          <div className="mt-5 margin-auto flex flex-wrap justify-center gap-5">
-          {menuItem.map((project) => {
-            return (
-              <Card
-                data={project}
-                key={project.name}
-              />
-            )
-          })}
-          </div>
+          <MainContainer
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 1,
+            }}
+          >
+            {cardData}
+          </MainContainer>
     
         </div>
         </>
         )}
-        </Meta>
       </>
       );
 }
+
+const MainContainer = styled(motion.main)`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3rem;
+  margin: 2rem 0;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 758px) {
+    grid-template-columns: 1fr;
+  }
+`;
