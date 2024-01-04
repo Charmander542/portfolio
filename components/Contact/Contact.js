@@ -355,7 +355,7 @@ const Contact = () => {
 
         input:hover,
         textarea:hover {
-          box-shadow: 0 0 0.3rem #7000ff;
+          box-shadow: 0 0 0.3rem #ffff00;
         }
 
         input:active,

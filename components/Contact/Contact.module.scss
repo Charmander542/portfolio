@@ -1,7 +1,7 @@
 .button {
   --primary: #1A171E;
-  --primary-dark: #9f55ff;
-  --shadow: #{rgba(#9f55ff, 0.3)};
+  --primary-dark: theme("colors.mush.dark");
+  --shadow: #{theme("colors.mush.dark")};
   --text: #fff;
   --text-opacity: 1;
   --success: #eeecff;

@@ -15,7 +15,9 @@
 
 body {
   box-sizing: border-box;
-  @apply bg-gray-dark-5 text-white overflow-x-hidden;
+  overflow-x: hidden;
+  @apply bg-gray-dark-5 text-white;
+  /* Add any other global body styles here */
 }
 
 html {
@@ -107,6 +109,22 @@ a,
             }
           }
         }
+        .filter {
+          > div {
+            transform: rotate(135deg);
+            &:before {
+              top: 0;
+              transform: rotate(90deg);
+              width: 100%;
+            }
+            &:after {
+              top: 0;
+              transform: rotate(90deg);
+              opacity: 0;
+              
+            }
+          }
+        }
       }
       ~ {
         .menu {
@@ -125,6 +143,11 @@ a,
       &:hover {
         + {
           .hamburger {
+            > div {
+              transform: rotate(225deg);
+            }
+          }
+          .filter {
             > div {
               transform: rotate(225deg);
             }
@@ -149,6 +172,32 @@ a,
         position: absolute;
         left: 0;
         width: 100%;
+        top: -0.5rem;
+        height: 0.125rem;
+        background: inherit;
+        transition: all 0.4s ease;
+      }
+      &:after {
+        top: 0.5rem;
+      }
+    }
+  }
+  .filter {
+    z-index: 1;
+    backface-visibility: hidden;
+
+    > div {
+      height: 0.125rem;
+      transition: all 0.4s ease;
+      -webkit-box-pack: center;
+
+      &:before,
+      &:after {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        width: 50%;
         top: -0.5rem;
         height: 0.125rem;
         background: inherit;
@@ -726,6 +775,51 @@ $bg: #f4faff;
   box-shadow: 0 0 1rem theme("colors.mush.dark");
 }
 
+.markdown {
+  h1 {
+    @apply text-4xl font-bold mb-4;
+  }
+
+  h2 {
+    @apply text-3xl font-bold mb-3;
+  }
+
+  h3 {
+    @apply text-2xl font-bold mb-2;
+  }
+
+  h4 {
+    @apply text-xl font-bold mb-2;
+  }
+
+  h5 {
+    @apply text-lg font-bold mb-1;
+  }
+
+  h6 {
+    @apply text-base font-bold mb-1;
+  }
+
+  p {
+    @apply text-base mb-4;
+  }
+
+  ul {
+    @apply list-disc pl-6 mb-4;
+  }
+
+  ol {
+    @apply list-decimal pl-6 mb-4;
+  }
+
+  li {
+    @apply mb-2;
+  }
+
+  a {
+    @apply text-blue hover:underline;
+  }
+}
 
 .milk-404 {
   max-height: 100vh;

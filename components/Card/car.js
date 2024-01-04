@@ -1,3 +1,4 @@
+import memo from "react";
 import { motion } from "framer-motion";
 import { Fragment, useRef, useState, useEffect } from "react";
 import Image from "next/image";
@@ -6,8 +7,8 @@ import ReactMarkdown from "react-markdown";
 import gfm from 'remark-gfm'
 
 
-export default function Card({ data}) {
-    const { name, image, description, gradient, author, category, markdown} = data;  
+const Card = (({data}) => {
+    const { name, image, description, gradient, author, category, done, markdown} = data;  
   const [isCardOpened, setIsCardOpened] = useState(false);
   const [cardDimensions, setCardDimensions] = useState({ width: 0, height: 0 });
   const [markdownContent, setMarkdownContent] = useState("");
@@ -22,6 +23,7 @@ export default function Card({ data}) {
         .catch((error) => console.error("Error fetching Markdown content:", error));
     }
   }, [markdown]);
+  console.log(markdownContent)
 
   return (
     <Fragment>
@@ -42,17 +44,25 @@ export default function Card({ data}) {
         }
       }style={isCardOpened ? {backgroundColor: "black"} : {}}
       >
-        <motion.div className="w-full h-full rounded-3xl overflow-hidden relative" style={{
-              background: `linear-gradient(90deg, ${gradient[0]} 0%, ${gradient[1]} 100%)`,
+        <motion.div className="w-full h-full rounded-3xl relative" style={{
               cursor: "pointer"
             }}>
-        <motion.img
-            src="/project-bg.svg"
-            alt="project"
-            className="w-full h-full top-0 left-0 object-cover opacity-30"
-          />
-          <motion.div className="absolute top-2 left-0 ">
-            <motion.span className="category pl-2">{category}</motion.span>
+              <img src={image} className="w-full object-cover overflow-hidden rounded-3xl" style={isCardOpened ? {height: "30"} : {height: "100%"}}/>
+              {!(done || isCardOpened)&& <img src="projects/inprogress.png" className="w-full object-cover overflow-hidden absolute top-20"/>}
+            <motion.div
+          className="absolute top-0 left-0 w-full h-40 rounded-3xl"
+          style={{
+            background: `linear-gradient(180deg, rgba(0,0,0,40) 0%, rgba(0,0,0,0) 100%)`,
+          }}
+        ></motion.div>
+          <motion.div className="top-2 left-0 absolute">
+            {category
+              .sort((a, b) => a.localeCompare(b)) // Sort categories alphabetically
+              .map((cat, index) => (
+                <motion.span key={index} className="text-md pl-2" style={isCardOpened ? {opacity: "0"} : {opacity: "1"}}>
+                  {cat}
+                </motion.span>
+              ))}
             <motion.h2
               layout
               className="font-medium text-3xl sm:text-4xl z-10 pl-2 overflow-hidden"
@@ -66,7 +76,7 @@ export default function Card({ data}) {
         {isCardOpened && (
           <CardDescription initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           {markdownContent ? (
-              <ReactMarkdown remarkPlugins={[gfm]} children={markdownContent} />
+              <ReactMarkdown className="markdown p-2" remarkPlugins={[gfm]} children={markdownContent} />
             ) : (
               <p>Loading...</p>
             )}
@@ -90,7 +100,9 @@ export default function Card({ data}) {
       )}
     </Fragment>
   );
-}
+});
+
+export default Card;
 
 const CardLink = styled(motion.div)`
   ${(props) =>
@@ -115,8 +127,6 @@ const CardLink = styled(motion.div)`
 
 
 const CardDescription = styled(motion.p)`
-  font-weight: 100;
-  font-size: 1.5em;
   color: #ffffff;
 `;
 
