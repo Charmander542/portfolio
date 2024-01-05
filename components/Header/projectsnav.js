@@ -2,6 +2,8 @@ import { useState, useCallback, useEffect } from 'react';
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
 import { MENULINKS } from "../../constants";
+import Button from '@/components/Button/Button';
+
 
 const useMediaQuery = (width) => {
     const [targetReached, setTargetReached] = useState(false);
@@ -29,13 +31,13 @@ const useMediaQuery = (width) => {
     return targetReached;
   };
 
-const Nav = ({ children }) => {
+const Nav = ({ children, allCategories, filter }) => {
     const isBreakpoint = useMediaQuery(768)
     return (
         <nav className="w-full fixed top-0 py-4 z-50 select-none bg-gray-dark-5 transition-all duration-300">
             <Fade>
             <div className="flex justify-between section-container">
-                <a href="/" className="link">
+                <a href="/" className="link" >
                 <Image
                     src="/cvh.svg"
                     alt="CVH"
@@ -58,17 +60,13 @@ const Nav = ({ children }) => {
                     {children}
                 </div>
                 ) : (
-                    <div className="desktopMenu">
-                    <ul className="flex space-x-4 justify-end">
-                        {MENULINKS.map((el) => (
-                        <li
-                            key={el.name}
-                            className={`p-5 m-0 pb-0 pt-2`}
-                        >
-                        </li>
-                        ))}
-                    </ul>
-                    </div>
+                  <div className='flex justify-center pt-2' >
+                  {allCategories.map((category, index) => (
+                    <Button
+                      classes={"btn-dark text-white p-1 px-2 mx-5 btn fw-bold"} type="primary" onClick={() => filter(category)}
+                    >{category}</Button>
+                  ))}
+                </div>
                 )}
                 </div>
             </div>

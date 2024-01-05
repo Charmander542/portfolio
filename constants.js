@@ -131,7 +131,6 @@ export const PROJECTS = [
   {
     name: "Hexapod",
     image: "/projects/hexapod/photos/full.png",
-    description: "Robotic Hexapod with AI Controlled Arm",
     gradient: ["#F14658", "#DC2537"],
     url: "/projects/hexapod",
     tech: ["python", "fusion360", "cpp", "opencv", "arduino"],
@@ -142,7 +141,6 @@ export const PROJECTS = [
   {
     name: "LiDaR Robot",
     image: "/projects/cheesebot/photos/inprogress.png",
-    description: "Nvidia Jetson Controled Robot with Autonomous Maping and Navigation",
     gradient: ["#FFA62E", "#EA4D2C"],
     url: "/projects/lidar_robot",
     tech: ["fusion360", "ROS", "nvidia", "cpp"],
@@ -153,7 +151,6 @@ export const PROJECTS = [
   {
     name: "Robotic Arm",
     image: "/projects/arm.png",
-    description: "3D Printed 8DOF Robotic Arm with ROS Move:it controls",
     gradient: ["#000066", "#6699FF"],
     url: "/projects/robot_arm",
     tech: ["fusion360", "ROS", "cpp"],
@@ -164,7 +161,6 @@ export const PROJECTS = [
   {
     name: "AI Chessboard",
     image: "/projects/chessboard/photos/full.png",
-    description: "An AI Controlled Chessboard that Emulates Players",
     gradient: ["#142D46", "#2E4964"],
     url: "/projects/chessboard",
     tech: ["altium", "cpp", "fusion360"],
@@ -175,7 +171,6 @@ export const PROJECTS = [
   {
     name: "Electric Skateboard",
     image: "/projects/skateboard/photos/full.png",
-    description: "An AI Controlled Chessboard that Emulates Players",
     gradient: ["#7DCE82", "#35AC3D"],
     tech: ["altium", "fusion360"],
     category: ['Engineering', 'PCB Design'],
@@ -185,7 +180,6 @@ export const PROJECTS = [
   {
     name: "Arcade Cabinet",
     image: "/projects/arcade/photos/off2.png",
-    description: "An AI Controlled Chessboard that Emulates Players",
     gradient: ["#7DCE82", "#35AC3D"],
     tech: ["fusion360"],
     category: ['Engineering', 'Code'],
@@ -195,11 +189,11 @@ export const PROJECTS = [
   {
     name: "CNC Machine",
     image: "/projects/cncmachine/photos/full.png",
-    description: "An AI Controlled Chessboard that Emulates Players",
     gradient: ["#7DCE82", "#35AC3D"],
     tech: ["fusion360"],
     category: ['Engineering', 'Code'],
     done: true,
     markdown: "/projects/cncmachine/cncmachine.md"
   },
+
 ]

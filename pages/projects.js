@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { PROJECTS } from "../constants.js";
 import Button from '@/components/Button/Button';
-import Card from '@/components/Card/car.js';
-import Sidebar from '@/components/Sidebar/Sidebar.js'
+import Card from '@/components/Card/Card.js';
 import Meta from "@/components/Seo/Meta";
 import Loader from "@/components/Loader/Loader";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Nav from "@/components/Header/projectsnav.js"
+import { gsap } from "gsap";
 
 const allCategories = ['All', ...new Set(PROJECTS.flatMap(project => project.category))];
 
@@ -17,6 +17,8 @@ export default function Projects({ isDesktop}) {
 
   const [menuItem, setMenuItem] = useState(PROJECTS);
   const [buttons, setButtons] = useState(allCategories);
+
+  const cardRefs = useRef([]);
 
   useEffect(() => {
     // Preload images
@@ -35,6 +37,15 @@ export default function Projects({ isDesktop}) {
     });
   }, []);
 
+  useEffect(() => {
+    gsap.to(cardRefs.current, {
+      autoAlpha: 1,
+      stagger: 0.1,
+      ease: 'none',
+      delay: 2,
+    });
+  }, [menuItem]);
+
   const filter = (button) => {
     if (button === 'All') {
       setMenuItem(PROJECTS);
@@ -50,6 +61,8 @@ export default function Projects({ isDesktop}) {
       <Card
         data={project}
         key={`card-${id}`}
+        ref={el => cardRefs.current[id] = el}
+        style={{ opacity: 0 }}
       />
     )
   })
@@ -60,7 +73,7 @@ export default function Projects({ isDesktop}) {
         <Loader />
       ) : (
         <>
-          <Nav />
+          <Nav allCategories={allCategories} filter={filter}/>
           <div className={`${
             isDesktop && "min-h-screen"
           }w-full relative select-none section-container transform-gpu justify-center`}>

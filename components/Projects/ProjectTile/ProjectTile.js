@@ -2,10 +2,15 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import VanillaTilt from "vanilla-tilt";
 import styles from "./ProjectTile.module.scss";
+import { useRouter } from 'next/router';
+
 
 const ProjectTile = ({ project, classes, isDesktop }) => {
   const { name, image, description, gradient, url, tech } = project;
   const projectCard = useRef(null);
+  const router = useRouter();
+
+  const formattedName = name.toLowerCase().replace(/\s+/g, '_');
   let additionalClasses = "";
   if (classes) {
     additionalClasses = classes;
@@ -25,7 +30,9 @@ const ProjectTile = ({ project, classes, isDesktop }) => {
 
   return (
     <a
-      href={url}
+    onClick={() => {
+      router.push(`/projects/${formattedName}`);
+    }}
       className={`overflow-hidden rounded-3xl ${additionalClasses}`}
       ref={projectCard}
       
