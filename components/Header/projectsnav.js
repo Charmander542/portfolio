@@ -3,6 +3,8 @@ import Image from "next/image";
 import Fade from "react-reveal/Fade";
 import { MENULINKS } from "../../constants";
 import Button from '@/components/Button/Button';
+import { useRouter } from 'next/router';
+
 
 
 const useMediaQuery = (width) => {
@@ -58,7 +60,7 @@ const Nav = ({ children, allCategories, filter }) => {
         <nav className={navbarClasses.join(" ")}>  
             <Fade>
             <div className="flex justify-between section-container">
-                <a href="/" className="link" >
+            <a onClick={() => {router.push(`/`);}} className="link" >
                 <Image
                     src="/cvh.svg"
                     alt="CVH"
@@ -84,7 +86,7 @@ const Nav = ({ children, allCategories, filter }) => {
                   <div className='flex justify-center pt-2' >
                   {allCategories.map((category, index) => (
                     <Button
-                      classes={"btn-dark text-white p-1 px-2 mx-5 btn fw-bold"} type="primary" onClick={() => filter(category)}
+                      classes={"btn-dark text-white p-1 px-2 mx-5 btn fw-bold"} type="primary" onClick={() => filter(category)} key={index}
                     >{category}</Button>
                   ))}
                 </div>

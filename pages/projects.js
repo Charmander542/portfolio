@@ -83,7 +83,7 @@ export default function Projects({ isDesktop}) {
             <div className='flex justify-center pt-2' >
               {allCategories.map((category, index) => (
                 <Button
-                  classes={"btn-dark text-white p-1 px-2 mx-5 btn fw-bold"} type="primary" onClick={() => filter(category)}
+                  classes={"btn-dark text-white p-1 px-2 mx-5 btn fw-bold"} type="primary" onClick={() => filter(category)} key={index}
                 >{category}</Button>
               ))}
             </div>

@@ -21,7 +21,7 @@ const Chessboard = () => {
           <div className="text-left">
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
             <p className="text-[1.3rem] font-medium">
-              This project is about creating an AI Chessboard using a 3D printed core-xy gantry and an electromagnet to move the chess pieces from under the board. The chessboard is controlled by a custom circuit board and connected to the internet for more advanced algorithms. Most of the bots are loaded onto a Raspberry Pi computer, which offers various levels of difficulty. A unique feature of this project is the ability to create a bot based on a player's gameplay if they play on the board enough times.
+              This project is about creating an AI Chessboard using a 3D printed core-xy gantry and an electromagnet to move the chess pieces from under the board. The chessboard is controlled by a custom circuit board and connected to the internet for more advanced algorithms. Most of the bots are loaded onto a Raspberry Pi computer, which offers various levels of difficulty. A unique feature of this project is the ability to create a bot based on a player&apos;s gameplay if they play on the board enough times.
             </p>
           </div>
         </section>
@@ -55,7 +55,7 @@ const Chessboard = () => {
           <div className="text-left">
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Challenges Encountered</h2>
             <p className="text-[1.3rem] font-medium">
-              The project faced several challenges, particularly in getting the electromagnet to move the pieces without affecting other pieces and activating the reed switches with the magnets in the pieces. These issues were addressed with complex designs that moved the magnets further away while orienting them in the most optimal way to prevent interference with each other's fields.
+              The project faced several challenges, particularly in getting the electromagnet to move the pieces without affecting other pieces and activating the reed switches with the magnets in the pieces. These issues were addressed with complex designs that moved the magnets further away while orienting them in the most optimal way to prevent interference with each other&apos;s fields.
             </p>
           </div>
         </section>
@@ -98,7 +98,7 @@ const Chessboard = () => {
           <div className="text-left">
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Solutions Implemented</h2>
             <p className="text-[1.3rem] font-medium">
-              To overcome the challenges, the project implemented several innovative solutions. The electromagnet issue was solved by designing a mechanism that moved the magnets further away while orienting them in the most optimal way to prevent interference with each other's fields. The project also made use of a custom circuit board and a Raspberry Pi computer to control the board and run the bots, respectively. A unique feature was added to create a bot based on a player's gameplay if they play on the board enough times.
+              To overcome the challenges, the project implemented several innovative solutions. The electromagnet issue was solved by designing a mechanism that moved the magnets further away while orienting them in the most optimal way to prevent interference with each other&apos;s fields. The project also made use of a custom circuit board and a Raspberry Pi computer to control the board and run the bots, respectively. A unique feature was added to create a bot based on a player&apos;s gameplay if they play on the board enough times.
             </p>
           </div>
         </section>

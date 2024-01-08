@@ -133,7 +133,7 @@ const Header = ({ children }) => {
                       }`}
                     >
                       <a
-                        if={el.ref}
+                        key={el.ref}
                         className={`link inline font-bold text-xl ${
                           activeSection !== el.ref ? 'hover:border-b-2 hover:border-yellow' : ''}`}
                         href={`#${el.ref}`}

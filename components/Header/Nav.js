@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
 import Button from '@/components/Button/Button';
+import { useRouter } from 'next/router';
+
 
 const Nav = ({ children, allCategories, filter }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,7 +31,7 @@ const Nav = ({ children, allCategories, filter }) => {
     <nav className={navbarClasses.join(" ")}>
       <Fade>
         <div className="flex justify-between section-container">
-          <a href="/" className="link" >
+          <a onClick={() => {router.push(`/`);}} className="link" >
             <Image
               src="/cvh.svg"
               alt="CVH"
