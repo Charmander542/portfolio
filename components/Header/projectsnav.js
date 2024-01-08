@@ -33,8 +33,29 @@ const useMediaQuery = (width) => {
 
 const Nav = ({ children, allCategories, filter }) => {
     const isBreakpoint = useMediaQuery(768)
-    return (
-        <nav className="w-full fixed top-0 py-4 z-50 select-none bg-gray-dark-5 transition-all duration-300">
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 0 ) {
+        setIsScrolled(true);
+      }
+      else {
+        setIsScrolled(false);
+      }
+    }
+  
+    useEffect(() => {
+      window.addEventListener('scroll', handleScroll)
+    })
+  
+    let navbarClasses = ['w-full fixed top-0 py-4 z-50 select-none bg-gray-dark-5  transition-all duration-300'];
+    if (isScrolled) {
+      navbarClasses.push('shadow-lg');
+    }
+  
+      return (
+        <nav className={navbarClasses.join(" ")}>  
             <Fade>
             <div className="flex justify-between section-container">
                 <a href="/" className="link" >

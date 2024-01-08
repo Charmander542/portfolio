@@ -3,11 +3,13 @@ import { PROJECTS } from "../constants.js";
 import Button from '@/components/Button/Button';
 import Card from '@/components/Card/Card.js';
 import Meta from "@/components/Seo/Meta";
+import ProgressIndicator from "@/components/ProgressIndicator/ProgressIndicator";
 import Loader from "@/components/Loader/Loader";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Nav from "@/components/Header/projectsnav.js"
 import { gsap } from "gsap";
+
 
 const allCategories = ['All', ...new Set(PROJECTS.flatMap(project => project.category))];
 
@@ -74,6 +76,7 @@ export default function Projects({ isDesktop}) {
       ) : (
         <>
           <Nav allCategories={allCategories} filter={filter}/>
+          <ProgressIndicator />
           <div className={`${
             isDesktop && "min-h-screen"
           }w-full relative select-none section-container transform-gpu justify-center`}>

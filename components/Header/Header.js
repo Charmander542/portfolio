@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
 
+
   const updateTarget = useCallback((e) => {
     if (e.matches) {
       setTargetReached(true);
@@ -38,6 +39,7 @@ const useMediaQuery = (width) => {
 const Header = ({ children }) => {
   const isBreakpoint = useMediaQuery(768)
   const [activeSection, setActiveSection] = useState('home');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const sections = MENULINKS.map((el) => el.ref);
@@ -74,12 +76,28 @@ const Header = ({ children }) => {
       }
     });
   }, []);
-  
-  
 
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 0 ) {
+      setIsScrolled(true);
+    }
+    else {
+      setIsScrolled(false);
+    }
+  }
 
-  return (
-    <nav className="w-full fixed top-0 py-4 z-50 select-none bg-gray-dark-5 transition-all duration-300">
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+  })
+
+  let navbarClasses = ['w-full fixed top-0 py-4 z-50 select-none bg-gray-dark-5  transition-all duration-300'];
+  if (isScrolled) {
+    navbarClasses.push('shadow-lg');
+  }
+
+    return (
+      <nav className={navbarClasses.join(" ")}>  
       <Fade>
         <div className="flex justify-between section-container">
           <a href="#home" className="link">

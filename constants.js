@@ -123,7 +123,7 @@ export const MAINPROJECTS = [
     description: "An AI Controlled Chessboard that Emulates Players",
     gradient: ["#142D46", "#2E4964"],
     url: "/projects/chessboard",
-    tech: ["altium", "cpp"],
+    tech: ["fusion360", "altium", "cpp"],
   },
 ];
 
