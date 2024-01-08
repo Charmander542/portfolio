@@ -2,7 +2,8 @@ const nextConfig = {
   output: 'export',
   distDir: 'dist',
   images: {
-    unoptimized: true,
+    loader: 'akamai',
+    path: '',
   },
   webpack: (config, { dev, isServer }) => {
     // Add your custom Webpack configurations here
