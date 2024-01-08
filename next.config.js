@@ -18,7 +18,7 @@ const nextConfig = {
         },
       },
     });
-
+/*
     // Image Files
     config.module.rules.push({
       test: /\.(png|jpe?g|gif)$/i,
@@ -32,7 +32,7 @@ const nextConfig = {
         },
       ],
     });
-
+*/
     // SVG Files (using SVGR)
     config.module.rules.push({
       test: /\.svg$/,
