@@ -2,7 +2,7 @@ const nextConfig = {
   output: 'export',
   distDir: 'dist',
   images: {
-    unoptimized: false,
+    unoptimized: true,
   },
   webpack: (config, { dev, isServer }) => {
     // Add your custom Webpack configurations here
