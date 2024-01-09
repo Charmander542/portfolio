@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 
 const Nav = ({ children, allCategories, filter }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -31,7 +32,7 @@ const Nav = ({ children, allCategories, filter }) => {
     <nav className={navbarClasses.join(" ")}>
       <Fade>
         <div className="flex justify-between section-container">
-          <a onClick={() => {router.push(`/`);}} className="link" >
+          <a onClick={() => {router.push(`/`);}} className="link cursor-pointer" >
             <Image
               src="/cvh.svg"
               alt="CVH"

@@ -188,5 +188,20 @@ export const PROJECTS = [
     category: ['Engineering', 'Code'],
     done: true,
   },
+  {
+    name: "POV GLobe",
+    image: "/projects/cncmachine/photos/full.png",
+    tech: ["onshape", "arduino"],
+    category: ['Engineering', 'Code'],
+    done: true,
+  },
+  {
+    name: "Altoids Speaker",
+    image: "/projects/speaker/photos/full.png",
+    tech: ["onshape", "altium"],
+    category: ['Engineering', 'PCB Design'],
+    done: true,
+  },
+
 
 ]

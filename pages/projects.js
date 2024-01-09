@@ -23,20 +23,10 @@ export default function Projects({ isDesktop}) {
   const cardRefs = useRef([]);
 
   useEffect(() => {
-    // Preload images
-    const imagePromises = PROJECTS.map(project => {
-      const image = new Image();
-      image.src = project.image;
-      return new Promise(resolve => {
-        image.onload = resolve;
-      });
-    });
-
-    // Wait for all images to load
-    Promise.all(imagePromises).then(() => {
-      // Images are loaded, set isLoading to false
+    setTimeout(() => {
       setIsLoading(false);
-    });
+    }, 2000);
+
   }, []);
 
   useEffect(() => {
