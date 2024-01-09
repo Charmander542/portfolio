@@ -81,7 +81,19 @@ html {
 }
 
 .pic {
-  right: 20px;
+  @media (min-width: 100px) {
+    right: -400px;
+  }
+  @media (min-width: 320px) {
+    right: -20px;
+  }
+  @media (min-width: 768px) {
+    right: -5px;
+  }
+  @media (min-width: 1024px) {
+    right: 20px;
+  }
+  
 }
 
 a,

@@ -6,7 +6,7 @@ import { MENULINKS, TYPED_STRINGS } from "../../constants";
 import styles from "./Hero.module.scss";
 import Button from "../Button/Button";
 import Profiles from "../Profiles/Profiles";
-import useDownloader from "react-use-downloader"; 
+import useDownloader from "react-use-downloader";
 
 const Hero = () => {
   const typedEl = useRef(null);
@@ -36,13 +36,11 @@ const Hero = () => {
     return () => typed.destroy();
   }, [typedEl, targetSection]);
 
-  const { size, elapsed, percentage, download, 
-    cancel, error, isInProgress } = 
-    useDownloader(); 
+  const { size, elapsed, percentage, download, cancel, error, isInProgress } =
+    useDownloader();
 
-    const fileUrl = "/resume.pdf"; 
-    const filename = "CharlesVanHookResume.pdf"; 
-
+  const fileUrl = "/resume.pdf";
+  const filename = "CharlesVanHookResume.pdf";
 
   return (
     <section
@@ -83,11 +81,12 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-      <div className="seq absolute pic -z-1 w-1/2 h-full">
-        <Image src="/person.png" layout="fill" />
-      </div>
     </section>
   );
 };
 
 export default Hero;
+
+<div className="seq absolute pic -z-1 w-1/2 h-full">
+  <Image src="/person.png" layout="fill" />
+</div>;

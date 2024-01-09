@@ -19,8 +19,13 @@ const Projects = ({ isDesktop, clientHeight }) => {
     } else {
       const projectWrapper =
         targetSection.current.querySelector(".project-wrapper");
-      projectWrapper.style.width = "calc(100vw - 1rem)";
-      projectWrapper.style.overflowX = "scroll";
+        projectWrapper.style.width = "calc(100vw - 1rem)";
+        projectWrapper.style.maxWidth = "500px";
+        projectWrapper.style.overflowX = "none";
+        projectWrapper.style.flexDirection = "column";
+        projectWrapper.style.justifyContent = "center";
+        projectWrapper.style.gap = "1rem";
+
     }
 
     const [revealTimeline, revealScrollTrigger] = getRevealSt();
@@ -40,14 +45,16 @@ const Projects = ({ isDesktop, clientHeight }) => {
       { opacity: 0, duration: 0.5, stagger: 0.5 },
       "<"
     );
-
-    const scrollTrigger = ScrollTrigger.create({
+    let scrollTrigger;
+    if (isDesktop) {
+      scrollTrigger = ScrollTrigger.create({
       trigger: targetSection.current,
-      start: "top bottom",
+      start: `top bottom`,
       end: "bottom bottom",
       scrub: 0,
       animation: revealTl,
     });
+  }
 
     return [revealTl, scrollTrigger];
   };
@@ -100,7 +107,7 @@ const Projects = ({ isDesktop, clientHeight }) => {
           <h1 className="text-6xl mt-2 font-medium text-gradient w-fit seq">
             My Projects
           </h1>
-          <h2 className="text-[1.65rem] font-medium md:max-w-xl max-w-sm mt-2 seq">
+          <h2 className="text-[1.65rem] font-medium md:max-w-xl w-full mt-2 seq">
             Delve into some of my various projects, from art to engineering.{" "}
           </h2>
         </div>
@@ -117,7 +124,7 @@ const Projects = ({ isDesktop, clientHeight }) => {
             />
           ))}
 
-            <Button href={`/projects`} classes="link pt-4 mr-20 xs:mr-12 sm:mr-16 h-10 w-40 m-auto" type="primary">
+            <Button href={`/projects`} classes="link pt-4 mr-20 xs:ml-2 sm:ml10 h-10 w-40 m-auto" type="primary">
             More Projects
             </Button>
           </div>

@@ -28,27 +28,22 @@
     color: black;
     box-shadow: 0 0 1rem theme("colors.mush.dark");
   }
+
+  @media (max-width: 768px) { // Add this line
+    &:hover {
+      background-position: 0%; // Reset hover effect on mobile
+      color: white;
+    }
+
+    &:active {
+      background-position: 100%; // Button turns yellow when clicked
+      color: white;
+      transition: background-position 0.3s ease-in-out; // Add transition for smooth color change
+    }
+  } // Add this line
 }
 
-// .primary__button[disabled] {
-//   pointer-events: none;
-//   background-position: 120%;
-//   box-shadow: 0 0 0rem theme("colors.mush.dark");
 
-//   color: inherit;
-
-//   background-image: linear-gradient(
-//     120deg,
-//     transparent 33%,
-//     theme("colors.purple") 33%,
-//     theme("colors.purple")66%,
-//     transparent 66%
-//   );
-
-//   animation-name: load;
-//   animation-duration: 1s;
-//   animation-iteration-count: infinite;
-// }
 
 .secondary__button {
   position: relative;

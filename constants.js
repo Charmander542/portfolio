@@ -189,7 +189,7 @@ export const PROJECTS = [
     done: true,
   },
   {
-    name: "POV GLobe",
+    name: "POV Globe",
     image: "/projects/cncmachine/photos/full.png",
     tech: ["onshape", "arduino"],
     category: ['Engineering', 'Code'],
