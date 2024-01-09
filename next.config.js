@@ -1,6 +1,6 @@
 const nextConfig = {
   images: {
-    unoptimized: true,
+    unoptimized: false,
   },
   webpack: (config, { dev, isServer }) => {
     // Add your custom Webpack configurations here
