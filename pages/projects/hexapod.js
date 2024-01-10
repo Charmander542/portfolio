@@ -1,11 +1,25 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Image from 'next/image';
 import Nav from '@/components/Header/Nav.js';
 import ProgressIndicator from "@/components/ProgressIndicator/ProgressIndicator";
+import Loader from "@/components/Loader/Loader";
+
 
 const Hexapod = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+  }, []);
   return (
     <>
+    {isLoading ? (
+        <Loader />
+      ) : (
+        <>
       <Nav />
       <ProgressIndicator />
 
@@ -115,6 +129,8 @@ const Hexapod = () => {
           </div>
         </section>
       </main>
+    </>
+    )}
     </>
   );
 };

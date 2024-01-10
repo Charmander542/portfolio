@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 
-const Card = ({ data }) => {
+
+const Card = ({ data, isDesktop }) => {
   const { name, image, done, category } = data;  
   const router = useRouter();
 
@@ -10,9 +11,10 @@ const Card = ({ data }) => {
 
   return (
     <motion.a
-      className="w-[22rem] h-[20rem] rounded-3xl"
+      className="h-[20rem] rounded-3xl"
+      style={isDesktop ? {width: "22rem"} : {width: "calc(100vh-1rem)"}}
       layout
-      whileHover={{ scale: 1.1 }}
+      whileHover={isDesktop ? {scale: 1.1} : {  }}
       onClick={() => {
         router.push(`/projects/${formattedName}`);
       }}

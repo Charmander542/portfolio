@@ -107,7 +107,7 @@ const Projects = ({ isDesktop, clientHeight }) => {
           <h1 className="text-6xl mt-2 font-medium text-gradient w-fit seq">
             My Projects
           </h1>
-          <h2 className="text-[1.65rem] font-medium md:max-w-xl w-full mt-2 seq">
+          <h2 className="text-[1.65rem] font-medium max-w-[10rem] xs:max-w-sm w-full sm:max-w-3xl mt-2 seq">
             Delve into some of my various projects, from art to engineering.{" "}
           </h2>
         </div>

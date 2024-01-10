@@ -13,14 +13,31 @@ import { gsap } from "gsap";
 
 const allCategories = ['All', ...new Set(PROJECTS.flatMap(project => project.category))];
 
-export default function Projects({ isDesktop}) {
+export default function Projects({}) {
   const [isLoading, setIsLoading] = useState(true);
   const [anyCardOpen, setAnyCardOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
+  const [clientHeight, setClientHeight] = useState(0);
+  const [clientWidth, setClientWidth] = useState(0);
+
 
   const [menuItem, setMenuItem] = useState(PROJECTS);
   const [buttons, setButtons] = useState(allCategories);
 
   const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const { innerWidth, innerHeight, orientation, history } = window;
+
+    const result =
+      typeof orientation === "undefined" &&
+      navigator.userAgent.indexOf("IEMobile") === -1;
+    history.scrollRestoration = "manual";
+
+    setIsDesktop(result);
+    setClientHeight(innerHeight);
+    setClientWidth(innerWidth);
+  }, [isDesktop]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -55,6 +72,7 @@ export default function Projects({ isDesktop}) {
         key={`card-${id}`}
         ref={el => cardRefs.current[id] = el}
         style={{ opacity: 0 }}
+        isDesktop={isDesktop}
       />
     )
   })
