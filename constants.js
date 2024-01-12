@@ -39,12 +39,13 @@ export const TYPED_STRINGS = [
   " Charles Van Hook",
   " An Engineer",
   " A Developer",
+  " A Roboticist"
 ];
 
 export const SOCIAL_LINKS = [
   {
     name: "mail",
-    url: "mailto: cvanhook@bu.edu",
+    url: "mailto:cvanhook@bu.edu",
   },
   {
     name: "linkedin",

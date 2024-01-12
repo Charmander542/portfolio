@@ -11,6 +11,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
+import { useRouter } from 'next/router';
 
 
 function Model({ url }) {
@@ -85,6 +86,7 @@ const Hero = () => {
   const typedEl = useRef(null);
   const targetSection = useRef(null);
   const [isDesktop, setIsDesktop] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     // Check if window is defined (i.e., if we're in a browser)
@@ -126,12 +128,6 @@ const Hero = () => {
     return () => typed.destroy();
   }, [typedEl, targetSection]);
 
-  const { size, elapsed, percentage, download, cancel, error, isInProgress } =
-    useDownloader();
-
-  const fileUrl = "/resume.pdf";
-  const filename = "CharlesVanHookResume.pdf";
-
   return (
     <section
       ref={targetSection}
@@ -163,7 +159,7 @@ const Hero = () => {
             Let&apos;s Talk
           </Button>
           <Button
-            onClick={() => download(fileUrl, filename)}
+            onClick={() => {router.push(`/resume`);}}
             classes="link ml-5"
             type="primary"
           >

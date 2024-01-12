@@ -5,7 +5,8 @@
   --text: #fff;
   --text-opacity: 1;
   --success: #eeecff;
-  --success-x: -12;
+  --success-x: -1;
+  --success-y: 10px;
   --success-stroke: 14;
   --success-opacity: 0;
   --border-radius: 7;
@@ -184,8 +185,8 @@
       z-index: 0;
       position: absolute;
       left: 0;
-      right: 0;
-      top: 15px;
+      right: 15px;
+      top: 10px;
       transform: translateX(calc(var(--success-x) * 1px)) translateZ(0);
       opacity: var(--success-opacity);
       color: var(--success);
