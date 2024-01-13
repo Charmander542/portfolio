@@ -28,7 +28,7 @@ const Nav = () => {
       <Fade>
         <div className="flex justify-center section-container">
           <a onClick={() => {router.push(`/`);}} className="link cursor-pointer" >
-            <div className="w-16 h-16 bg-gray-dark-4 flex items-center justify-center">
+            <div className="w-16 h-16 bg-gray-dark-5 flex items-center justify-center">
               <Image
                 src="/cvh.svg"
                 alt="CVH"
