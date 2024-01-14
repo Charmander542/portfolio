@@ -12,6 +12,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useRouter } from 'next/router';
+/* eslint-disable react/no-unknown-property */
+
 
 
 function Model({ url }) {
