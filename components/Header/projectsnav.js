@@ -1,7 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
-import { MENULINKS } from "../../constants";
 import Button from '@/components/Button/Button';
 import { useRouter } from 'next/router';
 
@@ -83,7 +82,7 @@ const Nav = ({ children, allCategories, filter, isDesktop }) => {
                     </div>
                     {children}
                 </div>
-                ) : (isDesktop &&
+                ) : (
                   <div className='flex justify-center pt-2' >
                   {allCategories.map((category, index) => (
                     <Button

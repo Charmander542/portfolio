@@ -9,6 +9,8 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import Nav from "@/components/Header/projectsnav.js"
 import { gsap } from "gsap";
+import Filter from "@/components/Header/Filter/Filter.js";
+
 
 
 const allCategories = ['All', ...new Set(PROJECTS.flatMap(project => project.category))];
@@ -83,7 +85,9 @@ export default function Projects({}) {
         <Loader />
       ) : (
         <>
-          <Nav allCategories={allCategories} filter={filter} isDesktop={isDesktop}/>
+          <Nav allCategories={allCategories} filter={filter} isDesktop={isDesktop}>
+            <Filter allCategories={allCategories} filter={filter}/>
+          </ Nav>
           <ProgressIndicator />
           <div className={`${
             isDesktop && "min-h-screen"
