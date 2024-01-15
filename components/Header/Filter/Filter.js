@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const Filter = ({allCategories, filter,}) => {
   useEffect(() => {
-    const anchorNodes = document.querySelectorAll('a');
+    const anchorNodes = document.querySelectorAll('a[id=filter]');
     anchorNodes.forEach((el) => {
       el.addEventListener("click", () => {
         const checkbox = document.querySelector(".checkbox-toggle");
@@ -19,6 +19,7 @@ const Filter = ({allCategories, filter,}) => {
             {allCategories.map((category, index) => (
               <li className="p-0 m-6 text-2xl block" key={index}>
                 <a
+                    id="filter"
                   className="link relative inline font-mono font-bold text-5xl duration-300 hover:no-underline"
                   onClick={() => filter(category)}
                 >
