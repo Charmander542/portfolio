@@ -26,9 +26,9 @@ const Nav = () => {
   return (
     <nav className={navbarClasses.join(" ")}>
       <Fade>
-        <div className="flex justify-center section-container">
+        <div className="flex section-container">
           <a onClick={() => {router.push(`/`);}} className="link cursor-pointer" >
-            <div className="w-16 h-16 bg-gray-dark-5 flex items-center justify-center">
+            <div className="w-16 h-20 bg-gray-dark-5 flex">
               <Image
                 src="/cvh.svg"
                 alt="CVH"

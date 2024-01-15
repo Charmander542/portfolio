@@ -107,7 +107,7 @@ communicated with senior engineers to test them in labs</p>
                 </div>
             </section>
             <section id="certificates" className="seq">
-                <h2 className="text-5xl font-bold sm:text-left sm:text-7xl">CERTIFICATES/AWARDS</h2>
+                <h2 className="text-5xl font-bold sm:text-left sm:text-7xl">CERTIFICATES & AWARDS</h2>
                 <hr className="h-1 mx-auto mb-4 border-2 rounded md:mb-10 bg:white"/>
                 <div className="flex justify-between mb-8">
                     <div>
@@ -119,11 +119,21 @@ communicated with senior engineers to test them in labs</p>
                         <p className="italic">2023</p>
                     </div>
                 </div>
+                <div className="flex justify-between mb-8">
+                    <div>
+                        <h2 className="text-mush-light text-4xl font-semibold">CREATE Showcase First Place</h2>
+                        <a onClick={() => {router.push(`/projects/arcade_cabinet`);}}><p className="text-blue cursor-pointer text-lg font-medium">Arcade Cabinet</p></a>
+                    </div>
+                    <div className="text-right">
+                        <p>Windward Makerspace Competition</p>
+                        <p className="italic">2022</p>
+                    </div>
+                </div>
             </section>
-            <div className="seq">
+            <div className="seq flex justify-center items-center">
                 <Button
                 onClick={() => download(fileUrl, filename)}
-                classes="link mb-[1rem]"
+                classes="link mb-[3rem]"
                 type="primary"
                 >
                 <FaDownload /> &nbsp;Download
