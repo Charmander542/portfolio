@@ -14,24 +14,21 @@ export default function Resume() {
     const router = useRouter();
     const { size, elapsed, percentage, download, cancel, error, isInProgress } =
     useDownloader();
+    const typedEl = useRef(null);
     const targetSection = useRef(null);
 
     useEffect(() => {
+    
         const revealTl = gsap.timeline({ defaults: { ease: Linear.easeNone } });
-        revealTl.from(
+        revealTl
+          .to(targetSection.current, { opacity: 1, duration: 2 })
+          .from(
             targetSection.current.querySelectorAll(".seq"),
             { opacity: 0, duration: 0.5, stagger: 0.5 },
             "<"
-        );
-
-        ScrollTrigger.create({
-            trigger: targetSection.current.querySelector(".resume-wrapper"),
-            start: "100px bottom",
-            end: `center center`,
-            animation: revealTl,
-            scrub: 0,
-        });
-    }, [targetSection]);
+          );
+    
+      }, [typedEl, targetSection]);
 
     const fileUrl = "/resume.pdf";
     const filename = "CharlesVanHookResume.pdf";
@@ -42,65 +39,66 @@ export default function Resume() {
         <section className="w-full relative select-none mt-20"
         ref={targetSection}>
         <main className="flex flex-col resume-wrapper">
+            <div className="seq"/>
             <div className="mt-0 w-full relative select-none section-container transform-gpu justify-center">
             <section id="education" className="seq">
-                <h2 className="text-6xl">Education</h2>
-                <hr className="h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg:white"/>
+                <h1 className="text-5xl font-bold sm:text-left sm:text-7xl">EDUCATION</h1>
+                <hr className="h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
                 <div className="flex justify-between mb-4">
                     <div>
-                        <h2 className="text-mush-light text-4xl">Boston University</h2>
-                        <p className="text-white text-2xl">Studying Mechanical and Computer Engineering</p>
+                        <h2 className="text-mush-light text-4xl font-semibold">Boston University</h2>
+                        <p className="text-lg font-medium">Studying Mechanical and Computer Engineering</p>
                     </div>
                     <div className="text-right">
                         <p>Boston, MA</p>
-                        <p className="text-white"> 4.0 GPA</p>
-                        <p>May, 2026</p>
+                        <p> 4.0 GPA</p>
+                        <p className="italic">May, 2026</p>
                     </div>
                 </div>
                 <p className="mb-8">I study things and learn more</p>
                 <div className="flex justify-between mb-4">
                     <div>
-                        <h2 className="text-mush-light text-4xl">Windward School</h2>
+                        <h2 className="text-mush-light text-4xl font-semibold">Windward School</h2>
                     </div>
                     <div className="text-right">
                         <p>Los Angeles, CA</p>
-                        <p>June, 2023</p>
+                        <p className="italic">June, 2023</p>
                     </div>
                 </div>
             </section>
             <section id="experience" className="seq">
-                <h2 className="text-6xl">Experience</h2>
+                <h2 className="text-5xl font-bold sm:text-left sm:text-7xl">EXPERIENCE</h2>
                 <hr className="h-1 mx-auto mb-4 border-2 rounded md:mb-10 bg:white"/>
                 <div className="flex justify-between mb-4">
                     <div>
-                        <h2 className="text-mush-light text-4xl">Griffith Observatory</h2>
-                        <p className="text-white text-2xl">Engineering Consultant</p>
+                        <h2 className="text-mush-light text-4xl font-semibold">Griffith Observatory</h2>
+                        <p className="text-lg font-medium">Engineering Consultant</p>
                     </div>
                     <div className="text-right">
                         <p>Los Angeles, CA</p>
-                        <p>2019-2023</p>
+                        <p className="italic">2019-2023</p>
                     </div>
                 </div>
-                <div className="mb-4">
+                <div className="mb-8">
                     <p>● Devised 3D models of 88 constellations and worked with a foundry to cast the models in bronze</p>
                     <p>● Programmed MATLAB to test and design different mounting ideas to test structural integrity</p>
                     <p>● Coded new algorithms for generating surface area and reducing casting cost of obj files</p>
                 </div>
             </section>
             <section id="internships" className="seq">
-                <h2 className="text-6xl">Internships</h2>
+                <h2 className="text-5xl font-bold sm:text-left sm:text-7xl">INTERNSHIPS</h2>
                 <hr className="h-1 mx-auto mb-4 border-2 rounded md:mb-10 bg:white"/>
                 <div className="flex justify-between mb-4">
                     <div>
-                        <h2 className="text-mush-light text-4xl">Boeing</h2>
-                        <p className="text-white text-2xl">Technical Intern</p>
+                        <h2 className="text-mush-light text-4xl font-semibold">Boeing</h2>
+                        <p className="text-lg font-medium">Technical Intern</p>
                     </div>
                     <div className="text-right">
                         <p>El Segundo, CA</p>
-                        <p>2020-2021</p>
+                        <p className="italic">2020-2021</p>
                     </div>
                 </div>
-                <div className="mb-4">
+                <div className="mb-8">
                     <p>● Modeled helical antennas and ran programs to generate radiation patterns for each antenna
 design to find optimal parameters in a team of three</p>
                     <p>● Presented findings on the efficiency of helical antennas and large array satellite disks</p>
@@ -109,20 +107,28 @@ communicated with senior engineers to test them in labs</p>
                 </div>
             </section>
             <section id="certificates" className="seq">
-                <h2 className="text-6xl">Certificates/Awards</h2>
+                <h2 className="text-5xl font-bold sm:text-left sm:text-7xl">CERTIFICATES/AWARDS</h2>
                 <hr className="h-1 mx-auto mb-4 border-2 rounded md:mb-10 bg:white"/>
-                <div className="flex justify-between mb-4">
-                    <h2 className="text-mush-light text-4xl">Hackathon First Place</h2>
-                    <a onClick={() => {router.push(`/projects/accesability_controller`);}}><p className="text-blue cursor-pointer">Accesability Controller</p></a>
+                <div className="flex justify-between mb-8">
+                    <div>
+                        <h2 className="text-mush-light text-4xl font-semibold">Hackathon First Place</h2>
+                        <a onClick={() => {router.push(`/projects/accesability_controller`);}}><p className="text-blue cursor-pointer text-lg font-medium">Accesability Controller</p></a>
+                    </div>
+                    <div className="text-right">
+                        <p>Boston University Hardware Hackathon</p>
+                        <p className="italic">2023</p>
+                    </div>
                 </div>
             </section>
+            <div className="seq">
                 <Button
                 onClick={() => download(fileUrl, filename)}
-                classes="link mt-[5rem] mb-[1rem] seq"
+                classes="link mb-[1rem]"
                 type="primary"
                 >
                 <FaDownload /> &nbsp;Download
                 </Button>
+                </div>
             </div>
         </main>
         </section>

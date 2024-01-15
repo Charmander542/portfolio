@@ -83,7 +83,7 @@ export default function Projects({}) {
         <Loader />
       ) : (
         <>
-          <Nav allCategories={allCategories} filter={filter}/>
+          <Nav allCategories={allCategories} filter={filter} isDesktop={isDesktop}/>
           <ProgressIndicator />
           <div className={`${
             isDesktop && "min-h-screen"

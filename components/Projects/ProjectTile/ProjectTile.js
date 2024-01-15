@@ -38,7 +38,7 @@ const ProjectTile = ({ project, classes, isDesktop }) => {
       
       rel="noreferrer"
       style={{
-        maxWidth: isDesktop ? "calc(100vw - 2rem)" : "calc(100vw - 4rem)",
+        maxWidth: isDesktop ? "calc(100vw - 2rem)" : "calc(100vw - 1rem)",
         flex: "1 0 auto",
         WebkitMaskImage: "-webkit-radial-gradient(white, black)",
       }}

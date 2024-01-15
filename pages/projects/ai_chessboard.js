@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import Nav from '@/components/Header/Nav.js';
 import ProgressIndicator from "@/components/ProgressIndicator/ProgressIndicator";
+import { PROJECTS } from "../../constants";
+
 
 const Chessboard = () => {
   return (
@@ -110,6 +112,17 @@ const Chessboard = () => {
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Tools and Technologies</h2>
             <p className="text-[1.3rem] font-medium">
             </p>
+            <div className="flex flex-wrap gap-6 transform-gpu seq">
+              {PROJECTS[3].tech.map((skill) => (
+                <Image
+                  key={skill}
+                  src={`/skills/${skill}.svg`}
+                  alt={skill}
+                  width={50}
+                  height={50}
+                />
+              ))}
+            </div>
           </div>
         </section>
       </main>
