@@ -91,14 +91,7 @@ export default function Projects({}) {
           <ProgressIndicator />
           <div className={`${
             isDesktop && "min-h-screen"
-          }w-full relative select-none section-container transform-gpu justify-center`}>
-            <div className='flex justify-center pt-2' >
-              {allCategories.map((category, index) => (
-                <Button
-                  classes={"btn-dark text-white p-1 px-2 mx-5 btn fw-bold"} type="primary" onClick={() => filter(category)} key={index}
-                >{category}</Button>
-              ))}
-            </div>
+          }w-full relative select-none section-container transform-gpu justify-center mt-[6rem]`}>
             <MainContainer
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

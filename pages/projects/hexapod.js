@@ -24,7 +24,7 @@ const Hexapod = () => {
       <Nav />
       <ProgressIndicator />
 
-      <main className="max-w-6xl mx-auto p-4 pt-4 space-y-8 mt-[4rem]">
+      <main className="mx-auto p-4 pt-4 space-y-8 mt-[4rem] section-container">
         {/* Hero Section */}
         <section className="relative h-screen w-full flex items-center justify-center text-white">
           <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover">
@@ -41,6 +41,24 @@ const Hexapod = () => {
                 This project is a self-exploration into the complex motion of legged robots, specifically hexapods. The focus was on working with inverse kinematics to emulate the diverse gaits of insects. The project also delved into the challenges of actuation technology, control systems, and the integration of a 6DOF robotic arm with computer vision capabilities.
               </p>
             </div>
+            <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+              <div>
+            <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
+            <p className="text-[1.3rem] font-medium">
+              CAD Stuff
+            </p>
+            </div>
+          <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
+            {/* Placeholder for Photo of Part of the Model */}
+            <Image
+              src="/projects/hexapod/photos/bottom.png" // Replace with the path to your image
+              alt="Part of the Model"
+              layout="fill"
+              objectFit="cover"
+            />
+            </div>
+            </div>
           </section>
 
           {/* Photo Area 1 */}
@@ -49,16 +67,16 @@ const Hexapod = () => {
               <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 1 */}
                 <Image
-                  src="/projects/hexapod/photos/walking.png"
+                  src="/projects/spider.png"
                   alt="Hexapod Robot"
                   layout="fill"
-                  objectFit="cover"
+                  objectFit="contain"
                 />
               </div>
               <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 2 */}
                 <Image
-                  src="/projects/hexapod/photos/walking.png"
+                  src="/projects/hexapod/photos/spider_arm.png"
                   alt="Hexapod Robot in Action"
                   layout="fill"
                   objectFit="cover"

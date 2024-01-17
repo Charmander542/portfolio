@@ -96,7 +96,7 @@ export const SKILLS = {
 export const MAINPROJECTS = [
   {
     name: "Hexapod",
-    image: "/projects/hexapod.png",
+    image: "/projects/spider.png",
     description: "Robotic Hexapod with AI Controlled Arm",
     gradient: ["#F14658", "#DC2537"],
     url: "/projects/hexapod",

@@ -11,7 +11,7 @@ const Chessboard = () => {
       <Nav />
       <ProgressIndicator />
 
-      <main className="max-w-6xl mx-auto p-4 space-y-8 mt-[4rem]">
+      <main className="mx-auto p-4 pt-4 space-y-8 mt-[4rem] section-container">
         {/* Hero Section */}
         <section className="relative h-screen w-full flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 text-white">
           <div className="absolute top-0 left-0 h-full w-full z-0 bg-opacity-50 bg-black"></div>
