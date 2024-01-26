@@ -90,7 +90,7 @@ const Skateboard = () => {
           <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
             <Image
-              src="/projects/hexapod/photos/battery.jpg" // Replace with the path to your image
+              src="/projects/hexapod/photos/battery.png" // Replace with the path to your image
               alt="battery"
               layout="fill"
               objectFit="cover"
