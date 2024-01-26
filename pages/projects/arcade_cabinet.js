@@ -27,10 +27,13 @@ const Arcade = () => {
       <main className="mx-auto p-4 pt-4 space-y-8 mt-[4rem] section-container">
         {/* Hero Section */}
         <section className="relative h-screen w-full flex items-center justify-center text-white">
-          <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover">
-            <source src="/projects/hexapod/spiderwalk.mp4" type="video/mp4" />
-          </video>
-          <h1 className="relative z-20 text-4xl font-bold">Hexapod Robot</h1>
+        <Image
+              src="/projects/arcade/photos/off1.png" // Replace with the path to your image
+              alt="Part of the Model"
+              layout="fill"
+              objectFit="cover"
+            />
+          <h1 className="relative z-20 text-4xl font-bold">Arcade Cabinet</h1>
         </section>
 
           {/* Project Overview Section */}
@@ -38,7 +41,10 @@ const Arcade = () => {
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
               <p className="text-[1.3rem] font-medium">
-                This project is an exploration into the complex motion of legged robots, specifically hexapods. The focus was on working with inverse kinematics to emulate the diverse gaits of insects. The project also delved into the challenges of actuation technology, control systems, and the integration of a 6DOF robotic arm with computer vision capabilities.
+              With adeep passion for retro games and a brother who was desperate for something to work on, I embarked on a project that would bring a wave of nostalgia to my gaming sessions with brothers and friends. 
+              Utilizing an old Dell computer as the brains behind the operation, I delved into the intricate world of arcade cabinet construction. Crafting custom controller hardware for the buttons and fashioning a 
+              wooden enclosure to mimic the classic arcade cabinet aesthetic. The challenge was not just in building a functional arcade cabinet, 
+              but in ensuring it was cool enough inside to run demanding games like PS2. This endeavor demanded meticulous design, coding expertise, and the creation of custom hardware. 
               </p>
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
@@ -46,7 +52,8 @@ const Arcade = () => {
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
             <p className="text-[1.3rem] font-medium">
-              CAD Stuff
+              Much like most of my designs I first made the cabinet in CAD by importing a drawing of the side and deriving the demensions from that, and using the size of the parts I had lying around to scale the compartments. However this design was much different
+              to all my 3D prints because it was only constructed by 2D sheets of wood. The only 3D printed parts were the various mounts and speaker grills. I cut the sides of the encloser on my homemade CNC machine and screwed it all together.
             </p>
             </div>
           <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
@@ -88,9 +95,10 @@ const Arcade = () => {
           {/* Challenges Section */}
           <section className="py-8">
             <div className="text-left">
-              <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Challenges Encountered</h2>
+              <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Electronics and Software</h2>
               <p className="text-[1.3rem] font-medium">
-                The project faced several challenges, particularly in the design of the actuation technology. Initial attempts with linear actuators proved slow and expensive, leading to a shift to servos. However, the servos were prone to breaking, necessitating the addition of temperature and current sensors to prevent motor damage. The control system also posed a challenge, with the project eventually settling on a choice between an Xbox controller or an RC control, depending on the processing unit used.
+                I had an old Dell desktop lying around from a junk store that I upgraded the CPU on, and I had used this computer for various tasks but I decided to retire it to be the arcade cabinet main computer for the rest of its days. The display was an old monitor also from the 
+                junk electronics store. The sound card is from an old laptop, which I rewired to work with the PC. The software running on it is an open source linux distro for emulation, with a custom performance layer for my particular screen and GPU.
               </p>
             </div>
           </section>
@@ -128,16 +136,6 @@ const Arcade = () => {
             </div>
           </section>
 
-          {/* Solutions Section */}
-          <section className="py-8 bg-gray-100">
-            <div className="text-left">
-              <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Solutions</h2>
-              <p className="text-[1.3rem] font-medium">
-                To overcome the challenges, the project implemented several innovative solutions. The actuation technology was improved by integrating temperature and current sensors to protect the servos. The control system was made flexible, allowing for the use of either an Xbox controller or an RC control. The project also expanded its scope by incorporating a Raspberry Pi as an alternative processing unit, enabling the addition of a 6DOF robotic arm. This arm was equipped with a camera and programmed to use computer vision to pick up trained objects, adding a new dimension to the project.
-              </p>
-            </div>
-          </section>
-
 
         {/* Tools Used Section */}
         <section className="py-8">
@@ -145,7 +143,7 @@ const Arcade = () => {
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Tools and Technologies</h2>
             <p className="text-[1.3rem] font-medium">
             <div className="flex flex-wrap gap-6 transform-gpu seq">
-              {PROJECTS[0].tech.map((skill) => (
+              {PROJECTS[5].tech.map((skill) => (
                 <Image
                   key={skill}
                   src={`/skills/${skill}.svg`}

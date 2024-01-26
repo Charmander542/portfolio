@@ -184,7 +184,7 @@ export const PROJECTS = [
   },
   {
     name: "Accesability Controller",
-    image: "/projects/cncmachine/photos/full.png",
+    image: "/projects/controller/photos/front.jpg",
     tech: ["onshape"],
     category: ['Engineering', 'Code'],
     done: true,

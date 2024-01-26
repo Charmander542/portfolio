@@ -27,13 +27,10 @@ const Controller = () => {
       <main className="mx-auto p-4 pt-4 space-y-8 mt-[4rem] section-container">
         {/* Hero Section */}
         <section className="relative h-screen w-full flex items-center justify-center text-white">
-        <Image
-              src="/projects/cheesebot/photos/inprogress.png" // Replace with the path to your image
-              alt="Part of the Model"
-              layout="fill"
-              objectFit="cover"
-            />
-          <h1 className="relative z-20 text-4xl font-bold">Hexapod Robot</h1>
+        <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover">
+            <source src="/projects/controller/controller.mp4" type="video/mp4" />
+          </video>
+          <h1 className="relative z-20 text-4xl font-bold">Accesability Controller</h1>
         </section>
 
           {/* Project Overview Section */}
@@ -151,7 +148,7 @@ const Controller = () => {
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Tools and Technologies</h2>
             <p className="text-[1.3rem] font-medium">
             <div className="flex flex-wrap gap-6 transform-gpu seq">
-              {PROJECTS[0].tech.map((skill) => (
+              {PROJECTS[7].tech.map((skill) => (
                 <Image
                   key={skill}
                   src={`/skills/${skill}.svg`}

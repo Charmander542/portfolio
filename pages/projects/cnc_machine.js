@@ -6,7 +6,7 @@ import Loader from "@/components/Loader/Loader";
 import { PROJECTS } from "../../constants";
 
 
-const Hexapod = () => {
+const CNC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -28,9 +28,9 @@ const Hexapod = () => {
         {/* Hero Section */}
         <section className="relative h-screen w-full flex items-center justify-center text-white">
           <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover">
-            <source src="/projects/hexapod/spiderwalk.mp4" type="video/mp4" />
+            <source src="/projects/cncmachine/firstmoves.mp4" type="video/mp4" />
           </video>
-          <h1 className="relative z-20 text-4xl font-bold">Hexapod Robot</h1>
+          <h1 className="relative z-20 text-4xl font-bold">CNC Machine</h1>
         </section>
 
           {/* Project Overview Section */}
@@ -57,7 +57,7 @@ const Hexapod = () => {
           <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
             <Image
-              src="/projects/hexapod/photos/bottom.png" // Replace with the path to your image
+              src="/projects/cncmachine/photos/full.png" // Replace with the path to your image
               alt="Part of the Model"
               layout="fill"
               objectFit="cover"
@@ -72,16 +72,16 @@ const Hexapod = () => {
               <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 1 */}
                 <Image
-                  src="/projects/spider.png"
+                  src="/projects/cncmachine/photos/box.png"
                   alt="Hexapod Robot"
                   layout="fill"
-                  objectFit="contain"
+                  objectFit="cover"
                 />
               </div>
               <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 2 */}
                 <Image
-                  src="/projects/hexapod/photos/spider_arm.png"
+                  src="/projects/cncmachine/photos/close.png"
                   alt="Hexapod Robot in Action"
                   layout="fill"
                   objectFit="cover"
@@ -93,15 +93,15 @@ const Hexapod = () => {
           <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
             <Image
-              src="/projects/hexapod/photos/dof.png" // Replace with the path to your image
-              alt="Part of the Model"
+              src="/projects/cncmachine/photos/open.png" // Replace with the path to your image
+              alt="Control Board"
               layout="fill"
               objectFit="cover"
               style={{ transform: 'rotate(90deg)' }}
             />
             </div>
               <div>
-            <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software</h2>
+            <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software and Hardware</h2>
             <p className="text-[1.3rem] font-medium">
               For the software I used c++ to program the arduino mega and python for the raspberry pi. Solving the inverse kinematics was the most interesting part of the software and I implemented 4 different gaits to emulate how different 6 legged creatures walk in real life.
               The image recognition software uses OpenCV for the object detection and then uses the x and y position of the center to run a movement algorithm to try to pick up the egg.
@@ -121,13 +121,15 @@ const Hexapod = () => {
           </section>
 
           {/* Additional Photos Section */}
+          
           <section className="py-8">
+          <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Stuff I Made</h2>
             <div className="flex justify-end gap-4">
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 3 */}
                 <Image
-                  src="/projects/hexapod/photos/walking.png"
-                  alt="Hexapod Robot Design"
+                  src="/projects/cncmachine/photos/caliperscase.png"
+                  alt="Calipers Case"
                   layout="fill"
                   objectFit="cover"
                 />
@@ -135,8 +137,8 @@ const Hexapod = () => {
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 4 */}
                 <Image
-                  src="/projects/hexapod/photos/dof.png"
-                  alt="Hexapod Robot Programming"
+                  src="/projects/cncmachine/photos/costers.png"
+                  alt="Coaster Gift"
                   layout="fill"
                   objectFit="cover"
                 />
@@ -144,8 +146,17 @@ const Hexapod = () => {
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 5 */}
                 <Image
-                  src="/projects/hexapod/photos/walking.png"
-                  alt="Hexapod Robot Performance Optimization"
+                  src="/projects/cncmachine/photos/dnddice.png"
+                  alt="D and D dice holder"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+                {/* Placeholder for Photo 5 */}
+                <Image
+                  src="/projects/cncmachine/photos/coastercam.png"
+                  alt="Cam design for the Coasters"
                   layout="fill"
                   objectFit="cover"
                 />
@@ -159,7 +170,7 @@ const Hexapod = () => {
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Tools and Technologies</h2>
             <p className="text-[1.3rem] font-medium">
             <div className="flex flex-wrap gap-6 transform-gpu seq">
-              {PROJECTS[0].tech.map((skill) => (
+              {PROJECTS[6].tech.map((skill) => (
                 <Image
                   key={skill}
                   src={`/skills/${skill}.svg`}
@@ -179,4 +190,4 @@ const Hexapod = () => {
   );
 };
 
-export default Hexapod;
+export default CNC;
