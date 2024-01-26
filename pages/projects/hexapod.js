@@ -127,7 +127,7 @@ const Hexapod = () => {
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 3 */}
                 <Image
-                  src="/projects/hexapod/photos/1.jpg"
+                  src="/projects/hexapod/photos/1.png"
                   alt="Hexapod Robot Design"
                   layout="fill"
                   objectFit="cover"
@@ -136,7 +136,7 @@ const Hexapod = () => {
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 4 */}
                 <Image
-                  src="/projects/hexapod/photos/2.jpg"
+                  src="/projects/hexapod/photos/2.png"
                   alt="Hexapod Robot Programming"
                   layout="fill"
                   objectFit="cover"
@@ -145,7 +145,7 @@ const Hexapod = () => {
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 5 */}
                 <Image
-                  src="/projects/hexapod/photos/3.jpg"
+                  src="/projects/hexapod/photos/3.png"
                   alt="Hexapod Robot Performance Optimization"
                   layout="fill"
                   objectFit="cover"

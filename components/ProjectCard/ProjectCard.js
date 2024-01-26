@@ -44,7 +44,7 @@ const ProjectCard = ({ project, classes, isDesktop }) => {
             >
               <div className="flex justify-between">
                 {project.tech.map((el, i) => (
-                  <img
+                  <Image
                     className={`flex-none`}
                     src={`/skills/${el}.svg`}
                     alt={el}
