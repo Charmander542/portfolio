@@ -4,10 +4,38 @@ import Nav from '@/components/Header/Nav.js';
 import ProgressIndicator from "@/components/ProgressIndicator/ProgressIndicator";
 import Loader from "@/components/Loader/Loader";
 import { PROJECTS } from "../../constants";
+import { useRouter } from 'next/router';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import Button from '@/components/Button/Button';
+
 
 
 const CNC = () => {
-  const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isDesktop, setIsDesktop] = useState(true);
+    const projectIndex = PROJECTS.findIndex((project) => project.name === "CNC Machine");
+    const router = useRouter();
+  
+    const handleNextProject = () => {
+      const nextIndex = (projectIndex + 1) % PROJECTS.length;
+      router.push(`/projects/${PROJECTS[nextIndex].name.toLowerCase().replace(/\s+/g, '_')}`);
+    };
+  
+    const handlePrevProject = () => {
+      const prevIndex = (projectIndex - 1 + PROJECTS.length) % PROJECTS.length;
+      router.push(`/projects/${PROJECTS[prevIndex].name.toLowerCase().replace(/\s+/g, '_')}`);
+    };
+  
+    useEffect(() => {
+      const { innerWidth, innerHeight, orientation, history } = window;
+  
+      const result =
+        typeof orientation === "undefined" &&
+        navigator.userAgent.indexOf("IEMobile") === -1;
+      history.scrollRestoration = "manual";
+  
+      setIsDesktop(result);
+    }, [isDesktop]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,7 +55,7 @@ const CNC = () => {
       <main className="mx-auto p-4 pt-4 space-y-8 mt-[4rem] section-container">
         {/* Hero Section */}
         <section className="relative h-screen w-full flex items-center justify-center text-white">
-          <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover">
+          <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover playsInLine">
             <source src="/projects/cncmachine/firstmoves.mp4" type="video/mp4" />
           </video>
           <h1 className="relative z-20 text-4xl font-bold">CNC Machine</h1>
@@ -183,6 +211,36 @@ const CNC = () => {
             </p>
           </div>
         </section>
+
+        <div className="flex justify-between">
+      {!isDesktop ? (
+        <>
+          <div className="pb-4"onClick={handlePrevProject}>
+            <FaArrowLeft size={70}/>
+          </div>
+          <div className="pb-4"onClick={handleNextProject}>
+            <FaArrowRight size={70}/>
+          </div>
+        </>
+      ) : (
+        <>
+          <Button
+            onClick={handlePrevProject}
+            classes="link mt-4 h-10 max-w-45"
+            type="primary"
+          >
+            <FaArrowLeft className='mr-2'/> Previous Project
+          </Button>
+          <Button
+            onClick={handleNextProject}
+            classes="link mt-4 h-10 max-w-45"
+            type="primary"
+          >
+            Next Project <FaArrowRight className='ml-2'/>
+          </Button>
+        </>
+      )}
+    </div>
       </main>
     </>
     )}

@@ -4,10 +4,38 @@ import Nav from '@/components/Header/Nav.js';
 import ProgressIndicator from "@/components/ProgressIndicator/ProgressIndicator";
 import Loader from "@/components/Loader/Loader";
 import { PROJECTS } from "../../constants";
+import { useRouter } from 'next/router';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import Button from '@/components/Button/Button';
+
 
 
 const Skateboard = () => {
-  const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isDesktop, setIsDesktop] = useState(true);
+    const projectIndex = PROJECTS.findIndex((project) => project.name === "Electric Skateboard");
+    const router = useRouter();
+  
+    const handleNextProject = () => {
+      const nextIndex = (projectIndex + 1) % PROJECTS.length;
+      router.push(`/projects/${PROJECTS[nextIndex].name.toLowerCase().replace(/\s+/g, '_')}`);
+    };
+  
+    const handlePrevProject = () => {
+      const prevIndex = (projectIndex - 1 + PROJECTS.length) % PROJECTS.length;
+      router.push(`/projects/${PROJECTS[prevIndex].name.toLowerCase().replace(/\s+/g, '_')}`);
+    };
+  
+    useEffect(() => {
+      const { innerWidth, innerHeight, orientation, history } = window;
+  
+      const result =
+        typeof orientation === "undefined" &&
+        navigator.userAgent.indexOf("IEMobile") === -1;
+      history.scrollRestoration = "manual";
+  
+      setIsDesktop(result);
+    }, [isDesktop]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,7 +55,7 @@ const Skateboard = () => {
       <main className="mx-auto p-4 pt-4 space-y-8 mt-[4rem] section-container">
         {/* Hero Section */}
         <section className="relative h-screen w-full flex items-center justify-center text-white">
-          <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover">
+          <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover playsInLine">
             <source src="/projects/skateboard/skateboard.mp4" type="video/mp4" />
           </video>
           <h1 className="relative z-20 text-4xl font-bold">Electric Skateboard</h1>
@@ -78,7 +106,7 @@ const Skateboard = () => {
               <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 2 */}
                 <Image
-                  src="/projects/hexapod/photos/front.png"
+                  src="/projects/skateboard/photos/front.png"
                   alt="Front of Skateboard with control board"
                   layout="fill"
                   objectFit="cover"
@@ -90,7 +118,7 @@ const Skateboard = () => {
           <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
             <Image
-              src="/projects/hexapod/photos/battery.png" // Replace with the path to your image
+              src="/projects/skateboard/photos/battery.png" // Replace with the path to your image
               alt="battery"
               layout="fill"
               objectFit="cover"
@@ -124,7 +152,7 @@ const Skateboard = () => {
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 3 */}
                 <Image
-                  src="/projects/hexapod/photos/1.jpg"
+                  src="/projects/skateboard/photos/1.jpg"
                   alt="Hexapod Robot Design"
                   layout="fill"
                   objectFit="cover"
@@ -133,7 +161,7 @@ const Skateboard = () => {
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 4 */}
                 <Image
-                  src="/projects/hexapod/photos/2.jpg"
+                  src="/projects/skateboard/photos/2.jpg"
                   alt="Hexapod Robot Programming"
                   layout="fill"
                   objectFit="cover"
@@ -142,7 +170,7 @@ const Skateboard = () => {
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 5 */}
                 <Image
-                  src="/projects/hexapod/photos/3.jpg"
+                  src="/projects/skateboard/photos/3.jpg"
                   alt="Hexapod Robot Performance Optimization"
                   layout="fill"
                   objectFit="cover"
@@ -151,7 +179,7 @@ const Skateboard = () => {
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 5 */}
                 <Image
-                  src="/projects/hexapod/photos/walking.png"
+                  src="/projects/skateboard/photos/walking.png"
                   alt="Hexapod Robot Performance Optimization"
                   layout="fill"
                   objectFit="cover"
@@ -179,6 +207,36 @@ const Skateboard = () => {
             </p>
           </div>
         </section>
+
+        <div className="flex justify-between">
+      {!isDesktop ? (
+        <>
+          <div className="pb-4"onClick={handlePrevProject}>
+            <FaArrowLeft size={70}/>
+          </div>
+          <div className="pb-4"onClick={handleNextProject}>
+            <FaArrowRight size={70}/>
+          </div>
+        </>
+      ) : (
+        <>
+          <Button
+            onClick={handlePrevProject}
+            classes="link mt-4 h-10 max-w-45"
+            type="primary"
+          >
+            <FaArrowLeft className='mr-2'/> Previous Project
+          </Button>
+          <Button
+            onClick={handleNextProject}
+            classes="link mt-4 h-10 max-w-45"
+            type="primary"
+          >
+            Next Project <FaArrowRight className='ml-2'/>
+          </Button>
+        </>
+      )}
+    </div>
       </main>
     </>
     )}

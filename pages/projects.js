@@ -90,13 +90,14 @@ export default function Projects({}) {
           <ProgressIndicator />
           <div className={`${
             isDesktop && "min-h-screen"
-          }w-full relative select-none section-container transform-gpu justify-center mt-[6rem]`}>
+          }relative select-none section-container transform-gpu justify-center my-[6rem]`}>
             <MainContainer
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
                 delay: 1,
               }}
+              className='max-width-full'
             >
               {cardData}
             </MainContainer>
@@ -112,7 +113,6 @@ const MainContainer = styled(motion.main)`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 3rem;
-  margin: 2rem 0;
 
   @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr 1fr;

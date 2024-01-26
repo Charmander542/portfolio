@@ -4,10 +4,38 @@ import Nav from '@/components/Header/Nav.js';
 import ProgressIndicator from "@/components/ProgressIndicator/ProgressIndicator";
 import Loader from "@/components/Loader/Loader";
 import { PROJECTS } from "../../constants";
+import { useRouter } from 'next/router';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import Button from '@/components/Button/Button';
+
 
 
 const Arcade = () => {
-  const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isDesktop, setIsDesktop] = useState(true);
+    const projectIndex = PROJECTS.findIndex((project) => project.name === "Arcade Cabinet");
+    const router = useRouter();
+  
+    const handleNextProject = () => {
+      const nextIndex = (projectIndex + 1) % PROJECTS.length;
+      router.push(`/projects/${PROJECTS[nextIndex].name.toLowerCase().replace(/\s+/g, '_')}`);
+    };
+  
+    const handlePrevProject = () => {
+      const prevIndex = (projectIndex - 1 + PROJECTS.length) % PROJECTS.length;
+      router.push(`/projects/${PROJECTS[prevIndex].name.toLowerCase().replace(/\s+/g, '_')}`);
+    };
+  
+    useEffect(() => {
+      const { innerWidth, innerHeight, orientation, history } = window;
+  
+      const result =
+        typeof orientation === "undefined" &&
+        navigator.userAgent.indexOf("IEMobile") === -1;
+      history.scrollRestoration = "manual";
+  
+      setIsDesktop(result);
+    }, [isDesktop]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -156,6 +184,36 @@ const Arcade = () => {
             </p>
           </div>
         </section>
+
+        <div className="flex justify-between">
+      {!isDesktop ? (
+        <>
+          <div className="pb-4"onClick={handlePrevProject}>
+            <FaArrowLeft size={70}/>
+          </div>
+          <div className="pb-4"onClick={handleNextProject}>
+            <FaArrowRight size={70}/>
+          </div>
+        </>
+      ) : (
+        <>
+          <Button
+            onClick={handlePrevProject}
+            classes="link mt-4 h-10 max-w-45"
+            type="primary"
+          >
+            <FaArrowLeft className='mr-2'/> Previous Project
+          </Button>
+          <Button
+            onClick={handleNextProject}
+            classes="link mt-4 h-10 max-w-45"
+            type="primary"
+          >
+            Next Project <FaArrowRight className='ml-2'/>
+          </Button>
+        </>
+      )}
+    </div>
       </main>
     </>
     )}

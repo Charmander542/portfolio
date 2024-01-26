@@ -4,10 +4,39 @@ import Nav from '@/components/Header/Nav.js';
 import ProgressIndicator from "@/components/ProgressIndicator/ProgressIndicator";
 import Loader from "@/components/Loader/Loader";
 import { PROJECTS } from "../../constants";
+import Button from '@/components/Button/Button';
+import { useRouter } from 'next/router';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+
+
 
 
 const Hexapod = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(true);
+  const projectIndex = PROJECTS.findIndex((project) => project.name === "Hexapod");
+  const router = useRouter();
+
+  const handleNextProject = () => {
+    const nextIndex = (projectIndex + 1) % PROJECTS.length;
+    router.push(`/projects/${PROJECTS[nextIndex].name.toLowerCase().replace(/\s+/g, '_')}`);
+  };
+
+  const handlePrevProject = () => {
+    const prevIndex = (projectIndex - 1 + PROJECTS.length) % PROJECTS.length;
+    router.push(`/projects/${PROJECTS[prevIndex].name.toLowerCase().replace(/\s+/g, '_')}`);
+  };
+
+  useEffect(() => {
+    const { innerWidth, innerHeight, orientation, history } = window;
+
+    const result =
+      typeof orientation === "undefined" &&
+      navigator.userAgent.indexOf("IEMobile") === -1;
+    history.scrollRestoration = "manual";
+
+    setIsDesktop(result);
+  }, [isDesktop]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,14 +56,14 @@ const Hexapod = () => {
       <main className="mx-auto p-4 pt-4 space-y-8 mt-[4rem] section-container">
         {/* Hero Section */}
         <section className="relative h-screen w-full flex items-center justify-center text-white">
-          <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover">
+          <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover playsInLine">
             <source src="/projects/hexapod/spiderwalk.mp4" type="video/mp4" />
           </video>
           <h1 className="relative z-20 text-4xl font-bold">Hexapod Robot</h1>
         </section>
 
           {/* Project Overview Section */}
-          <section className="py-8 bg-gray-100">
+          <section className="pt-8 bg-gray-100">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
               <p className="text-[1.3rem] font-medium">
@@ -67,7 +96,7 @@ const Hexapod = () => {
           </section>
 
           {/* Photo Area 1 */}
-          <section className="py-8">
+          <section className="">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 1 */}
@@ -101,7 +130,7 @@ const Hexapod = () => {
             />
             </div>
               <div>
-            <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software</h2>
+            <h2 className="text-4xl font-medium text-mush-light w-fit seq">Software</h2>
             <p className="text-[1.3rem] font-medium">
               For the software I used c++ to program the arduino mega and python for the raspberry pi. Solving the inverse kinematics was the most interesting part of the software and I implemented 4 different gaits to emulate how different 6 legged creatures walk in real life.
               The image recognition software uses OpenCV for the object detection and then uses the x and y position of the center to run a movement algorithm to try to pick up the egg.
@@ -110,7 +139,7 @@ const Hexapod = () => {
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
           {/* Challenges Section */}
-          <section className="py-8">
+          <section className="py-4">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Challenges Encountered</h2>
               <p className="text-[1.3rem] font-medium">
@@ -122,9 +151,9 @@ const Hexapod = () => {
           </section>
 
           {/* Additional Photos Section */}
-          <section className="py-8">
-            <div className="flex justify-end gap-4">
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+          <section className="py-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 3 */}
                 <Image
                   src="/projects/hexapod/photos/1.png"
@@ -133,7 +162,7 @@ const Hexapod = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 4 */}
                 <Image
                   src="/projects/hexapod/photos/2.png"
@@ -142,7 +171,7 @@ const Hexapod = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-64  relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 5 */}
                 <Image
                   src="/projects/hexapod/photos/3.png"
@@ -151,7 +180,7 @@ const Hexapod = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 5 */}
                 <Image
                   src="/projects/hexapod/photos/walking.png"
@@ -164,12 +193,12 @@ const Hexapod = () => {
           </section>
 
         {/* Tools Used Section */}
-        <section className="py-8">
+        <section className="py-4">
           <div className="text-left">
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Tools and Technologies</h2>
             <p className="text-[1.3rem] font-medium">
             <div className="flex flex-wrap gap-6 transform-gpu seq">
-              {PROJECTS[0].tech.map((skill) => (
+              {PROJECTS[projectIndex].tech.map((skill) => (
                 <Image
                   key={skill}
                   src={`/skills/${skill}.svg`}
@@ -182,6 +211,36 @@ const Hexapod = () => {
             </p>
           </div>
         </section>
+
+        <div className="flex justify-between">
+      {!isDesktop ? (
+        <>
+          <div className="pb-4"onClick={handlePrevProject}>
+            <FaArrowLeft size={70}/>
+          </div>
+          <div className="pb-4"onClick={handleNextProject}>
+            <FaArrowRight size={70}/>
+          </div>
+        </>
+      ) : (
+        <>
+          <Button
+            onClick={handlePrevProject}
+            classes="link mt-4 h-10 max-w-45"
+            type="primary"
+          >
+            <FaArrowLeft className='mr-2'/> Previous Project
+          </Button>
+          <Button
+            onClick={handleNextProject}
+            classes="link mt-4 h-10 max-w-45"
+            type="primary"
+          >
+            Next Project <FaArrowRight className='ml-2'/>
+          </Button>
+        </>
+      )}
+    </div>
       </main>
     </>
     )}

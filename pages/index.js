@@ -51,7 +51,7 @@ export default function Home() {
               <Hero isDesktop={isDesktop} />
               <Skills />
               <div className="pt-10 sm:pt-16 bg-gray-dark-5"></div>
-              <Projects isDesktop={isDesktop} clientHeight={clientHeight} />
+              <Projects isDesktop={isDesktop} clientHeight={clientHeight} clientWidth={clientWidth}/>
               <div className="pt-10 sm:pt-16 bg-gray-dark-5"></div>
               <Contact />
             </main>

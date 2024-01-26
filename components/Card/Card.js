@@ -12,7 +12,7 @@ const Card = ({ data, isDesktop }) => {
   return (
     <motion.a
       className="h-[20rem] rounded-3xl"
-      style={isDesktop ? {width: "22rem"} : {width: "calc(100vh-1rem)"}}
+      style={isDesktop ? {width: "100%"} : {width: "calc(100vh-1rem)"}}
       layout
       whileHover={isDesktop ? {scale: 1.1} : {  }}
       onClick={() => {

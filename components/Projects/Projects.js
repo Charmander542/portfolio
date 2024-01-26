@@ -6,7 +6,7 @@ import ProjectTile from "./ProjectTile/ProjectTile";
 import Button from "../Button/Button";
 
 
-const Projects = ({ isDesktop, clientHeight }) => {
+const Projects = ({ isDesktop, clientHeight, clientWidth }) => {
   const targetSection = useRef(null);
   const sectionTitle = useRef(null);
 
@@ -14,29 +14,56 @@ const Projects = ({ isDesktop, clientHeight }) => {
     let projectsScrollTrigger;
     let projectsTimeline;
 
-    if (isDesktop) {
-      [projectsTimeline, projectsScrollTrigger] = getProjectsSt();
-    } else {
-      const projectWrapper =
-        targetSection.current.querySelector(".project-wrapper");
-        projectWrapper.style.width = "calc(100vw - 1rem)";
-        projectWrapper.style.maxWidth = "500px";
-        projectWrapper.style.overflowX = "none";
-        projectWrapper.style.flexDirection = "column";
-        projectWrapper.style.justifyContent = "center";
-        projectWrapper.style.gap = "1rem";
+    const handleResize = () => {
+      // Clear old styles
+      clearOldStyles();
 
-    }
+      if (isDesktop) {
+        [projectsTimeline, projectsScrollTrigger] = getProjectsSt();
+      } else {
+        // Handle styles for non-desktop or specific width scenarios
+        const projectWrapper = targetSection.current.querySelector(".project-wrapper");
+        if (window.innerWidth > 500) {
+          projectWrapper.style.width = "80vw";
+          projectWrapper.style.overflowX = "none";
+          projectWrapper.style.overflowY = "scroll";
+        } else {
+          projectWrapper.style.width = "calc(100vw - 1rem)";
+          projectWrapper.style.maxWidth = "500px";
+          projectWrapper.style.overflowX = "none";
+          projectWrapper.style.flexDirection = "column";
+          projectWrapper.style.justifyContent = "center";
+          projectWrapper.style.gap = "1rem";
+        }
+      }
+    };
+
+    const clearOldStyles = () => {
+      const projectWrapper = targetSection.current.querySelector(".project-wrapper");
+      projectWrapper.removeAttribute("style");
+
+      // Add more elements to clear styles if needed
+    };
+
+    // Initial setup
+    handleResize();
+
+    // Event listener for window resize
+    window.addEventListener("resize", handleResize);
 
     const [revealTimeline, revealScrollTrigger] = getRevealSt();
 
     return () => {
+      // Remove the event listener on component unmount
+      window.removeEventListener("resize", handleResize);
+
       projectsScrollTrigger && projectsScrollTrigger.kill();
       projectsTimeline && projectsTimeline.kill();
       revealScrollTrigger && revealScrollTrigger.kill();
       revealTimeline && revealTimeline.progress(1);
     };
   }, [targetSection, sectionTitle, isDesktop]);
+
 
   const getRevealSt = () => {
     const revealTl = gsap.timeline({ defaults: { ease: Linear.easeNone } });
@@ -110,6 +137,9 @@ const Projects = ({ isDesktop, clientHeight }) => {
           <h2 className="text-[1.65rem] font-medium max-w-[10rem] xs:max-w-sm w-full sm:max-w-3xl mt-2 seq">
             Delve into some of my various projects, from art to engineering.{" "}
           </h2>
+          <Button href={`/projects`} classes="link mt-4 h-10 w-40" type="primary">
+            All Projects
+          </Button>
         </div>
         <div
           className={`${
@@ -121,11 +151,12 @@ const Projects = ({ isDesktop, clientHeight }) => {
               classes={"mr-10 xs:mr-4 sm:mr-16"}
               project={project}
               key={project.name}
+              isDesktop={isDesktop}
             />
           ))}
 
-            <Button href={`/projects`} classes="link pt-4 mr-20 xs:ml-2 sm:ml10 h-10 w-40 m-auto" type="primary">
-            More Projects
+            <Button href={`/projects`} classes="link pt-4 mr-20 xs:ml-2 sm:ml-10 h-10 w-40 m-auto" type="primary">
+              More&nbsp;Projects
             </Button>
           </div>
       </div>
