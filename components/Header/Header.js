@@ -99,7 +99,7 @@ const Header = ({ children }) => {
     return (
       <nav className={navbarClasses.join(" ")}>  
       <Fade>
-        <div className="flex justify-between section-container">
+        <div className="flex justify-between section-container pt-2">
           <a href="#home" className="link">
             <Image
               src="/cvh.svg"

@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { PROJECTS } from "../constants.js";
 import Button from '@/components/Button/Button';
 import Card from '@/components/Card/Card.js';
-import Meta from "@/components/Seo/Meta";
 import ProgressIndicator from "@/components/ProgressIndicator/ProgressIndicator";
 import Loader from "@/components/Loader/Loader";
 import styled from "styled-components";

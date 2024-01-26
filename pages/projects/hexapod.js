@@ -38,7 +38,10 @@ const Hexapod = () => {
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
               <p className="text-[1.3rem] font-medium">
-                This project is a self-exploration into the complex motion of legged robots, specifically hexapods. The focus was on working with inverse kinematics to emulate the diverse gaits of insects. The project also delved into the challenges of actuation technology, control systems, and the integration of a 6DOF robotic arm with computer vision capabilities.
+                In Sophmore year of Highschool Covid hit and I had very little to do, so I started a small robotics competition for the students at my school where we would all make robots that could traverse an arena and pick up eggs.
+                Beyond the interesting process of designing the competition and the software required to let people control their robots from a safe distance (home), my submission was a hexapod robot. I have made many wheeled robots for clubs and various projects but nothing
+                that could walk, so I took this as a challenge. I designed, coded and made the pcb for the entire hexapod. Drawing inspiration from real hexapods and others' interpretations. I also implemented a grabber with a camera to pick up the eggs automaticly, which led
+                me to learn a lot about computer communication and computer vision. 
               </p>
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
@@ -46,7 +49,9 @@ const Hexapod = () => {
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
             <p className="text-[1.3rem] font-medium">
-              CAD Stuff
+            The design uses three servos per leg to control the tibia, femur, and coax. And has an off the shelf robotic arm mounted on top. The shell is completly 3D printed. 
+            There is an arduino mega that controls all the servos and power managment, while a raspberry PI runs
+              a custom computer vision script to move the arm around and move towards eggs.
             </p>
             </div>
           <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
@@ -84,13 +89,34 @@ const Hexapod = () => {
               </div>
             </div>
           </section>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+          <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
+            {/* Placeholder for Photo of Part of the Model */}
+            <Image
+              src="/projects/hexapod/photos/dof.png" // Replace with the path to your image
+              alt="Part of the Model"
+              layout="fill"
+              objectFit="cover"
+              style={{ transform: 'rotate(90deg)' }}
+            />
+            </div>
+              <div>
+            <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software</h2>
+            <p className="text-[1.3rem] font-medium">
+              For the software I used c++ to program the arduino mega and python for the raspberry pi. Solving the inverse kinematics was the most interesting part of the software and I implemented 4 different gaits to emulate how different 6 legged creatures walk in real life.
+              The image recognition software uses OpenCV for the object detection and then uses the x and y position of the center to run a movement algorithm to try to pick up the egg.
+            </p>
+            </div>
+            </div>
+            <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
           {/* Challenges Section */}
           <section className="py-8">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Challenges Encountered</h2>
               <p className="text-[1.3rem] font-medium">
-                The project faced several challenges, particularly in the design of the actuation technology. Initial attempts with linear actuators proved slow and expensive, leading to a shift to servos. However, the servos were prone to breaking, necessitating the addition of temperature and current sensors to prevent motor damage. The control system also posed a challenge, with the project eventually settling on a choice between an Xbox controller or an RC control, depending on the processing unit used.
+              Navigating through the project, I encountered a series of significant challenges, especially in developing the actuation technology. 
+              My initial approach, utilizing linear actuators, was hindered by their sluggish response and prohibitive cost. This led me to pivot towards servo motors. 
+              While servos offered improved efficiency, they brought their own set of issues, notably a tendency to break under strain. To mitigate this, I integrated temperature and current sensors to safeguard the motors from damage. 
               </p>
             </div>
           </section>
@@ -101,7 +127,7 @@ const Hexapod = () => {
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 3 */}
                 <Image
-                  src="/projects/hexapod/photos/walking.png"
+                  src="/projects/hexapod/photos/1.jpg"
                   alt="Hexapod Robot Design"
                   layout="fill"
                   objectFit="cover"
@@ -110,8 +136,17 @@ const Hexapod = () => {
               <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 4 */}
                 <Image
-                  src="/projects/hexapod/photos/dof.png"
+                  src="/projects/hexapod/photos/2.jpg"
                   alt="Hexapod Robot Programming"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+                {/* Placeholder for Photo 5 */}
+                <Image
+                  src="/projects/hexapod/photos/3.jpg"
+                  alt="Hexapod Robot Performance Optimization"
                   layout="fill"
                   objectFit="cover"
                 />
@@ -127,17 +162,6 @@ const Hexapod = () => {
               </div>
             </div>
           </section>
-
-          {/* Solutions Section */}
-          <section className="py-8 bg-gray-100">
-            <div className="text-left">
-              <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Solutions</h2>
-              <p className="text-[1.3rem] font-medium">
-                To overcome the challenges, the project implemented several innovative solutions. The actuation technology was improved by integrating temperature and current sensors to protect the servos. The control system was made flexible, allowing for the use of either an Xbox controller or an RC control. The project also expanded its scope by incorporating a Raspberry Pi as an alternative processing unit, enabling the addition of a 6DOF robotic arm. This arm was equipped with a camera and programmed to use computer vision to pick up trained objects, adding a new dimension to the project.
-              </p>
-            </div>
-          </section>
-
 
         {/* Tools Used Section */}
         <section className="py-8">

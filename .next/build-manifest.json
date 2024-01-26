@@ -20,6 +20,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
+    "/404": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/404.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -35,10 +40,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/projects/ai_chessboard.js"
     ],
-    "/resume": [
+    "/projects/robotic_arm": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/resume.js"
+      "static/chunks/pages/projects/robotic_arm.js"
     ]
   },
   "ampFirstPages": []

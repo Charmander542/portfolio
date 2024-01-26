@@ -49,7 +49,7 @@ const Meta = ({ children }) => {
           sizes="16x16"
           href="/favicons/favicon-16x16.png"
         />
-        <meta name="msapplication-TileColor" content="#7000FF" />
+        <meta name="msapplication-TileColor" content="#ff0000" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       {children}

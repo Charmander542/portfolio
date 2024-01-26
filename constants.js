@@ -189,6 +189,11 @@ export const PROJECTS = [
     category: ['Engineering', 'Code'],
     done: true,
   },
+
+
+
+]
+/*
   {
     name: "POV Globe",
     image: "/projects/cncmachine/photos/full.png",
@@ -202,7 +207,4 @@ export const PROJECTS = [
     tech: ["onshape", "altium"],
     category: ['Engineering', 'PCB Design'],
     done: true,
-  },
-
-
-]
+  },*/

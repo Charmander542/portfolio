@@ -51,7 +51,7 @@ const Nav = ({ children, allCategories, filter, isDesktop }) => {
       window.addEventListener('scroll', handleScroll)
     })
   
-    let navbarClasses = ['w-full fixed top-0 py-4 z-50 select-none bg-gray-dark-5  transition-all duration-300'];
+    let navbarClasses = ['w-full fixed top-0 py-4 z-50 select-none bg-gray-dark-5 transition-all duration-300'];
     if (isScrolled) {
       navbarClasses.push('shadow-lg');
     }
@@ -60,7 +60,7 @@ const Nav = ({ children, allCategories, filter, isDesktop }) => {
         <nav className={navbarClasses.join(" ")}>  
             <Fade>
             <div className="flex justify-between section-container">
-            <a onClick={() => {router.push(`/`);}} className="link cursor-pointer" >
+            <a onClick={() => {router.push(`/`);}} className="link cursor-pointer pt-2" >
                 <Image
                     src="/cvh.svg"
                     alt="CVH"

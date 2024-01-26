@@ -21,12 +21,12 @@ const Nav = () => {
     window.addEventListener('scroll', handleScroll)
   })
 
-  let navbarClasses = ['fixed top-0 z-50 select-none transition-all duration-300'];
+  let navbarClasses = ['fixed top-0 z-50 select-none transition-all duration-300 2xl:container xl:px-20 md:px-12 px-4 mx-auto'];
 
   return (
-    <nav className={navbarClasses.join(" ")}>
+    <nav className="w-full fixed top-0 z-50 select-none transition-all duration-300">
       <Fade>
-        <div className="flex section-container">
+        <div className="flex justify-between section-container">
           <a onClick={() => {router.push(`/`);}} className="link cursor-pointer" >
             <div className="w-16 h-20 bg-gray-dark-5 flex">
               <Image
