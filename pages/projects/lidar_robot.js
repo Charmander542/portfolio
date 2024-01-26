@@ -51,7 +51,7 @@ const LidarRobot = () => {
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
             <p className="text-[1.3rem] font-medium">
-            TAfter the proof of concept I started to design the robot to use parts from my school's robotics lab that were not being used, and this posed an interesting limit on most of my components. The key design ideas were the LiDaR at the top which shoots lasers out in 360 degrees
+            TAfter the proof of concept I started to design the robot to use parts from my school&apos;s robotics lab that were not being used, and this posed an interesting limit on most of my components. The key design ideas were the LiDaR at the top which shoots lasers out in 360 degrees
               and measures the time it takes to come back to find the distance traveled. And this was on top of a base that contained an overkill power managment board meant for much stronger robots, an arduino teensy, and two CIM motors with encoders attached.
             </p>
             </div>
@@ -104,7 +104,7 @@ const LidarRobot = () => {
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software</h2>
             <p className="text-[1.3rem] font-medium">
-              I didn't know much about LiDaR or mapping with point clouds so I followed various tutorials and through trial and error I was able to implement it. At first I was trying to port it all to an arduino but I later decided to add an nvidia jetson nano to the robot
+              I didn&apos;t know much about LiDaR or mapping with point clouds so I followed various tutorials and through trial and error I was able to implement it. At first I was trying to port it all to an arduino but I later decided to add an nvidia jetson nano to the robot
               to run the ROS and handle all the navigation. The robot knows where it is the space by counting how many times the wheel spins and adds that data to the accelerameter on board these feed into the jetson that can take the current position of the robot and place the
               map points in the 2D space respectively. It then uses some basic linear algebra to fix any gaps or rotation issues.
             </p>
@@ -116,7 +116,7 @@ const LidarRobot = () => {
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Challenges Encountered</h2>
               <p className="text-[1.3rem] font-medium">
-              Beyond the problems around getting parts, one intersting design problem was making sure the robot wouldn't get stuck on ledges or medium rocks. Using only two passive wheels and two powered wheels in a cross orientation there would be a chance that both the powered wheels
+              Beyond the problems around getting parts, one intersting design problem was making sure the robot wouldn&apos;t get stuck on ledges or medium rocks. Using only two passive wheels and two powered wheels in a cross orientation there would be a chance that both the powered wheels
               would not be in contact with the floor. So I added springs to the back wheel to allow the robot to maintain a powered wheel in contact with the ground at all times.
               </p>
             </div>

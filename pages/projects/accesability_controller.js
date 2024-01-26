@@ -48,7 +48,7 @@ const Controller = () => {
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
             <p className="text-[1.3rem] font-medium">
-              After the proof of concept I started to design the robot to use parts from my school's robotics lab that were not being used, and this posed an interesting limit on most of my components. The key design ideas were the LiDaR at the top which shoots lasers out in 360 degrees
+              After the proof of concept I started to design the robot to use parts from my school&apos;s robotics lab that were not being used, and this posed an interesting limit on most of my components. The key design ideas were the LiDaR at the top which shoots lasers out in 360 degrees
               and measures the time it takes to come back to find the distance traveled. And this was on top of a base that contained an overkill power managment board meant for much stronger robots, an arduino teensy, and two CIM motors with encoders attached.
             </p>
             </div>
