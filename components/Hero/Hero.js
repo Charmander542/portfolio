@@ -145,18 +145,18 @@ const Hero = () => {
         `}
       </style>
       <div className="flex flex-col pt-40 md:pt-0 select-none">
-        <h1 className={`${styles.intro} font-mono font-bold text-5xl seq`}>
+        <h1 className={`${styles.intro} font-mono font-bold text-5xl`}>
           Hello, <br /> I&apos;m&nbsp;
           <span
             ref={typedEl}
-            className="seq text-5xl text-mush-light font-mono leading-relaxed"
+            className="text-5xl text-mush-light font-mono leading-relaxed"
           ></span>
         </h1>
         <p></p>
-        <div className="seq">
+        <div className="">
           <Profiles />
         </div>
-        <div className="seq flex pt-4">
+        <div className="flex pt-4">
           <Button href={`#${MENULINKS[3].ref}`} classes="link" type="primary">
             Let&apos;s Talk
           </Button>
@@ -170,7 +170,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {isDesktop && <div className="pic pt-2 absolute seq w-1/2 h-[30rem]">
+      {isDesktop && <div className="pic pt-2 absolute w-1/2 h-[30rem]">
       <Canvas>
         <ambientLight />
           <pointLight position={[10, 10, 10]} />
