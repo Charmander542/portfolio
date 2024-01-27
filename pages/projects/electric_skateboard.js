@@ -55,7 +55,7 @@ const Skateboard = () => {
       <main className="mx-auto p-4 pt-4 space-y-8 mt-[4rem] section-container">
         {/* Hero Section */}
         <section className="relative h-screen w-full flex items-center justify-center text-white">
-          <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover playsInLine">
+          <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover playsInline">
             <source src="/projects/skateboard/skateboard.mp4" type="video/mp4" />
           </video>
           <h1 className="relative z-20 text-4xl font-bold">Electric Skateboard</h1>
