@@ -66,6 +66,30 @@ const Contact = () => {
     setFormData(initialState);
   };
 
+  const checkTextFields = () => {
+    const nameField = document.getElementById("name");
+    const emailField = document.getElementById("email");
+    const messageField = document.getElementById("message");
+
+    const button = document.querySelector(`.${styles.button}`);
+
+    if (
+      nameField.value.trim() !== "" &&
+      emailField.value.trim() !== "" &&
+      messageField.value.trim() !== ""
+    ) {
+      button.classList.add(styles.withHover);
+    } else {
+      button.classList.remove(styles.withHover);
+    }
+  };
+
+  useEffect(() => {
+    document.getElementById("name").addEventListener("input", checkTextFields);
+    document.getElementById("email").addEventListener("input", checkTextFields);
+    document.getElementById("message").addEventListener("input", checkTextFields);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 

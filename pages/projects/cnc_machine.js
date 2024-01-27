@@ -152,8 +152,8 @@ const CNC = () => {
           
           <section className="py-8">
           <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Stuff I Made</h2>
-            <div className="flex justify-end gap-4">
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 3 */}
                 <Image
                   src="/projects/cncmachine/photos/caliperscase.png"
@@ -162,7 +162,7 @@ const CNC = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 4 */}
                 <Image
                   src="/projects/cncmachine/photos/costers.png"
@@ -171,7 +171,7 @@ const CNC = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 5 */}
                 <Image
                   src="/projects/cncmachine/photos/dnddice.png"
@@ -180,7 +180,7 @@ const CNC = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 5 */}
                 <Image
                   src="/projects/cncmachine/photos/coastercam.png"
@@ -215,10 +215,10 @@ const CNC = () => {
         <div className="flex justify-between">
       {!isDesktop ? (
         <>
-          <div className="pb-4"onClick={handlePrevProject}>
+          <div className="mt-4"onClick={handlePrevProject}>
             <FaArrowLeft size={70}/>
           </div>
-          <div className="pb-4"onClick={handleNextProject}>
+          <div className="mt-4"onClick={handleNextProject}>
             <FaArrowRight size={70}/>
           </div>
         </>

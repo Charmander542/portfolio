@@ -67,17 +67,7 @@
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 
-  &:hover,
-  &:active {
-    background-position: 99%;
-    color: black;
-    box-shadow: 0 0 1rem theme("colors.mush.dark");
-    background-color: theme("colors.mush.dark");
-    --left-wing-background: theme("colors.mush.dark");
-    --left-body-background: theme("colors.mush.dark");
-    --right-wing-background: theme("colors.mush.dark");
-    --right-body-background: theme("colors.mush.dark");
-  }
+  
 
   .plane,
   .trails {
@@ -206,4 +196,16 @@
       }
     }
   }
+}
+
+.button.withHover:hover,
+.button.withHover:active {
+  background-position: 99%;
+  color: black;
+  box-shadow: 0 0 1rem theme("colors.mush.dark");
+  background-color: theme("colors.mush.dark");
+  --left-wing-background: theme("colors.mush.dark");
+  --left-body-background: theme("colors.mush.dark");
+  --right-wing-background: theme("colors.mush.dark");
+  --right-body-background: theme("colors.mush.dark");
 }

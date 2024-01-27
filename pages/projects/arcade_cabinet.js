@@ -188,10 +188,10 @@ const Arcade = () => {
         <div className="flex justify-between">
       {!isDesktop ? (
         <>
-          <div className="pb-4"onClick={handlePrevProject}>
+          <div className="mt-4"onClick={handlePrevProject}>
             <FaArrowLeft size={70}/>
           </div>
-          <div className="pb-4"onClick={handleNextProject}>
+          <div className="mt-4"onClick={handleNextProject}>
             <FaArrowRight size={70}/>
           </div>
         </>
