@@ -87,7 +87,7 @@ const Arcade = () => {
           <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
             <Image
-              src="/projects/hexapod/photos/bottom.png" // Replace with the path to your image
+              src="/projects/arcade/photos/back.png" // Replace with the path to your image
               alt="Part of the Model"
               layout="fill"
               objectFit="cover"
@@ -102,16 +102,16 @@ const Arcade = () => {
               <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 1 */}
                 <Image
-                  src="/projects/spider.png"
+                  src="/projects/arcade/photos/sanding.png"
                   alt="Hexapod Robot"
                   layout="fill"
-                  objectFit="contain"
+                  objectFit="cover"
                 />
               </div>
               <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 2 */}
                 <Image
-                  src="/projects/hexapod/photos/spider_arm.png"
+                  src="/projects/arcade/photos/pieces.png"
                   alt="Hexapod Robot in Action"
                   layout="fill"
                   objectFit="cover"
@@ -133,30 +133,39 @@ const Arcade = () => {
 
           {/* Additional Photos Section */}
           <section className="py-8">
-            <div className="flex justify-end gap-4">
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-gray-300 h-96 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 3 */}
                 <Image
-                  src="/projects/hexapod/photos/walking.png"
-                  alt="Hexapod Robot Design"
+                  src="/projects/arcade/photos/buttonpanel.png"
+                  alt="Button Board"
                   layout="fill"
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-96 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 4 */}
                 <Image
-                  src="/projects/hexapod/photos/dof.png"
-                  alt="Hexapod Robot Programming"
+                  src="/projects/arcade/photos/on1.png"
+                  alt="Loading Screen"
                   layout="fill"
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-96 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 5 */}
                 <Image
-                  src="/projects/hexapod/photos/walking.png"
-                  alt="Hexapod Robot Performance Optimization"
+                  src="/projects/arcade/photos/step5.png"
+                  alt="All glued together"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="bg-gray-300 h-96 relative rounded-xl overflow-hidden">
+                {/* Placeholder for Photo 5 */}
+                <Image
+                  src="/projects/arcade/photos/on2.png"
+                  alt="Working"
                   layout="fill"
                   objectFit="cover"
                 />

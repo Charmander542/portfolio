@@ -1,6 +1,6 @@
 export const METADATA = {
   author: "Charles Van Hook",
-  title: "Portfolio | Charles Van Hook",
+  title: "Charles Van Hook | Portfolio",
   siteUrl: "",
   keywords: [
     "Charles Van Hook",
@@ -38,8 +38,7 @@ export const MENULINKS = [
 export const TYPED_STRINGS = [
   " Charles Van Hook",
   " An Engineer",
-  " A Developer",
-  " A Roboticist"
+  " A Developer"
 ];
 
 export const SOCIAL_LINKS = [
@@ -143,15 +142,15 @@ export const PROJECTS = [
     url: "/projects/lidar_robot",
     tech: ["fusion360", "ros", "nvidia", "cpp"],
     category: ['Engineering', 'Code'],
-    done: false,
+    done: true,
   },
   {
     name: "Robotic Arm",
-    image: "/projects/arm.png",
+    image: "/projects/robotarm/photos/parts.png",
     url: "/projects/robot_arm",
     tech: ["fusion360", "ros", "cpp"],
     category: ['Engineering', 'Code'],
-    done: false,
+    done: true,
   },
   {
     name: "AI Chessboard",
@@ -172,20 +171,20 @@ export const PROJECTS = [
     name: "Arcade Cabinet",
     image: "/projects/arcade/photos/off2.png",
     tech: ["fusion360"],
-    category: ['Engineering', 'Code'],
+    category: ['Engineering'],
     done: true,
   },
   {
     name: "CNC Machine",
     image: "/projects/cncmachine/photos/full.png",
     tech: ["fusion360"],
-    category: ['Engineering', 'Code'],
+    category: ['Engineering', 'Code', 'PCB Design'],
     done: true,
   },
   {
     name: "Accesability Controller",
     image: "/projects/controller/photos/front.jpg",
-    tech: ["onshape"],
+    tech: ["onshape", "cpp"],
     category: ['Engineering', 'Code'],
     done: true,
   },

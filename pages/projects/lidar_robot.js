@@ -68,20 +68,30 @@ const LidarRobot = () => {
           <section className="py-8 bg-gray-100">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
-              <p className="text-[1.3rem] font-medium">
-              During Covid I had another project I was working on alongside the Hexapod. I was attempting to create a robot that could autonomously navigate and map the campus of my school. I had experience making robots that used cameras and tags to map areas but I had never used LiDaR.
-                I first constructed a very simple robot that ran on just an arduino as a proof of concept, and it worked great. I then spent many months designing a large scale 3D printed robot that could so the same for more difficult terain. I was able to assemble some of it and get the code working in ROS simulations
-                but due to time and budget I was never able to fully finish my robot.
-              </p>
+              <p className="text-[1.3rem] font-medium mb-4">In parallel with the hexapod project during the Covid pandemic, 
+              I embarked on another ambitious endeavor: creating a robot capable of autonomously navigating and mapping 
+              my school&apos;s campus.</p>
+
+              <p className="text-[1.3rem] font-medium mb-4">While I had previously built robots that used cameras and tags 
+              for mapping, this project introduced me to the world of LiDAR. I began with a simple proof-of-concept robot, 
+              powered solely by an Arduino, which performed admirably.</p>
+
+              <p className="text-[1.3rem] font-medium mb-4">Emboldened by this success, I spent several months designing a large-scale, 
+              3D-printed robot that could navigate more challenging terrain. I managed to assemble parts of it and successfully ran 
+              the code in ROS simulations. However, due to time and budget constraints, I was unable to fully complete the robot.</p>
+
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
-            <p className="text-[1.3rem] font-medium">
-            TAfter the proof of concept I started to design the robot to use parts from my school&apos;s robotics lab that were not being used, and this posed an interesting limit on most of my components. The key design ideas were the LiDaR at the top which shoots lasers out in 360 degrees
-              and measures the time it takes to come back to find the distance traveled. And this was on top of a base that contained an overkill power managment board meant for much stronger robots, an arduino teensy, and two CIM motors with encoders attached.
-            </p>
+            <p className="text-[1.3rem] font-medium mb-4">Following the successful proof of concept, I began designing the robot using spare 
+            parts from my school&apos;s robotics lab. This constraint added an interesting challenge to the design process, as I had to work
+             within the limitations of the available components.</p>
+
+            <p className="text-[1.3rem] font-medium">The robot&apos;s design was centered around a LiDAR system positioned at the top. 
+            This system emits lasers in a 360-degree pattern and measures the time it takes for the lasers to return, 
+            thereby determining the distance traveled.</p>
             </div>
           <div className="bg-gray-300 h-80 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
@@ -131,11 +141,17 @@ const LidarRobot = () => {
             </div>
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software</h2>
-            <p className="text-[1.3rem] font-medium">
-              I didn&apos;t know much about LiDaR or mapping with point clouds so I followed various tutorials and through trial and error I was able to implement it. At first I was trying to port it all to an arduino but I later decided to add an nvidia jetson nano to the robot
-              to run the ROS and handle all the navigation. The robot knows where it is the space by counting how many times the wheel spins and adds that data to the accelerameter on board these feed into the jetson that can take the current position of the robot and place the
-              map points in the 2D space respectively. It then uses some basic linear algebra to fix any gaps or rotation issues.
-            </p>
+            <p className="text-[1.3rem] font-medium mb-4">My initial foray into LiDAR and point cloud mapping was a learning curve. 
+            I started with little knowledge in these areas, but through various tutorials and a process of trial and error, 
+            I was able to successfully implement these technologies.</p>
+
+            <p className="text-[1.3rem] font-medium mb-4">Initially, I attempted to port all the functionalities to an Arduino. 
+            However, I later decided to incorporate an Nvidia Jetson Nano into the robot to run the Robot Operating System (ROS) 
+            and manage all the navigation tasks.</p>
+
+            <p className="text-[1.3rem] font-medium mb-4">The robot&apos;s location in space is determined by counting the number of wheel
+             rotations and integrating this data with readings from an onboard accelerometer. This information is fed into the
+              Jetson Nano, which uses it to position the map points in a 2D space accurately.</p>
             </div>
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
@@ -143,10 +159,15 @@ const LidarRobot = () => {
           <section className="py-8">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Challenges Encountered</h2>
-              <p className="text-[1.3rem] font-medium">
-              Beyond the problems around getting parts, one intersting design problem was making sure the robot wouldn&apos;t get stuck on ledges or medium rocks. Using only two passive wheels and two powered wheels in a cross orientation there would be a chance that both the powered wheels
-              would not be in contact with the floor. So I added springs to the back wheel to allow the robot to maintain a powered wheel in contact with the ground at all times.
-              </p>
+              <p className="text-[1.3rem] font-medium mb-4">In addition to the challenges of sourcing parts, an intriguing design problem
+               I encountered was ensuring the robot could navigate ledges and medium-sized rocks without getting stuck. The robot&apos;s design,
+                which featured two passive wheels and two powered wheels in a cross orientation, posed a risk of both powered wheels losing
+                 contact with the ground.</p>
+
+              <p className="text-[1.3rem] font-medium mb-4">To address this issue, I incorporated springs into the back wheel&apos;s design. 
+              This modification ensured that at least one powered wheel would always maintain contact with the ground, enhancing the robot&apos;s
+               mobility and stability.</p>
+
             </div>
           </section>
 

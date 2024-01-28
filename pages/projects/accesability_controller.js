@@ -65,25 +65,38 @@ const Controller = () => {
           <section className="py-8 bg-gray-100">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
-              <p className="text-[1.3rem] font-medium">
-                During Covid I had another project I was working on alongside the Hexapod. I was attempting to create a robot that could autonomously navigate and map the campus of my school. I had experience making robots that used cameras and tags to map areas but I had never used LiDaR.
-                I first constructed a very simple robot that ran on just an arduino as a proof of concept, and it worked great. I then spent many months designing a large scale 3D printed robot that could so the same for more difficult terain. I was able to assemble some of it and get the code working in ROS simulations
-                but due to time and budget I was never able to fully finish my robot.
+              <p className="text-[1.3rem] font-medium mb-4">
+              This project developed an accessibility controller utilizing the RP240 chip it was designed and fabricated in 24 hours for a school hackathon. It integrates a diverse array 
+              of sensors, such as touch, vibration, sound, and heart rate monitors, to cater to the nuanced needs of individuals with 
+              limited mobility. Central to its design is the concept of customization; users can personalize the controller by adding 
+              sensors that best suit their specific requirements. 
               </p>
+              <p className="text-[1.3rem] font-medium mb-4">
+              The design is mounted to a Logitech controller, chosen for its ergonomic design and compatibility with various controller 
+              programs. The mount is designed to ensure a secure fit and easy access to the controller&apos;s functions. It features dedicated 
+              slots for each sensor, allowing them to be securely attached and positioned for optimal performance. The mount&apos;s design 
+              also takes into account the need for easy installation and removal of sensors, facilitating maintenance and upgrades. 
+              This thoughtful design ensures that the controller maintains its comfort and functionality while expanding its capabilities
+               with the added sensors.</p>
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               <div>
-            <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
+            <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software</h2>
             <p className="text-[1.3rem] font-medium">
-              After the proof of concept I started to design the robot to use parts from my school&apos;s robotics lab that were not being used, and this posed an interesting limit on most of my components. The key design ideas were the LiDaR at the top which shoots lasers out in 360 degrees
-              and measures the time it takes to come back to find the distance traveled. And this was on top of a base that contained an overkill power managment board meant for much stronger robots, an arduino teensy, and two CIM motors with encoders attached.
+            In the software framework of our advanced accessibility controller, the TinyUSB library configures the device as a 
+            USB Human Interface Device (HID), enabling effective communication with the host computer. Leveraging the dual-core 
+            capability of the RP240 chip, one core is dedicated to USB host functions for efficient processing, while the other 
+            manages sensor data and user inputs, ensuring smooth operation. The code includes HID callback functions to handle the 
+            connection and disconnection of the HID device, alongside a filter_report() function for processing gamepad data, which 
+            is crucial for interpreting inputs like joystick movements and button presses. Additionally, detailed gamepad button state 
+            definitions ensure precise detection and processing of each input, enhancing the controller&apos;s responsiveness and user control.
             </p>
             </div>
-          <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
+          <div className="bg-gray-300 h-96 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
             <Image
-              src="/projects/hexapod/photos/bottom.png" // Replace with the path to your image
+              src="/projects/controller/photos/controllermount.png" // Replace with the path to your image
               alt="Part of the Model"
               layout="fill"
               objectFit="cover"
@@ -93,22 +106,22 @@ const Controller = () => {
           </section>
 
           {/* Photo Area 1 */}
-          <section className="py-8">
+          <section className="pb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
+              <div className="bg-gray-300 h-80 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 1 */}
                 <Image
-                  src="/projects/spider.png"
-                  alt="Hexapod Robot"
+                  src="/projects/controller/photos/circuits.png"
+                  alt="Circuit design"
                   layout="fill"
-                  objectFit="contain"
+                  objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
+              <div className="bg-gray-300 h-80 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 2 */}
                 <Image
-                  src="/projects/hexapod/photos/spider_arm.png"
-                  alt="Hexapod Robot in Action"
+                  src="/projects/controller/photos/open.png"
+                  alt="Open controller"
                   layout="fill"
                   objectFit="cover"
                 />
@@ -120,54 +133,24 @@ const Controller = () => {
           <section className="py-8">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Challenges Encountered</h2>
-              <p className="text-[1.3rem] font-medium">
-                The project faced several challenges, particularly in the design of the actuation technology. Initial attempts with linear actuators proved slow and expensive, leading to a shift to servos. However, the servos were prone to breaking, necessitating the addition of temperature and current sensors to prevent motor damage. The control system also posed a challenge, with the project eventually settling on a choice between an Xbox controller or an RC control, depending on the processing unit used.
+              <p className="text-[1.3rem] font-medium mb-4">
+              One of the primary challenges in this project was the integration and mounting of the various sensors onto the 
+              accessibility controller. To address this, a custom part was designed and 3D printed, made to fit onto the controller. 
+              This innovative approach allowed for a seamless and secure mounting of all sensors — including touch, vibration, sound, 
+              and heart rate monitor. The 3D printed component ensured that each sensor was accurately positioned for optimal 
+              functionality.
               </p>
+              <p className="text-[1.3rem] font-medium mb-4">
+              Another significant challenge involved the development of a custom USB controller interface. 
+              The controller needed to operate in a dual mode: one for sending data from the sensors to the processing unit, 
+              and another for receiving input commands. To achieve this, a bit-banged USB controller was developed. This custom 
+              solution emulated the functionality of two USB controllers within a single framework, managing the bidirectional flow 
+              of data. The implementation of this bit-banged USB controller was crucial for the seamless operation of the device, 
+              ensuring that the data from sensors could be accurately processed while simultaneously receiving user inputs. </p>
             </div>
           </section>
 
-          {/* Additional Photos Section */}
-          <section className="py-8">
-            <div className="flex justify-end gap-4">
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
-                {/* Placeholder for Photo 3 */}
-                <Image
-                  src="/projects/hexapod/photos/walking.png"
-                  alt="Hexapod Robot Design"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
-                {/* Placeholder for Photo 4 */}
-                <Image
-                  src="/projects/hexapod/photos/dof.png"
-                  alt="Hexapod Robot Programming"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
-                {/* Placeholder for Photo 5 */}
-                <Image
-                  src="/projects/hexapod/photos/walking.png"
-                  alt="Hexapod Robot Performance Optimization"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-            </div>
-          </section>
 
-          {/* Solutions Section */}
-          <section className="py-8 bg-gray-100">
-            <div className="text-left">
-              <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Solutions</h2>
-              <p className="text-[1.3rem] font-medium">
-                To overcome the challenges, the project implemented several innovative solutions. The actuation technology was improved by integrating temperature and current sensors to protect the servos. The control system was made flexible, allowing for the use of either an Xbox controller or an RC control. The project also expanded its scope by incorporating a Raspberry Pi as an alternative processing unit, enabling the addition of a 6DOF robotic arm. This arm was equipped with a camera and programmed to use computer vision to pick up trained objects, adding a new dimension to the project.
-              </p>
-            </div>
-          </section>
 
 
         {/* Tools Used Section */}

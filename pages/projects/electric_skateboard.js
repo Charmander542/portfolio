@@ -65,19 +65,22 @@ const Skateboard = () => {
           <section className="py-8 bg-gray-100">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
-              <p className="text-[1.3rem] font-medium">
-                
-              </p>
+              <p className="text-[1.3rem] font-medium mb-4">The electric skateboard project was born out of a desire to create 
+              a fun and efficient mode of transportation around my college campus. This project, which I shared with my brothers, 
+              allowed me to explore my interest in personal mobility devices. The skateboard was designed with the dual objectives of 
+              performance and sustainability, utilizing leftover components from various projects and repurposed materials.</p>
+
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
-            <p className="text-[1.3rem] font-medium">
-            The design uses three servos per leg to control the tibia, femur, and coax. And has an off the shelf robotic arm mounted on top. The shell is completly 3D printed. 
-            There is an arduino mega that controls all the servos and power managment, while a raspberry PI runs
-              a custom computer vision script to move the arm around and move towards eggs.
-            </p>
+            <p className="text-[1.3rem] font-medium mb-4">The design process involved several iterations, with initial designs featuring 
+            independent suspension. However, ensuring proper turning proved challenging, leading me to opt for all-metal trucks crafted 
+            on my CNC machine. The skateboard was powered by brushless motors and rode on wheels repurposed from old robots. 
+            A custom battery, assembled from old laptops, provided the power, while a custom battery management board with an attached 
+            heatsink ensured efficient power utilization.</p>
+
             </div>
           <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
@@ -127,10 +130,10 @@ const Skateboard = () => {
             </div>
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software</h2>
-            <p className="text-[1.3rem] font-medium">
-              For the software I used c++ to program the arduino mega and python for the raspberry pi. Solving the inverse kinematics was the most interesting part of the software and I implemented 4 different gaits to emulate how different 6 legged creatures walk in real life.
-              The image recognition software uses OpenCV for the object detection and then uses the x and y position of the center to run a movement algorithm to try to pick up the egg.
-            </p>
+            <p className="text-[1.3rem] font-medium mb-4">The skateboard&apos;s control board was designed to offer intelligent 
+            speed control for both the front and back, with six different speed modes and a reversing function. 
+            This level of control made the skateboard adaptable to various riding conditions and user preferences.</p>
+
             </div>
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
@@ -138,49 +141,31 @@ const Skateboard = () => {
           <section className="py-8">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Challenges Encountered</h2>
-              <p className="text-[1.3rem] font-medium">
-              Navigating through the project, I encountered a series of significant challenges, especially in developing the actuation technology. 
-              My initial approach, utilizing linear actuators, was hindered by their sluggish response and prohibitive cost. This led me to pivot towards servo motors. 
-              While servos offered improved efficiency, they brought their own set of issues, notably a tendency to break under strain. To mitigate this, I integrated temperature and current sensors to safeguard the motors from damage. 
-              </p>
+              <p className="text-[1.3rem] font-medium mb-4">The project presented several challenges, from design issues like ensuring 
+              proper turning to sourcing parts and managing power efficiently. Despite these challenges, the project was a rewarding 
+              experience that allowed me to apply my skills in design, manufacturing, and programming to create a functional and 
+              sustainable personal mobility device.</p>
+
             </div>
           </section>
 
           {/* Additional Photos Section */}
           <section className="py-8">
-            <div className="flex justify-end gap-4">
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 3 */}
                 <Image
-                  src="/projects/skateboard/photos/1.jpg"
-                  alt="Hexapod Robot Design"
+                  src="/projects/skateboard/photos/open.png"
+                  alt="Battery open on full design"
                   layout="fill"
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 4 */}
                 <Image
-                  src="/projects/skateboard/photos/2.jpg"
-                  alt="Hexapod Robot Programming"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
-                {/* Placeholder for Photo 5 */}
-                <Image
-                  src="/projects/skateboard/photos/3.jpg"
-                  alt="Hexapod Robot Performance Optimization"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
-                {/* Placeholder for Photo 5 */}
-                <Image
-                  src="/projects/skateboard/photos/walking.png"
-                  alt="Hexapod Robot Performance Optimization"
+                  src="/projects/skateboard/photos/P1.png"
+                  alt="Version 1 constructed"
                   layout="fill"
                   objectFit="cover"
                 />

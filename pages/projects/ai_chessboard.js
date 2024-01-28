@@ -69,9 +69,14 @@ const Chessboard = () => {
         <section className="py-8 bg-gray-100">
           <div className="text-left">
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
-            <p className="text-[1.3rem] font-medium">
-              This project is about creating an AI Chessboard using a 3D printed core-xy gantry and an electromagnet to move the chess pieces from under the board. The chessboard is controlled by a custom circuit board and connected to the internet for more advanced algorithms. Most of the bots are loaded onto a Raspberry Pi computer, which offers various levels of difficulty. A unique feature of this project is the ability to create a bot based on a player&apos;s gameplay if they play on the board enough times.
-            </p>
+            <p className="text-[1.3rem] font-medium mb-4">This project revolves around the creation of an AI Chessboard, 
+            a blend of traditional chess and modern technology. The chessboard utilizes a 3D printed core-xy gantry and an
+             electromagnet to move the chess pieces from underneath. The board is equipped with reed switches on each square 
+             to detect the presence of a piece. The AI Chessboard is not just a physical entity but also a digital marvel, 
+             capable of connecting to the internet for more advanced algorithms and offering various levels of difficulty through 
+             bots loaded onto a Raspberry Pi computer. A standout feature of this project is its ability to learn from a player&apos;s 
+             gameplay and create a personalized bot if they play on the board enough times.</p>
+
           </div>
         </section>
 
@@ -79,11 +84,11 @@ const Chessboard = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
-            <p className="text-[1.3rem] font-medium">
-            The design uses three servos per leg to control the tibia, femur, and coax. And has an off the shelf robotic arm mounted on top. The shell is completly 3D printed. 
-            There is an arduino mega that controls all the servos and power managment, while a raspberry PI runs
-              a custom computer vision script to move the arm around and move towards eggs.
-            </p>
+            <p className="text-[1.3rem] font-medium mb-4">The AI Chessboard&apos;s design is a testament to the power of modern manufacturing 
+            and electronics. The core-xy gantry and the electromagnet, both 3D printed, form the heart of the chessboard, enabling the 
+            movement of the chess pieces. Each square on the board is fitted with a reed switch, allowing the system to detect when a 
+            piece is located above it. This design ensures accurate tracking of the game state at all times.</p>
+
             </div>
           <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
@@ -103,7 +108,7 @@ const Chessboard = () => {
               <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 1 */}
                 <Image
-                  src="/projects/chessboard/photos/gantry.jpg"
+                  src="/projects/chessboard/photos/reedswitches.png"
                   alt="In progress Gantry"
                   layout="fill"
                   objectFit="cover"
@@ -133,10 +138,12 @@ const Chessboard = () => {
             </div>
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software/Hardware</h2>
-            <p className="text-[1.3rem] font-medium">
-              For the software I used c++ to program the arduino mega and python for the raspberry pi. Solving the inverse kinematics was the most interesting part of the software and I implemented 4 different gaits to emulate how different 6 legged creatures walk in real life.
-              The image recognition software uses OpenCV for the object detection and then uses the x and y position of the center to run a movement algorithm to try to pick up the egg.
-            </p>
+            <p className="text-[1.3rem] font-medium mb-4">The AI Chessboard is controlled by a custom circuit board and powered by a 
+            Raspberry Pi computer. The software uses a min-max algorithm for basic gameplay, while more advanced algorithms can be 
+            accessed via an internet connection. The hardware and software work in harmony to offer various levels of difficulty, 
+            catering to players of all skill levels. The unique feature of this system is its ability to learn from a player&apos;s gameplay 
+            and create a personalized bot, providing a tailored and challenging gaming experience.</p>
+
             </div>
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>

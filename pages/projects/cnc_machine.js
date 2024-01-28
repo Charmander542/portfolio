@@ -65,22 +65,20 @@ const CNC = () => {
           <section className="py-8 bg-gray-100">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
-              <p className="text-[1.3rem] font-medium">
-                In Sophmore year of Highschool Covid hit and I had very little to do, so I started a small robotics competition for the students at my school where we would all make robots that could traverse an arena and pick up eggs.
-                Beyond the interesting process of designing the competition and the software required to let people control their robots from a safe distance (home), my submission was a hexapod robot. I have made many wheeled robots for clubs and various projects but nothing
-                that could walk, so I took this as a challenge. I designed, coded and made the pcb for the entire hexapod. Drawing inspiration from real hexapods and others&apos; interpretations. I also implemented a grabber with a camera to pick up the eggs automaticly, which led
-                me to learn a lot about computer communication and computer vision. 
-              </p>
+              <p className="text-[1.3rem] font-medium mb-4">The homemade CNC machine project was an endeavor to create a versatile and 
+              efficient milling tool. The machine, with a working area of 1 meter by 1 meter, was designed to mill both wood and aluminum. 
+              It was constructed using 3D printed parts and 80x20 aluminum v-extrusion, showcasing the potential of modern manufacturing 
+              techniques. The CNC machine was controlled by custom hardware and ran on open-source software, reflecting a commitment to 
+              accessibility and community-driven innovation.</p>
+
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
-            <p className="text-[1.3rem] font-medium">
-            The design uses three servos per leg to control the tibia, femur, and coax. And has an off the shelf robotic arm mounted on top. The shell is completly 3D printed. 
-            There is an arduino mega that controls all the servos and power managment, while a raspberry PI runs
-              a custom computer vision script to move the arm around and move towards eggs.
-            </p>
+            <p className="text-[1.3rem] font-medium mb-4">The CNC machine&apos;s design was centered around functionality and durability. 
+            The structure was built using 80x20 aluminum v-extrusion, providing a sturdy frame. The machine featured a spindle for 
+            milling, capable of working with both wood and aluminum. All components were 3D printed and designed in Fusion 360.</p>
             </div>
           <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
@@ -130,21 +128,23 @@ const CNC = () => {
             </div>
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software and Hardware</h2>
-            <p className="text-[1.3rem] font-medium">
-              For the software I used c++ to program the arduino mega and python for the raspberry pi. Solving the inverse kinematics was the most interesting part of the software and I implemented 4 different gaits to emulate how different 6 legged creatures walk in real life.
-              The image recognition software uses OpenCV for the object detection and then uses the x and y position of the center to run a movement algorithm to try to pick up the egg.
-            </p>
+            <p className="text-[1.3rem] font-medium mb-4">The CNC machine was controlled by a custom circuit board running 
+            open-source software. This setup allowed for precise control over the milling process. The machine was also equipped 
+            with robust motors, ensuring it had the power to move its own mass while cutting through material. All the axis have 2 limit
+            switches for more accurate alignment.</p>
+
             </div>
             </div>
           {/* Challenges Section */}
           <section className="py-8">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Challenges Encountered</h2>
-              <p className="text-[1.3rem] font-medium">
-              Navigating through the project, I encountered a series of significant challenges, especially in developing the actuation technology. 
-              My initial approach, utilizing linear actuators, was hindered by their sluggish response and prohibitive cost. This led me to pivot towards servo motors. 
-              While servos offered improved efficiency, they brought their own set of issues, notably a tendency to break under strain. To mitigate this, I integrated temperature and current sensors to safeguard the motors from damage. 
-              </p>
+              <p className="text-[1.3rem] font-medium mb-4">The project presented several challenges, particularly in the areas of 
+              motor selection and power management. Ensuring the motors were strong enough to move the mass of the CNC machine while 
+              cutting through material was a significant hurdle. Initial attempts with cheaper motors resulted in skipped steps, leading 
+              to the decision to invest in larger, more powerful motors. Despite these challenges, the project was a rewarding experience 
+              that provided valuable insights into the intricacies of CNC machine design and development.</p>
+
             </div>
           </section>
 
@@ -153,7 +153,7 @@ const CNC = () => {
           <section className="py-8">
           <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Stuff I Made</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-96 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 3 */}
                 <Image
                   src="/projects/cncmachine/photos/caliperscase.png"
@@ -162,7 +162,7 @@ const CNC = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-96 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 4 */}
                 <Image
                   src="/projects/cncmachine/photos/costers.png"
@@ -171,7 +171,7 @@ const CNC = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-96 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 5 */}
                 <Image
                   src="/projects/cncmachine/photos/dnddice.png"
@@ -180,7 +180,7 @@ const CNC = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="bg-gray-300 h-64 relative rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-96 relative rounded-xl overflow-hidden">
                 {/* Placeholder for Photo 5 */}
                 <Image
                   src="/projects/cncmachine/photos/coastercam.png"

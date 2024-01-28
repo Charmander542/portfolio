@@ -55,33 +55,42 @@ const RobotArm = () => {
       <main className="mx-auto p-4 pt-4 space-y-8 mt-[4rem] section-container">
         {/* Hero Section */}
         <section className="relative h-screen w-full flex items-center justify-center text-white">
-          <video autoPlay loop muted className="absolute z-0 w-full h-full object-cover">
-            <source src="/projects/hexapod/spiderwalk.mp4" type="video/mp4" />
-          </video>
-          <h1 className="relative z-20 text-4xl font-bold">Hexapod Robot</h1>
+        <Image
+              src="/projects/robotarm/photos/parts.png" // Replace with the path to your image
+              alt="ARM Design"
+              layout="fill"
+              objectFit="cover"
+            />
+          <h1 className="relative z-20 text-4xl font-bold">Robotic Arm</h1>
         </section>
 
           {/* Project Overview Section */}
           <section className="py-8 bg-gray-100">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
-              <p className="text-[1.3rem] font-medium">
-                This project is an exploration into the complex motion of legged robots, specifically hexapods. The focus was on working with inverse kinematics to emulate the diverse gaits of insects. The project also delved into the challenges of actuation technology, control systems, and the integration of a 6DOF robotic arm with computer vision capabilities.
-              </p>
+              <p className="text-[1.3rem] font-medium mb-4">In the pursuit of expanding my knowledge in robotics, 
+              I conceptualized and designed a robotic arm. This project was a testament to my ability to innovate and adapt,
+               even when faced with resource constraints. The robotic arm, boasting 7 degrees of freedom (DOF), was meticulously
+                designed in Fusion 360 and all its components were 3D printed. Although I was unable to secure the necessary
+                 funding to purchase the motors required for completion, the project remains a significant milestone in my journey
+                  in robotics.</p>
+
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
-            <p className="text-[1.3rem] font-medium">
-              CAD Stuff
-            </p>
+            <p className="text-[1.3rem] font-medium mb-4">The robotic arm was designed with 7 DOF, providing it with a wide range of 
+              motion and the ability to perform complex tasks. Each joint of the arm was powered by NEMA motors, equipped with encoders for 
+              precise control. One of the degrees of freedom was facilitated by a custom linear actuator, adding to the arm&apos;s versatility. 
+              The design process was carried out in Fusion 360, a powerful 3D modeling software. Each component of the arm was then brought
+               to life through 3D printing, demonstrating the potential of this technology in rapid prototyping and custom manufacturing.</p>
             </div>
-          <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
+          <div className="bg-gray-300 h-90 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
             <Image
-              src="/projects/hexapod/photos/bottom.png" // Replace with the path to your image
-              alt="Part of the Model"
+              src="/projects/robotarm/photos/armcad.png" // Replace with the path to your image
+              alt="Model"
               layout="fill"
               objectFit="cover"
             />
@@ -95,74 +104,55 @@ const RobotArm = () => {
               <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 1 */}
                 <Image
-                  src="/projects/spider.png"
-                  alt="Hexapod Robot"
+                  src="/projects/robotarm/photos/moveit.png"
+                  alt="Moveit Example"
                   layout="fill"
-                  objectFit="contain"
+                  objectFit="cover"
                 />
               </div>
               <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
                 {/* Placeholder for Photo 2 */}
                 <Image
-                  src="/projects/hexapod/photos/spider_arm.png"
-                  alt="Hexapod Robot in Action"
+                  src="/projects/robotarm/photos/dofdiagram.png"
+                  alt=""
                   layout="fill"
                   objectFit="cover"
                 />
               </div>
             </div>
           </section>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+          <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
+            {/* Placeholder for Photo of Part of the Model */}
+            <Image
+              src="/projects/robotarm/photos/examplecode.png" // Replace with the path to your image
+              alt="Control Code"
+              layout="fill"
+              objectFit="cover"
+              style={{ transform: 'rotate(90deg)' }}
+            />
+            </div>
+              <div>
+            <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software and Hardware</h2>
+            <p className="text-[1.3rem] font-medium mb-4">The robotic arm was programmed to run on an Arduino,
+             a testament to the versatility of this microcontroller platform. Despite the lack of motors,
+              I was able to model and program the arm in the Robot Operating System (ROS) to execute various
+               commands and even follow G-code instructions. This experience allowed me to delve deeper into
+                the world of robotics software and control systems.</p>
+            </div>
+            </div>
+            <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
 
           {/* Challenges Section */}
           <section className="py-8">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Challenges Encountered</h2>
-              <p className="text-[1.3rem] font-medium">
-                The project faced several challenges, particularly in the design of the actuation technology. Initial attempts with linear actuators proved slow and expensive, leading to a shift to servos. However, the servos were prone to breaking, necessitating the addition of temperature and current sensors to prevent motor damage. The control system also posed a challenge, with the project eventually settling on a choice between an Xbox controller or an RC control, depending on the processing unit used.
-              </p>
-            </div>
-          </section>
-
-          {/* Additional Photos Section */}
-          <section className="py-8">
-            <div className="flex justify-end gap-4">
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
-                {/* Placeholder for Photo 3 */}
-                <Image
-                  src="/projects/hexapod/photos/walking.png"
-                  alt="Hexapod Robot Design"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
-                {/* Placeholder for Photo 4 */}
-                <Image
-                  src="/projects/hexapod/photos/dof.png"
-                  alt="Hexapod Robot Programming"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-              <div className="bg-gray-300 h-64 w-1/4 relative rounded-xl overflow-hidden">
-                {/* Placeholder for Photo 5 */}
-                <Image
-                  src="/projects/hexapod/photos/walking.png"
-                  alt="Hexapod Robot Performance Optimization"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-            </div>
-          </section>
-
-          {/* Solutions Section */}
-          <section className="py-8 bg-gray-100">
-            <div className="text-left">
-              <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Solutions</h2>
-              <p className="text-[1.3rem] font-medium">
-                To overcome the challenges, the project implemented several innovative solutions. The actuation technology was improved by integrating temperature and current sensors to protect the servos. The control system was made flexible, allowing for the use of either an Xbox controller or an RC control. The project also expanded its scope by incorporating a Raspberry Pi as an alternative processing unit, enabling the addition of a 6DOF robotic arm. This arm was equipped with a camera and programmed to use computer vision to pick up trained objects, adding a new dimension to the project.
-              </p>
+              <p className="text-[1.3rem] font-medium mb-4">The project presented several challenges, particularly in the areas of 
+            programming and part sourcing. Programming the robotic arm in ROS was a complex task that required a deep understanding
+             of robotics software and control systems. Sourcing the necessary parts, especially the NEMA motors and the custom linear
+             actuator, was another significant hurdle. Despite these challenges, I was able to design custom programs that allowed the
+             arm to execute various commands and follow G-code instructions. These experiences provided valuable insights into the
+           intricacies of robotics design and development.</p>
             </div>
           </section>
 

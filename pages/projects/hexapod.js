@@ -66,12 +66,20 @@ const Hexapod = () => {
           <section className="pt-8 bg-gray-100">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
-              <p className="text-[1.3rem] font-medium">
-                In Sophmore year of Highschool Covid hit and I had very little to do, so I started a small robotics competition for the students at my school where we would all make robots that could traverse an arena and pick up eggs.
-                Beyond the interesting process of designing the competition and the software required to let people control their robots from a safe distance (home), my submission was a hexapod robot. I have made many wheeled robots for clubs and various projects but nothing
-                that could walk, so I took this as a challenge. I designed, coded and made the pcb for the entire hexapod. Drawing inspiration from real hexapods and others&apos; interpretations. I also implemented a grabber with a camera to pick up the eggs automaticly, which led
-                me to learn a lot about computer communication and computer vision. 
-              </p>
+              <p className="text-[1.3rem] font-medium mb-4">During my sophomore year of high school, when the Covid pandemic 
+              left me with ample free time, I embarked on an ambitious project: a hexapod robot. This was a departure from the 
+              wheeled robots I had previously built for clubs and projects, and it presented a unique challenge that I was eager 
+              to tackle.</p>
+
+              <p className="text-[1.3rem] font-medium mb-4">I took inspiration from real hexapods and various interpretations by others, 
+              and modeled the entire robot myself. The process involved 3D printing the robot, coding its movements, and creating a 
+              printed circuit board (PCB) to control it.</p>
+
+              <p className="text-[1.3rem] font-medium mb-4">In addition to the hexapod, I designed a robotic arm equipped with a camera. 
+              This arm was capable of picking up objects automatically, a feature that required me to delve into the realms of computer 
+              communication and computer vision. This project not only honed my technical skills but also deepened my understanding of 
+              robotics and computer science.</p>
+
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">

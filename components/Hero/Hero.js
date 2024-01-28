@@ -109,9 +109,9 @@ const Hero = () => {
   const options = {
     strings: TYPED_STRINGS,
     typeSpeed: 50,
-    startDelay: 1500,
+    startDelay: 1000,
     backSpeed: 50,
-    backDelay: 1500,
+    backDelay: 1000,
     loop: true,
   };
 
