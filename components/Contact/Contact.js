@@ -89,21 +89,28 @@ const Contact = () => {
     document.getElementById("email").addEventListener("input", checkTextFields);
     document.getElementById("message").addEventListener("input", checkTextFields);
   }, []);
-
+  
+  const isValidEmail = (email) => {
+    // Add a regular expression to validate the email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const { name, email, message } = {
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
-    };
-
+  
+    const { name, email, message } = formData;
+  
     if (name === "" || email === "" || message === "") {
       empty();
       return setMailerResponse("empty");
     }
-
+  
+    if (!isValidEmail(email)) {
+      // Add a check for valid email format
+      return setMailerResponse("invalidEmail");
+    }
+  
     setIsSending(true);
     mail({ name, email, message })
       .then((res) => {
