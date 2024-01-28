@@ -69,7 +69,7 @@ const Arcade = () => {
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
               <p className="text-[1.3rem] font-medium">
-              With adeep passion for retro games and a brother who was desperate for something to work on, I embarked on a project that would bring a wave of nostalgia to my gaming sessions with brothers and friends. 
+              With a deep passion for retro games and a brother who was desperate for something to work on, I embarked to build a retro arcade cabinet.
               Utilizing an old Dell computer as the brains behind the operation, I delved into the intricate world of arcade cabinet construction. Crafting custom controller hardware for the buttons and fashioning a 
               wooden enclosure to mimic the classic arcade cabinet aesthetic. The challenge was not just in building a functional arcade cabinet, 
               but in ensuring it was cool enough inside to run demanding games like PS2. This endeavor demanded meticulous design, coding expertise, and the creation of custom hardware. 

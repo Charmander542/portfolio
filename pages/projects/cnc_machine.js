@@ -67,9 +67,8 @@ const CNC = () => {
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
               <p className="text-[1.3rem] font-medium mb-4">The homemade CNC machine project was an endeavor to create a versatile and 
               efficient milling tool. The machine, with a working area of 1 meter by 1 meter, was designed to mill both wood and aluminum. 
-              It was constructed using 3D printed parts and 80x20 aluminum v-extrusion, showcasing the potential of modern manufacturing 
-              techniques. The CNC machine was controlled by custom hardware and ran on open-source software, reflecting a commitment to 
-              accessibility and community-driven innovation.</p>
+              It was constructed using 3D printed parts and 80x20 aluminum v-extrusion. The CNC machine was controlled by custom hardware 
+              and ran on open-source software.</p>
 
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
@@ -130,8 +129,7 @@ const CNC = () => {
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software and Hardware</h2>
             <p className="text-[1.3rem] font-medium mb-4">The CNC machine was controlled by a custom circuit board running 
             open-source software. This setup allowed for precise control over the milling process. The machine was also equipped 
-            with robust motors, ensuring it had the power to move its own mass while cutting through material. All the axis have 2 limit
-            switches for more accurate alignment.</p>
+            with robust motors, and a power managment system to control the entire machine.</p>
 
             </div>
             </div>

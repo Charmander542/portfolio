@@ -75,7 +75,7 @@ const Hexapod = () => {
               and modeled the entire robot myself. The process involved 3D printing the robot, coding its movements, and creating a 
               printed circuit board (PCB) to control it.</p>
 
-              <p className="text-[1.3rem] font-medium mb-4">In addition to the hexapod, I designed a robotic arm equipped with a camera. 
+              <p className="text-[1.3rem] font-medium mb-4">In addition to the hexapod, I programmed a robotic arm equipped with a camera. 
               This arm was capable of picking up objects automatically, a feature that required me to delve into the realms of computer 
               communication and computer vision. This project not only honed my technical skills but also deepened my understanding of 
               robotics and computer science.</p>
@@ -86,9 +86,9 @@ const Hexapod = () => {
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
             <p className="text-[1.3rem] font-medium">
-            The design uses three servos per leg to control the tibia, femur, and coax. And has an off the shelf robotic arm mounted on top. The shell is completly 3D printed. 
-            There is an arduino mega that controls all the servos and power managment, while a raspberry PI runs
-              a custom computer vision script to move the arm around and move towards eggs.
+            The design uses three servos per leg to control the tibia, femur, and coax. It also utilizes an off-the-shelf robotic arm mounted on top. 
+            The shell is completly 3D printed. There is an arduino mega that controls all the servos and power managment, while a raspberry PI runs
+              a custom computer vision script to move the arm around towards objects to pick them up.
             </p>
             </div>
           <div className="bg-gray-300 h-64 relative rounded-md overflow-hidden">
@@ -140,8 +140,9 @@ const Hexapod = () => {
               <div>
             <h2 className="text-4xl font-medium text-mush-light w-fit seq">Software</h2>
             <p className="text-[1.3rem] font-medium">
-              For the software I used c++ to program the arduino mega and python for the raspberry pi. Solving the inverse kinematics was the most interesting part of the software and I implemented 4 different gaits to emulate how different 6 legged creatures walk in real life.
-              The image recognition software uses OpenCV for the object detection and then uses the x and y position of the center to run a movement algorithm to try to pick up the egg.
+              For the software I used c++ to program the arduino mega and python for the raspberry pi. Solving the inverse kinematics was the most interesting part of the software and 
+              I implemented 4 different gaits to emulate how different 6 legged creatures walk in real life.
+              The image recognition software uses OpenCV for the object detection and then uses the x and y position of the object on the screen to run a movement algorithm to try to pick up objects.
             </p>
             </div>
             </div>

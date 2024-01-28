@@ -69,8 +69,7 @@ const RobotArm = () => {
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
               <p className="text-[1.3rem] font-medium mb-4">In the pursuit of expanding my knowledge in robotics, 
-              I conceptualized and designed a robotic arm. This project was a testament to my ability to innovate and adapt,
-               even when faced with resource constraints. The robotic arm, boasting 7 degrees of freedom (DOF), was meticulously
+              I concerted and designed a robotic arm. The robotic arm, boasting 7 degrees of freedom (DOF), was
                 designed in Fusion 360 and all its components were 3D printed. Although I was unable to secure the necessary
                  funding to purchase the motors required for completion, the project remains a significant milestone in my journey
                   in robotics.</p>
@@ -83,8 +82,8 @@ const RobotArm = () => {
             <p className="text-[1.3rem] font-medium mb-4">The robotic arm was designed with 7 DOF, providing it with a wide range of 
               motion and the ability to perform complex tasks. Each joint of the arm was powered by NEMA motors, equipped with encoders for 
               precise control. One of the degrees of freedom was facilitated by a custom linear actuator, adding to the arm&apos;s versatility. 
-              The design process was carried out in Fusion 360, a powerful 3D modeling software. Each component of the arm was then brought
-               to life through 3D printing, demonstrating the potential of this technology in rapid prototyping and custom manufacturing.</p>
+              The design process was carried out in Fusion 360. Each component of the arm was then brought
+               to life through 3D printing. Although the plan was to machine the parts out of aluminum.</p>
             </div>
           <div className="bg-gray-300 h-90 relative rounded-md overflow-hidden">
             {/* Placeholder for Photo of Part of the Model */}
@@ -134,9 +133,8 @@ const RobotArm = () => {
             </div>
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Software and Hardware</h2>
-            <p className="text-[1.3rem] font-medium mb-4">The robotic arm was programmed to run on an Arduino,
-             a testament to the versatility of this microcontroller platform. Despite the lack of motors,
-              I was able to model and program the arm in the Robot Operating System (ROS) to execute various
+            <p className="text-[1.3rem] font-medium mb-4">The robotic arm was programmed to run on an Arduino.
+            Despite the lack of motors, I was able to model and program the arm in the Robot Operating System (ROS) to execute various
                commands and even follow G-code instructions. This experience allowed me to delve deeper into
                 the world of robotics software and control systems.</p>
             </div>

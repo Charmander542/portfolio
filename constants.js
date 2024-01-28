@@ -37,8 +37,8 @@ export const MENULINKS = [
 
 export const TYPED_STRINGS = [
   " Charles Van Hook",
-  " An Engineer",
-  " A Developer"
+  " an Engineer",
+  " a Developer"
 ];
 
 export const SOCIAL_LINKS = [

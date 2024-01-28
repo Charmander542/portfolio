@@ -55,10 +55,10 @@ export default function Resume() {
                         <p className="italic">May, 2026</p>
                     </div>
                 </div>
-                <p className="mb-8">I study things and learn more</p>
                 <div className="flex justify-between mb-4">
                     <div>
                         <h2 className="text-mush-light text-4xl font-semibold">Windward School</h2>
+                        <p className="text-lg font-medium">Dean&apos;s List, 4 Years</p>
                     </div>
                     <div className="text-right">
                         <p>Los Angeles, CA</p>

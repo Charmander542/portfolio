@@ -68,8 +68,8 @@ const LidarRobot = () => {
           <section className="py-8 bg-gray-100">
             <div className="text-left">
               <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Project Summary</h2>
-              <p className="text-[1.3rem] font-medium mb-4">In parallel with the hexapod project during the Covid pandemic, 
-              I embarked on another ambitious endeavor: creating a robot capable of autonomously navigating and mapping 
+              <p className="text-[1.3rem] font-medium mb-4">
+              During my junior year of highschool I embarked on a challenging robot design: creating a robot capable of autonomously navigating and mapping 
               my school&apos;s campus.</p>
 
               <p className="text-[1.3rem] font-medium mb-4">While I had previously built robots that used cameras and tags 
@@ -78,14 +78,14 @@ const LidarRobot = () => {
 
               <p className="text-[1.3rem] font-medium mb-4">Emboldened by this success, I spent several months designing a large-scale, 
               3D-printed robot that could navigate more challenging terrain. I managed to assemble parts of it and successfully ran 
-              the code in ROS simulations. However, due to time and budget constraints, I was unable to fully complete the robot.</p>
+              the code in ROS simulations.</p>
 
             </div>
             <hr className="mt-4 h-1 mx-auto mb-2 border-2 rounded md:mb-10 bg-white"/>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
-            <p className="text-[1.3rem] font-medium mb-4">Following the successful proof of concept, I began designing the robot using spare 
+            <p className="text-[1.3rem] font-medium mb-4">I designed the robot using spare 
             parts from my school&apos;s robotics lab. This constraint added an interesting challenge to the design process, as I had to work
              within the limitations of the available components.</p>
 

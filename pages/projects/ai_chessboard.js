@@ -72,9 +72,7 @@ const Chessboard = () => {
             <p className="text-[1.3rem] font-medium mb-4">This project revolves around the creation of an AI Chessboard, 
             a blend of traditional chess and modern technology. The chessboard utilizes a 3D printed core-xy gantry and an
              electromagnet to move the chess pieces from underneath. The board is equipped with reed switches on each square 
-             to detect the presence of a piece. The AI Chessboard is not just a physical entity but also a digital marvel, 
-             capable of connecting to the internet for more advanced algorithms and offering various levels of difficulty through 
-             bots loaded onto a Raspberry Pi computer. A standout feature of this project is its ability to learn from a player&apos;s 
+             to detect the presence of a piece. A standout feature of this project is its ability to learn from a player&apos;s 
              gameplay and create a personalized bot if they play on the board enough times.</p>
 
           </div>
@@ -84,9 +82,8 @@ const Chessboard = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               <div>
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Design Process</h2>
-            <p className="text-[1.3rem] font-medium mb-4">The AI Chessboard&apos;s design is a testament to the power of modern manufacturing 
-            and electronics. The core-xy gantry and the electromagnet, both 3D printed, form the heart of the chessboard, enabling the 
-            movement of the chess pieces. Each square on the board is fitted with a reed switch, allowing the system to detect when a 
+            <p className="text-[1.3rem] font-medium mb-4">The core-xy gantry form the movement system of the chessboard, enabling the 
+            board to play against a human. Each square on the board is fitted with a reed switch, allowing the system to detect when a 
             piece is located above it. This design ensures accurate tracking of the game state at all times.</p>
 
             </div>
@@ -152,7 +149,8 @@ const Chessboard = () => {
           <div className="text-left">
             <h2 className="text-4xl mt-2 font-medium text-mush-light w-fit seq">Challenges Encountered</h2>
             <p className="text-[1.3rem] font-medium">
-              The project faced several challenges, particularly in getting the electromagnet to move the pieces without affecting other pieces and activating the reed switches with the magnets in the pieces. These issues were addressed with complex designs that moved the magnets further away while orienting them in the most optimal way to prevent interference with each other&apos;s fields.
+              The project faced several challenges, particularly in getting the electromagnet to move the pieces without affecting other pieces and activating the reed switches with the magnets in the pieces. 
+              These issues were addressed with complex designs that moved the magnets further away while orienting them in the most optimal way to prevent interference with each other&apos;s fields.
             </p>
           </div>
         </section>
