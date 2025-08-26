@@ -20,20 +20,23 @@
 
 ### 🏠 Homepage
 <!-- Add your homepage screenshot here -->
-![Homepage Screenshot](screenshots/homepage.png)
+![Homepage Screenshot](homepage.png)
 
 ### 🤖 Interactive 3D Robot
 <!-- Add your 3D robot interaction screenshot here -->
-![3D Robot Interaction](screenshots/3d-robot.png)
+![3D Robot Interaction](3d-robot.png)
 
 ### 📱 Responsive Design
 <!-- Add your mobile/tablet screenshots here -->
-![Mobile View](screenshots/mobile-view.png)
-![Tablet View](screenshots/tablet-view.png)
+![Mobile View](mobile-view.png)
 
 ### 🎯 Projects Section
 <!-- Add your projects showcase screenshot here -->
-![Projects Showcase](screenshots/projects-showcase.png)
+![Projects Showcase](projects-showcase.png)
+
+### Custom Loading Screen
+
+![Loading Screen](custom-loading.png)
 
 ---
 
