@@ -188,14 +188,6 @@ portfolio/
 
 ---
 
-## 📧 Contact
-
-- **Email**: [cvanhook@bu.edu](mailto:cvanhook@bu.edu)
-- **LinkedIn**: [Charles Van Hook](https://www.linkedin.com/in/charles-van-hook)
-- **GitHub**: [charmander542](https://github.com/charmander542)
-
----
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
