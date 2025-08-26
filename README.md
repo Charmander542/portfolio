@@ -18,19 +18,15 @@
 
 ## 📸 Screenshots
 
-### 🏠 Homepage
-<!-- Add your homepage screenshot here -->
-![Homepage Screenshot](homepage.png)
-
-### 🤖 Interactive 3D Robot
+### Interactive 3D Robot
 <!-- Add your 3D robot interaction screenshot here -->
 ![3D Robot Interaction](3d-robot.png)
 
-### 📱 Responsive Design
+### Responsive Design
 <!-- Add your mobile/tablet screenshots here -->
 ![Mobile View](mobile-view.png)
 
-### 🎯 Projects Section
+### Projects Section
 <!-- Add your projects showcase screenshot here -->
 ![Projects Showcase](projects-showcase.png)
 
