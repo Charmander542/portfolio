@@ -18,15 +18,13 @@ const Projects = ({ isDesktop, clientHeight, clientWidth }) => {
       // Clear old styles
       clearOldStyles();
 
-      if (isDesktop) {
-        [projectsTimeline, projectsScrollTrigger] = getProjectsSt();
-      } else {
-        // Handle styles for non-desktop or specific width scenarios
         const projectWrapper = targetSection.current.querySelector(".project-wrapper");
         if (window.innerWidth > 500) {
-          projectWrapper.style.width = "80vw";
+          projectWrapper.style.width = "50vm";
           projectWrapper.style.overflowX = "none";
-          projectWrapper.style.overflowY = "scroll";
+          projectWrapper.style.flexDirection = "column";
+          projectWrapper.style.justifyContent = "center";
+          projectWrapper.style.gap = "1rem";
         } else {
           projectWrapper.style.width = "calc(100vw - 1rem)";
           projectWrapper.style.maxWidth = "500px";
@@ -35,7 +33,6 @@ const Projects = ({ isDesktop, clientHeight, clientWidth }) => {
           projectWrapper.style.justifyContent = "center";
           projectWrapper.style.gap = "1rem";
         }
-      }
     };
 
     const clearOldStyles = () => {
@@ -51,16 +48,16 @@ const Projects = ({ isDesktop, clientHeight, clientWidth }) => {
     // Event listener for window resize
     window.addEventListener("resize", handleResize);
 
-    const [revealTimeline, revealScrollTrigger] = getRevealSt();
+    //const [revealTimeline, revealScrollTrigger] = getRevealSt();
 
     return () => {
       // Remove the event listener on component unmount
       window.removeEventListener("resize", handleResize);
 
-      projectsScrollTrigger && projectsScrollTrigger.kill();
-      projectsTimeline && projectsTimeline.kill();
-      revealScrollTrigger && revealScrollTrigger.kill();
-      revealTimeline && revealTimeline.progress(1);
+      //projectsScrollTrigger && projectsScrollTrigger.kill();
+      //projectsTimeline && projectsTimeline.kill();
+      //revealScrollTrigger && revealScrollTrigger.kill();
+      //revealTimeline && revealTimeline.progress(1);
     };
   }, [targetSection, sectionTitle, isDesktop]);
 
@@ -155,7 +152,7 @@ const Projects = ({ isDesktop, clientHeight, clientWidth }) => {
             />
           ))}
 
-            <Button href={`/projects`} classes="link pt-4 mr-20 xs:ml-2 sm:ml-10 h-10 w-40 m-auto" type="primary">
+            <Button href={`/projects`} classes="link pt-4 mr-20 h-10 w-40 m-auto" type="primary">
               More&nbsp;Projects
             </Button>
           </div>
