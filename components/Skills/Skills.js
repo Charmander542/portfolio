@@ -1,0 +1,107 @@
+/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { MENULINKS, SKILLS } from "../../constants";
+
+const SKILL_SIZE_OVERRIDES = {
+  altium: 36,
+};
+
+const SkillIcon = ({ skill }) => {
+  const size = SKILL_SIZE_OVERRIDES[skill] ?? 50;
+  return (
+    <div style={{ width: 50, height: 50 }} className="flex items-center justify-center">
+      <Image
+        src={`/skills/${skill}.svg`}
+        alt={skill}
+        width={size}
+        height={size}
+      />
+    </div>
+  );
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut", delay: i * 0.07 },
+  }),
+};
+
+const Skills = () => {
+  return (
+    <section
+      className="w-full relative select-none mt-20"
+      id={MENULINKS[1].ref}
+    >
+      <div className="section-container py-16 flex flex-col justify-center">
+        <img
+          src="/right-pattern.svg"
+          alt=""
+          className="absolute hidden right-0 bottom-2/4 w-2/12 max-w-xs md:block"
+          height={700}
+          width={320}
+        />
+        <motion.div
+          className="flex flex-col skills-wrapper"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          <motion.div className="flex flex-col" variants={fadeUp} custom={0}>
+            <p className="uppercase tracking-widest text-gray-light-1">
+              SKILLS
+            </p>
+            <h1 className="text-6xl mt-2 font-medium text-mush-light w-fit">
+              My Skills
+            </h1>
+            <h2 className="text-[1.65rem] font-medium md:max-w-xl w-full mt-2">
+              Leveraging a diverse array of software skills, I have successfully
+              brought numerous projects to life. Here&apos;s a snapshot of the
+              technical expertise I utilized in my creations:{" "}
+            </h2>
+          </motion.div>
+
+          <motion.div className="mt-10" variants={fadeUp} custom={1}>
+            <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4">
+              LANGUAGES AND TOOLS
+            </h3>
+            <div className="flex flex-wrap gap-6 transform-gpu">
+              {SKILLS.languagesAndTools.map((skill) => (
+                <SkillIcon key={skill} skill={skill} />
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div className="mt-10" variants={fadeUp} custom={2}>
+            <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4">
+              LIBRARIES AND FRAMEWORKS
+            </h3>
+            <div className="flex flex-wrap gap-6 transform-gpu">
+              {SKILLS.librariesAndFrameworks.map((skill) => (
+                <SkillIcon key={skill} skill={skill} />
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div className="flex flex-wrap mt-10" variants={fadeUp} custom={3}>
+            <div className="mr-16 xs:mr-20 mb-6">
+              <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4">
+                ENGINEERING SOFTWARE
+              </h3>
+              <div className="flex flex-wrap gap-6 transform-gpu">
+                {SKILLS.software.map((skill) => (
+                  <SkillIcon key={skill} skill={skill} />
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Skills;
