@@ -7,7 +7,7 @@ const ResearchCard = ({ item, index }) => {
   const { title, authors, venue, year, description, tags, links } = item;
 
   return (
-    <article className="research-card group relative flex flex-col gap-4 rounded-2xl border border-gray-dark-1 bg-gray-dark-3 p-6 sm:p-8 transition-all duration-300 hover:border-yellow hover:shadow-[0_0_1.5rem_rgba(255,255,0,0.08)]">
+    <article className="research-card relative flex flex-col gap-4 rounded-2xl border border-gray-dark-1 bg-gray-dark-3 p-6 sm:p-8">
       {/* Index number watermark */}
       <span className="absolute top-6 right-7 text-7xl font-bold text-white opacity-[0.03] select-none leading-none">
         {String(index + 1).padStart(2, "0")}
@@ -23,7 +23,7 @@ const ResearchCard = ({ item, index }) => {
       </div>
 
       {/* Title */}
-      <h3 className="text-xl sm:text-2xl font-semibold leading-snug text-white group-hover:text-yellow transition-colors duration-200">
+      <h3 className="text-xl sm:text-2xl font-semibold leading-snug text-white">
         {title}
       </h3>
 

@@ -7,7 +7,7 @@ import TechStackSection from "@/components/ProjectLayout/TechStackSection";
 import SplineSection from "@/components/ProjectLayout/SplineSection";
 
 const PROJECT_NAME = "Electric Skateboard";
-const SPLINE_URL = "";
+const SPLINE_URL = "https://my.spline.design/skatebaord-75e0cb7f2c18e91e37fa0e17d726a733/";
 
 const ElectricSkateboard = () => (
   <ProjectLayout projectName={PROJECT_NAME}>

@@ -63,7 +63,7 @@ const Projects = ({ isDesktop }) => {
                 isDesktop={isDesktop}
               />
             ))}
-            <div className="flex-shrink-0 flex items-center pl-6 pr-10">
+            <div className="more-btn-cell">
               <Button href={`/projects`} classes="link h-10 w-40" type="primary">
                 More&nbsp;Projects
               </Button>
@@ -73,6 +73,7 @@ const Projects = ({ isDesktop }) => {
       </div>
 
       <style>{`
+        /* ── Desktop: horizontal scroll ── */
         .projects-scroll-wrapper {
           overflow-x: auto;
           overflow-y: hidden;
@@ -89,8 +90,16 @@ const Projects = ({ isDesktop }) => {
           align-items: center;
         }
 
+        .more-btn-cell {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          padding-left: 1.5rem;
+          padding-right: 2.5rem;
+        }
+
         .projects-scroll-wrapper::-webkit-scrollbar {
-          height: 3px;
+          height: 8px;
         }
 
         .projects-scroll-wrapper::-webkit-scrollbar-track {
@@ -98,12 +107,32 @@ const Projects = ({ isDesktop }) => {
         }
 
         .projects-scroll-wrapper::-webkit-scrollbar-thumb {
-          background: #FFFF00;
+          background: rgba(255, 255, 0);
           border-radius: 9999px;
         }
 
         .projects-scroll-wrapper::-webkit-scrollbar-thumb:hover {
-          background: darkgoldenrod;
+          background: rgba(255, 255, 0, 0.45);
+        }
+
+        /* ── Mobile: vertical stack ── */
+        @media (max-width: 767px) {
+          .projects-scroll-wrapper {
+            overflow: visible;
+            padding-bottom: 0;
+          }
+
+          .projects-scroll-track {
+            flex-direction: column;
+            width: 100%;
+            gap: 1.25rem;
+            align-items: stretch;
+          }
+
+          .more-btn-cell {
+            padding: 0.5rem 0 0 0;
+            justify-content: flex-start;
+          }
         }
       `}</style>
     </section>

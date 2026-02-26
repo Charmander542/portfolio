@@ -1,8 +1,7 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from 'next/router';
 
-// All variants live here — no useState, no re-renders.
-// The parent's whileHover="hover" propagates to every child automatically.
 const ease = [0.25, 0.46, 0.45, 0.94];
 
 const cardV    = { rest: { y: 0   }, hover: { y: -5,   transition: { duration: 0.18, ease } } };
@@ -11,19 +10,29 @@ const accentV  = { rest: { scaleX: 0 }, hover: { scaleX: 1, transition: { durati
 const ctaV     = { rest: { opacity: 0.35, x: 0 }, hover: { opacity: 1, x: 4, transition: { duration: 0.18 } } };
 
 const Card = ({ data }) => {
-  const { name, image, done, tags = [] } = data;
+  const { name, image, done, tags = [], url } = data;
   const router = useRouter();
-  const formattedName = name.toLowerCase().replace(/\s+/g, '_');
+  const formattedName = url ?? `/projects/${name.toLowerCase().replace(/\s+/g, '_')}`;
+
+  // Disable hover animations on touch/mobile devices
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: none), (max-width: 768px)");
+    setIsMobile(mq.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   return (
     <motion.a
       className="relative block rounded-2xl overflow-hidden cursor-pointer select-none"
       style={{ height: '22rem' }}
-      variants={cardV}
-      initial="rest"
-      whileHover="hover"
-      animate="rest"
-      onClick={() => router.push(`/projects/${formattedName}`)}
+      variants={isMobile ? undefined : cardV}
+      initial={isMobile ? false : "rest"}
+      whileHover={isMobile ? undefined : "hover"}
+      animate={isMobile ? undefined : "rest"}
+      onClick={() => router.push(formattedName)}
     >
       {/* Image — static, no zoom */}
       <img

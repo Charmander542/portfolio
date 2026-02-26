@@ -8,7 +8,7 @@ import SplineSection from "@/components/ProjectLayout/SplineSection";
 
 const PROJECT_NAME = "Hexapod";
 // To embed a Spline model, paste your Spline embed URL below:
-const SPLINE_URL = ""; // e.g. "https://my.spline.design/yoursceneurl/"
+const SPLINE_URL = "https://my.spline.design/hexapod-4c51c5ac5cdd2032c10b2e00223c4aa9/"; // e.g. "https://my.spline.design/yoursceneurl/"
 
 const Hexapod = () => (
   <ProjectLayout projectName={PROJECT_NAME}>

@@ -7,7 +7,7 @@ import TechStackSection from "@/components/ProjectLayout/TechStackSection";
 import SplineSection from "@/components/ProjectLayout/SplineSection";
 
 const PROJECT_NAME = "AI Chessboard";
-const SPLINE_URL = "";
+const SPLINE_URL = "https://my.spline.design/untitled-b720bd546b27eb17e1c73717636074c5/";
 
 const Chessboard = () => (
   <ProjectLayout projectName={PROJECT_NAME}>

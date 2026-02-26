@@ -5,9 +5,12 @@ import TextImageSection from "@/components/ProjectLayout/TextImageSection";
 import GallerySection from "@/components/ProjectLayout/GallerySection";
 import TechStackSection from "@/components/ProjectLayout/TechStackSection";
 import SplineSection from "@/components/ProjectLayout/SplineSection";
+import EmbedSection from "@/components/ProjectLayout/EmbedSection";
 
 const PROJECT_NAME = "LiDaR Robot";
 const SPLINE_URL = "";
+const FUSION_URL =
+  "https://windwardschool11.autodesk360.com/shares/public/SH30dd5QT870c25f12fc96150d84c057b268?mode=embed";
 
 const LidarRobot = () => (
   <ProjectLayout projectName={PROJECT_NAME}>
@@ -47,14 +50,6 @@ const LidarRobot = () => (
       </p>
     </TextImageSection>
 
-    <GallerySection
-      label="Gallery"
-      images={[
-        { src: "/projects/cheesebot/photos/turtlebot.png", alt: "Prototype robot", fit: "contain" },
-        { src: "/projects/cheesebot.png", alt: "Full assembled robot" },
-      ]}
-    />
-
     <TextImageSection
       label="Software"
       title="Software"
@@ -85,6 +80,22 @@ const LidarRobot = () => (
     </SectionWrapper>
 
     {SPLINE_URL && <SplineSection url={SPLINE_URL} title="LiDaR Robot 3D Model" />}
+
+    <GallerySection
+      label="Gallery"
+      images={[
+        { src: "/projects/cheesebot/photos/turtlebot.png", alt: "Prototype robot", fit: "contain" },
+        { src: "/projects/cheesebot.png", alt: "Full assembled robot" },
+      ]}
+    />
+
+    <EmbedSection
+      url={FUSION_URL}
+      label="3D Model"
+      title="LiDaR Robot — Fusion 360"
+      height="600px"
+      hint="Scroll to zoom · Click and drag to orbit · Right-click to pan"
+    />
 
     <TechStackSection tech={["fusion360", "ros", "nvidia", "cpp"]} />
   </ProjectLayout>

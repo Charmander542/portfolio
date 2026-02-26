@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg75" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.78 163.46">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 4.23px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #8e0027;
+        stroke: #8e0027;
+      }
+
+      .cls-2 {
+        stroke-width: 4.41px;
+      }
+    </style>
+  </defs>
+  <path id="path16" class="cls-1" d="M34.36,2.88L2.34,34.89l46.32,46.54L2.12,127.93l32.24,32.02h51.31l-31.61-31.75,46.41-46.54-47.08-47.04L85.12,2.88h-50.77Z"/>
+  <path id="path18" class="cls-2" d="M88.32,2.2l14.84,14.84,25.09,25.23L167.64,2.88l-50.23-.13-14.25,14.3"/>
+  <path id="path20" class="cls-2" d="M88.77,160.4l40.2-40.2,41.05,41.05-51.44-.13-15.42-15.24"/>
+</svg>

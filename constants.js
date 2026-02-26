@@ -96,7 +96,8 @@ export const SKILLS = {
     "altium",
     "fusion360",
     "onshape",
-    "solidworks"
+    "solidworks",
+    "xilinx"
   ],
 };
 
@@ -167,6 +168,15 @@ export const RESEARCH = [
 
 export const PROJECTS = [
   {
+    name: "Griffith Observatory Celestial Globe",
+    image: "/projects/griffith_observatory/photos/celestial.jpg",
+    url: "/projects/griffith_observatory",
+    tech: ["python", "fusion360"],
+    category: ["Engineering"],
+    tags: ["Structural Engineering", "Nonlinear Programming", "Mesh Repair", "Bronze Casting"],
+    done: true,
+  },
+  {
     name: "Hexapod",
     image: "/projects/hexapod/photos/full.png",
     url: "/projects/hexapod",
@@ -187,7 +197,7 @@ export const PROJECTS = [
   {
     name: "Robotic Arm",
     image: "/projects/robotarm/photos/parts.png",
-    url: "/projects/robot_arm",
+    url: "/projects/robotic_arm",
     tech: ["fusion360", "ros", "cpp"],
     category: ['Engineering', 'Code'],
     tags: ["Robotics", "3D Printing", "ROS", "CAD"],
@@ -196,7 +206,7 @@ export const PROJECTS = [
   {
     name: "AI Chessboard",
     image: "/projects/chessboard/photos/full.png",
-    url: "/projects/chessboard",
+    url: "/projects/ai_chessboard",
     tech: ["altium", "cpp", "fusion360"],
     category: ['Engineering', 'PCB Design', 'Code'],
     tags: ["Robotics", "PCB Design", "AI", "Embedded Systems"],
@@ -205,6 +215,7 @@ export const PROJECTS = [
   {
     name: "Electric Skateboard",
     image: "/projects/skateboard/photos/full.png",
+    url: "/projects/electric_skateboard",
     tech: ["altium", "fusion360"],
     category: ['Engineering', 'PCB Design'],
     tags: ["Engineering", "PCB Design", "CNC", "Power Electronics"],
@@ -213,6 +224,7 @@ export const PROJECTS = [
   {
     name: "Arcade Cabinet",
     image: "/projects/arcade/photos/off2.png",
+    url: "/projects/arcade_cabinet",
     tech: ["fusion360"],
     category: ['Engineering'],
     tags: ["Engineering", "CNC", "Woodworking", "Emulation"],
@@ -221,6 +233,7 @@ export const PROJECTS = [
   {
     name: "CNC Machine",
     image: "/projects/cncmachine/photos/full.png",
+    url: "/projects/cnc_machine",
     tech: ["fusion360"],
     category: ['Engineering', 'Code', 'PCB Design'],
     tags: ["Engineering", "CNC", "Machining", "PCB Design"],
@@ -228,13 +241,74 @@ export const PROJECTS = [
   },
   {
     name: "Accesability Controller",
-    image: "/projects/controller/photos/front.jpg",
+    image: "/projects/controller/photos/front.jpg", 
+    url: "/projects/accesability_controller",
     tech: ["onshape", "cpp"],
     category: ['Engineering', 'Code'],
     tags: ["Embedded Systems", "Hackathon", "3D Printing", "HID"],
     done: true,
   },
-
+  {
+    name: "Stabilizing Mug",
+    image: "/projects/stabilizing_mug/photos/cup.JPG",
+    url: "/projects/stabilizing_mug",
+    tech: ["onshape", "cpp"],
+    category: ['Engineering', '3D Printing'],
+    tags: ["Embedded Systems", "3D Printing", "Gyroscope", "Accelerometer"],
+    done: true,
+  },
+  {
+    name: "Braille Ebook",
+    image: "/projects/braille_ebook/photos/braille.webp",
+    url: "/projects/braille_ebook",
+    tech: ["onshape", "cpp", "altium"],
+    category: ['Engineering', '3D Printing'],
+    tags: ["Embedded Systems", "3D Printing", "Braille", "PCB Design"],
+    done: true,
+  },
+  {
+    name: "Persistance of Vision Globe",
+    image: "/projects/pov_globe/photos/globe.jpg",
+    url: "/projects/pov_globe",
+    tech: ["onshape", "arduino", "python"],
+    category: ['Engineering', '3D Printing'],
+    tags: ["Embedded Systems", "3D Printing", "Persistence of Vision", "Laser Cutting"],
+    done: true,
+  },
+  {
+    name: "FPGA Microcontroller",
+    image: "/projects/fpga_microcontroller/photos/fpga.jpg",
+    url: "/projects/fpga_microcontroller",
+    tech: ["cpp", "python"],
+    category: ['Engineering', 'Code'],
+    tags: ["Embedded Systems", "FPGA", "Verilog", "Computer Architecture"],
+    done: true,
+  },
+  {
+    name: "Password Manager",
+    image: "/projects/password_manager/photos/password_manager.png",
+    tech: ["cpp", "altium"],
+    category: ['Engineering', 'PCB Design', 'Code'],
+    tags: ["Embedded Systems", "PCB Design", "Security", "Cryptography"],
+    done: false,
+  },
+  {
+    name: "Electronic Twister",
+    image: "/projects/electronic_twister/photos/twisterfull.JPG",
+    url: "/projects/electronic_twister",
+    tech: ["cpp", "python"],
+    category: ['Engineering', 'Code'],
+    tags: ["Embedded Systems", "BeagleBone", "Linux Kernel", "3D Printing"],
+    done: true
+  },
+  {
+    name: "Electronic Pickleball PCB",
+    image: "/projects/electronic_pickleball_pcb/photos/electronic_pickleball_pcb.png",
+    tech: ["altium"],
+    category: ['Engineering', 'PCB Design'],
+    tags: ["Embedded Systems", "PCB Design", "Sports Technology"],
+    done: false,
+  }
 
 
 ]

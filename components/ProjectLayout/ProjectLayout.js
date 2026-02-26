@@ -15,7 +15,8 @@ const ProjectLayout = ({ projectName, children }) => {
   const prevIndex = (projectIndex - 1 + PROJECTS.length) % PROJECTS.length;
   const nextIndex = (projectIndex + 1) % PROJECTS.length;
 
-  const toSlug = (name) => name.toLowerCase().replace(/\s+/g, "_");
+  const toUrl = (project) =>
+    project.url ?? `/projects/${project.name.toLowerCase().replace(/\s+/g, "_")}`;
 
   return (
     <>
@@ -69,7 +70,7 @@ const ProjectLayout = ({ projectName, children }) => {
               {/* Prev / Next */}
               <div className="flex justify-between items-center">
                 <button
-                  onClick={() => router.push(`/projects/${toSlug(PROJECTS[prevIndex].name)}`)}
+                  onClick={() => router.push(toUrl(PROJECTS[prevIndex]))}
                   className="group flex items-center gap-3 text-gray-light-3 hover:text-yellow transition-colors duration-200"
                 >
                   <FaArrowLeft className="group-hover:-translate-x-1 transition-transform duration-200" />
@@ -80,7 +81,7 @@ const ProjectLayout = ({ projectName, children }) => {
                 </button>
 
                 <button
-                  onClick={() => router.push(`/projects/${toSlug(PROJECTS[nextIndex].name)}`)}
+                  onClick={() => router.push(toUrl(PROJECTS[nextIndex]))}
                   className="group flex items-center gap-3 text-gray-light-3 hover:text-yellow transition-colors duration-200 text-right"
                 >
                   <span className="font-mono text-sm">
