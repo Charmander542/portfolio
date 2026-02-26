@@ -109,23 +109,25 @@ const Hero = () => {
   const options = {
     strings: TYPED_STRINGS,
     typeSpeed: 50,
-    startDelay: 1000,
+    startDelay: 200,
     backSpeed: 50,
-    backDelay: 1000,
+    backDelay: 800,
     loop: true,
   };
 
   useEffect(() => {
     const typed = new Typed(typedEl.current, options);
 
-    const revealTl = gsap.timeline({ defaults: { ease: Linear.easeNone } });
-    revealTl
-      .to(targetSection.current, { opacity: 1, duration: 2 })
-      .from(
-        targetSection.current.querySelectorAll(".seq"),
-        { opacity: 0, duration: 0.5, stagger: 0.5 },
-        "<"
-      );
+    // Snap section visible instantly, then stagger each seq element up
+    gsap.set(targetSection.current, { opacity: 1 });
+    gsap.from(targetSection.current.querySelectorAll(".seq"), {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      stagger: 0.16,
+      ease: "power3.out",
+      delay: 0.15,
+    });
 
     return () => typed.destroy();
   }, [typedEl, targetSection]);
@@ -137,15 +139,15 @@ const Hero = () => {
       id={MENULINKS[0].ref}
       style={{ opacity: 0 }}
     >
-      <style>
-        {`
-          .typed-cursor {
-            font-size: 2rem;
-          }
-        `}
-      </style>
+      <style>{`
+        .typed-cursor { font-size: 2rem; }
+        @keyframes heroRobotIn {
+          from { opacity: 0; transform: translateX(20px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+      `}</style>
       <div className="flex flex-col pt-40 md:pt-0 select-none">
-        <h1 className={`${styles.intro} font-mono font-bold text-5xl`}>
+        <h1 className={`${styles.intro} font-mono font-bold text-5xl seq`}>
           Hello, <br /> I&apos;m&nbsp;
           <span
             ref={typedEl}
@@ -153,10 +155,10 @@ const Hero = () => {
           ></span>
         </h1>
         <p></p>
-        <div className="">
+        <div className="seq">
           <Profiles />
         </div>
-        <div className="flex pt-4">
+        <div className="flex pt-4 seq">
           <Button href={`#${MENULINKS[4].ref}`} classes="link" type="primary">
             Let&apos;s Talk
           </Button>
@@ -170,13 +172,18 @@ const Hero = () => {
         </div>
       </div>
 
-      {isDesktop && <div className="pic pt-2 absolute w-1/2 h-[30rem]">
-      <Canvas>
-        <ambientLight />
-          <pointLight position={[10, 10, 10]} />
-        <Model url="/scene.gltf" />
-    </Canvas>
-    </div>}
+      {isDesktop && (
+        <div
+          className="pic pt-2 absolute w-1/2 h-[30rem]"
+          style={{ opacity: 0, animation: "heroRobotIn 0.7s ease-out 1s forwards" }}
+        >
+          <Canvas>
+            <ambientLight />
+            <pointLight position={[10, 10, 10]} />
+            <Model url="/scene.gltf" />
+          </Canvas>
+        </div>
+      )}
     </section>
   );
 };

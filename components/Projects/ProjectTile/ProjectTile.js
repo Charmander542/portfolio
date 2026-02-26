@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import VanillaTilt from "vanilla-tilt";
 import styles from "./ProjectTile.module.scss";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
 
 const ProjectTile = ({ project, classes, isDesktop }) => {
@@ -49,10 +49,13 @@ const ProjectTile = ({ project, classes, isDesktop }) => {
           background: `linear-gradient(90deg, ${gradient[0]} 0%, ${gradient[1]} 100%)`,
         }}
       >
-        <img
+        <Image
           src="/project-bg.svg"
-          alt="project"
-          className="absolute w-full h-full top-0 left-0 object-cover opacity-30"
+          alt=""
+          fill
+          className="object-cover opacity-30"
+          sizes="608px"
+          priority={false}
         />
         {/* Image — fixed size, centered vertically, anchored to right side */}
         <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[22rem] h-[22rem] pointer-events-none">
@@ -61,6 +64,7 @@ const ProjectTile = ({ project, classes, isDesktop }) => {
             alt={name}
             fill
             className="object-contain opacity-90"
+            sizes="352px"
           />
         </div>
         <div
@@ -88,13 +92,14 @@ const ProjectTile = ({ project, classes, isDesktop }) => {
         >
           <div className="flex flex-col pb-8">
             {project.tech.map((el, i) => (
-              <img
+              <Image
+                key={el}
                 className={`${i % 2 === 0 && "ml-16"} mb-4`}
                 src={`/skills/${el}.svg`}
                 alt={el}
                 height={45}
                 width={45}
-                key={el}
+                unoptimized
               />
             ))}
           </div>

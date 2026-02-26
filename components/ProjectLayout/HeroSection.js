@@ -77,23 +77,25 @@ const HeroSection = ({ video, image, title, subtitle, tags = [], gradient = ["#3
         )}
       </div>
 
-      {/* Scroll indicator — clicking scrolls past the hero */}
+      {/* Scroll indicator */}
       <motion.button
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 cursor-pointer select-none"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer select-none z-20"
         style={{ background: "none", border: "none", padding: 0 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.5 }}
         onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
         aria-label="Scroll to content"
       >
-        <span style={{ color: "rgba(255,255,255,0.4)" }} className="font-mono text-xs tracking-widest uppercase">Scroll</span>
-        <motion.div
-          className="w-px h-8"
-          style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.4), transparent)" }}
-          animate={{ scaleY: [1, 0.4, 1], opacity: [0.6, 1, 0.6] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-        />
+        <span className="font-mono text-xs tracking-widest uppercase text-white/70">Scroll</span>
+        <motion.svg
+          width="20" height="20" viewBox="0 0 20 20" fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          animate={{ y: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 1.4, ease: "easeInOut" }}
+        >
+          <path d="M4 7 L10 13 L16 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </motion.svg>
       </motion.button>
     </section>
   );

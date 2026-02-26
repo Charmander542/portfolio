@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Chip body -->
+  <rect fill="#4A90D9" x="34" y="34" width="60" height="60" rx="6"/>
+  <!-- Chip pins left -->
+  <rect fill="#7DB8E8" x="14" y="46" width="20" height="8" rx="2"/>
+  <rect fill="#7DB8E8" x="14" y="60" width="20" height="8" rx="2"/>
+  <rect fill="#7DB8E8" x="14" y="74" width="20" height="8" rx="2"/>
+  <!-- Chip pins right -->
+  <rect fill="#7DB8E8" x="94" y="46" width="20" height="8" rx="2"/>
+  <rect fill="#7DB8E8" x="94" y="60" width="20" height="8" rx="2"/>
+  <rect fill="#7DB8E8" x="94" y="74" width="20" height="8" rx="2"/>
+  <!-- Chip pins top -->
+  <rect fill="#7DB8E8" x="46" y="14" width="8" height="20" rx="2"/>
+  <rect fill="#7DB8E8" x="60" y="14" width="8" height="20" rx="2"/>
+  <rect fill="#7DB8E8" x="74" y="14" width="8" height="20" rx="2"/>
+  <!-- Chip pins bottom -->
+  <rect fill="#7DB8E8" x="46" y="94" width="8" height="20" rx="2"/>
+  <rect fill="#7DB8E8" x="60" y="94" width="8" height="20" rx="2"/>
+  <rect fill="#7DB8E8" x="74" y="94" width="8" height="20" rx="2"/>
+  <!-- Notch -->
+  <path fill="#3A7BC8" d="M34 34 Q34 44 44 44 L34 44 Z"/>
+  <!-- Waveform lines inside chip -->
+  <polyline fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"
+    points="44,70 50,70 50,56 58,56 58,70 66,70 66,56 74,56 74,70 84,70"/>
+</svg>

@@ -1,22 +1,20 @@
-/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MENULINKS, SKILLS } from "../../constants";
+import { MENULINKS, SKILLS, SKILL_NAMES } from "../../constants";
 
-const SKILL_SIZE_OVERRIDES = {
-  altium: 36,
-};
+const SKILL_SIZE_OVERRIDES = { altium: 26 };
 
 const SkillIcon = ({ skill }) => {
-  const size = SKILL_SIZE_OVERRIDES[skill] ?? 50;
+  const size = SKILL_SIZE_OVERRIDES[skill] ?? 45;
+  const label = SKILL_NAMES[skill] ?? skill;
   return (
-    <div style={{ width: 50, height: 50 }} className="flex items-center justify-center">
-      <Image
-        src={`/skills/${skill}.svg`}
-        alt={skill}
-        width={size}
-        height={size}
-      />
+    <div className="flex flex-col items-center gap-2" style={{ width: 64 }}>
+      <div className="w-12 h-12 flex items-center justify-center">
+        <Image src={`/skills/${skill}.svg`} alt={label} width={size} height={size} />
+      </div>
+      <span className="font-mono text-xs text-gray-light-3 text-center leading-tight">
+        {label}
+      </span>
     </div>
   );
 };
@@ -66,7 +64,7 @@ const Skills = () => {
 
           <motion.div className="mt-10" variants={fadeUp} custom={1}>
             <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4">
-              LANGUAGES AND TOOLS
+              LANGUAGES
             </h3>
             <div className="flex flex-wrap gap-6 transform-gpu">
               {SKILLS.languagesAndTools.map((skill) => (
@@ -77,7 +75,7 @@ const Skills = () => {
 
           <motion.div className="mt-10" variants={fadeUp} custom={2}>
             <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4">
-              LIBRARIES AND FRAMEWORKS
+              AI, ROBOTICS &amp; WEB
             </h3>
             <div className="flex flex-wrap gap-6 transform-gpu">
               {SKILLS.librariesAndFrameworks.map((skill) => (

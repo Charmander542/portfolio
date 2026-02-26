@@ -42,7 +42,7 @@ export const MENULINKS = [
 export const TYPED_STRINGS = [
   " Charles Van Hook",
   " an Engineer",
-  " a Developer"
+  " a Researcher"
 ];
 
 export const SOCIAL_LINKS = [
@@ -64,40 +64,55 @@ export const SOCIAL_LINKS = [
   }
 ];
 
+export const SKILL_NAMES = {
+  cpp:         "C++",
+  python:      "Python",
+  verilog:     "Verilog",
+  matlab:      "MATLAB",
+  javascript:  "JavaScript",
+  typescript:  "TypeScript",
+  git:         "Git",
+  tensorflow:  "TensorFlow",
+  opencv:      "OpenCV",
+  ros:         "ROS",
+  react:       "React",
+  nextjs:      "Next.js",
+  linux:       "Linux",
+  tailwindcss: "Tailwind",
+  nodejs:      "Node.js",
+  arduino:     "Arduino",
+  nvidia:      "NVIDIA",
+  altium:      "Altium",
+  fusion360:   "Fusion 360",
+  onshape:     "Onshape",
+  solidworks:  "SolidWorks",
+  xilinx:      "Xilinx",
+};
+
 export const SKILLS = {
   languagesAndTools: [
-    "html",
-    "css",
-    "javascript",
-    "typescript",
     "cpp",
-    "java",
     "python",
-    "ros",
-    "nodejs",
-    //"webpack",
-    //"vite",
-    "firebase",
-    // "moralis",
-    // "stripe",
-    // "figma",
-    //"tanstack-query",
+    "verilog",
+    "matlab",
+    "javascript",
+    "git",
+    "c"
   ],
   librariesAndFrameworks: [
+    "tensorflow",
+    "opencv",
+    "ros",
     "react",
-    //"redux",
     "nextjs",
-    "tailwindcss",
-    //"styledcomponents",
-    //"antdesign",
-    //"chakra-ui",
+    "linux",
   ],
   software: [
     "altium",
     "fusion360",
     "onshape",
     "solidworks",
-    "xilinx"
+    "xilinx",
   ],
 };
 

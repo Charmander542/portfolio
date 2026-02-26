@@ -8,6 +8,64 @@ import Button from "../Button/Button";
 
 const Projects = ({ isDesktop }) => {
   const targetSection = useRef(null);
+  const scrollRef = useRef(null);
+  const dragState = useRef({ isDragging: false, startX: 0, scrollLeft: 0 });
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const DRAG_THRESHOLD = 6; // px — movement below this is treated as a click
+
+    const onMouseDown = (e) => {
+      dragState.current = {
+        isDragging: true,
+        hasMoved: false,
+        startX: e.pageX - el.offsetLeft,
+        scrollLeft: el.scrollLeft,
+      };
+      el.style.cursor = "grabbing";
+      el.style.userSelect = "none";
+    };
+
+    const onMouseMove = (e) => {
+      if (!dragState.current.isDragging) return;
+      const x = e.pageX - el.offsetLeft;
+      const delta = x - dragState.current.startX;
+      if (Math.abs(delta) > DRAG_THRESHOLD) {
+        dragState.current.hasMoved = true;
+        e.preventDefault();
+        el.scrollLeft = dragState.current.scrollLeft - delta * 1.2;
+      }
+    };
+
+    const onMouseUp = () => {
+      dragState.current.isDragging = false;
+      el.style.cursor = "grab";
+      el.style.userSelect = "";
+    };
+
+    // If the user dragged, swallow the next click so the card doesn't navigate
+    const onClickCapture = (e) => {
+      if (dragState.current.hasMoved) {
+        e.stopPropagation();
+        dragState.current.hasMoved = false;
+      }
+    };
+
+    el.style.cursor = "grab";
+    el.addEventListener("mousedown", onMouseDown);
+    el.addEventListener("click", onClickCapture, true); // capture phase
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onMouseUp);
+
+    return () => {
+      el.removeEventListener("mousedown", onMouseDown);
+      el.removeEventListener("click", onClickCapture, true);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+    };
+  }, []);
 
   useEffect(() => {
     const revealTl = gsap.timeline({ defaults: { ease: Linear.easeNone } });
@@ -53,7 +111,7 @@ const Projects = ({ isDesktop }) => {
           </Button>
         </div>
 
-        <div className="mt-12 projects-scroll-wrapper seq">
+        <div className="mt-12 projects-scroll-wrapper seq" ref={scrollRef}>
           <div className="projects-scroll-track">
             {MAINPROJECTS.map((project) => (
               <ProjectTile

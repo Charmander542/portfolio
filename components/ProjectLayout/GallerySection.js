@@ -17,13 +17,14 @@ const GallerySection = ({ label, title, images = [], cols = 2 }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
           >
-            <Image
-              src={img.src}
-              alt={img.alt || ""}
-              fill
-              className={`object-${img.fit || "cover"}`}
-              style={img.rotate ? { transform: `rotate(${img.rotate}deg)` } : undefined}
-            />
+              <Image
+                src={img.src}
+                alt={img.alt || ""}
+                fill
+                className={`object-${img.fit || "cover"}`}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                style={img.rotate ? { transform: `rotate(${img.rotate}deg)` } : undefined}
+              />
           </motion.div>
         ))}
       </div>

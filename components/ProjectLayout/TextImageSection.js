@@ -18,7 +18,7 @@ const TextImageSection = ({
 
   const imageCol = (
     <div className="relative w-full h-72 sm:h-96 rounded-2xl overflow-hidden border border-gray-dark-1">
-      <Image src={image} alt={imageAlt} fill className={`object-${objectFit}`} />
+      <Image src={image} alt={imageAlt} fill className={`object-${objectFit}`} sizes="(max-width: 768px) 100vw, 50vw" />
     </div>
   );
 
