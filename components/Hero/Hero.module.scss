@@ -1,5 +1,6 @@
 .intro {
-  animation: fadeAppear 1s 0.2s;
+  animation: fadeAppear 1s 0.2s forwards;
+  opacity: 1; /* prevent dim look on reload */
 }
 
 .heroName{

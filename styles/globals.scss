@@ -88,6 +88,19 @@ html {
   @apply 2xl:container xl:px-20 md:px-12 px-4 mx-auto;
 }
 
+/* Scroll-to-section alignment: nav links land with section title visible (not too far down) */
+#home {
+  scroll-margin-top: 0;
+}
+#skills,
+#projects {
+  scroll-margin-top: 6rem;
+}
+#research,
+#contact {
+  scroll-margin-top: 5rem;
+}
+
 .pic {
   @media (min-width: 100px) {
     right: -400px;

@@ -116,9 +116,10 @@ const Hero = () => {
   };
 
   useEffect(() => {
+    if (!typedEl.current || !targetSection.current) return;
     const typed = new Typed(typedEl.current, options);
 
-    // Snap section visible instantly, then stagger each seq element up
+    // Keep section at full opacity so "Hello" never looks dim on reload
     gsap.set(targetSection.current, { opacity: 1 });
     gsap.from(targetSection.current.querySelectorAll(".seq"), {
       opacity: 0,
