@@ -1,6 +1,8 @@
 export const METADATA = {
   author: "Charles Van Hook",
   title: "Charles Van Hook | Portfolio",
+  description:
+    "Portfolio of Charles Van Hook, engineer and researcher showcasing robotics, embedded systems, and software projects.",
   siteUrl: "",
   keywords: [
     "Charles Van Hook",
@@ -104,7 +106,7 @@ export const SKILLS = {
     "opencv",
     "ros",
     "react",
-    "nextjs",
+    "tailwindcss",
     "linux",
   ],
   software: [
@@ -113,6 +115,7 @@ export const SKILLS = {
     "onshape",
     "solidworks",
     "xilinx",
+    "arduino",
   ],
 };
 
@@ -165,6 +168,7 @@ export const RESEARCH = [
       code: "https://github.com/softroboticscontrollab/SMA-resistance-Measurement",
       // pdf: "/your-paper.pdf",  ← drop a PDF into /public and set the path here
     },
+    slug: "fault_detection_safe_soft_robots",
   },
   {
     title: "Scaling Up Parallel Decoding of LoRa Channels",
@@ -178,6 +182,7 @@ export const RESEARCH = [
       pdf: "/Multiplexing.pdf",
       code: "https://github.com/Charmander542/LoRaMultiplex",
     },
+    slug: "scaling_parallel_lora_channels",
   },
 ];
 

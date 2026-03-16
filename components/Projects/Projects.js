@@ -137,6 +137,8 @@ const Projects = ({ isDesktop }) => {
           overflow-y: hidden;
           -webkit-overflow-scrolling: touch;
           scroll-snap-type: x proximity;
+          /* Extra vertical padding so tilted cards don’t get clipped */
+          padding-top: 0.75rem;
           padding-bottom: 0.75rem;
         }
 

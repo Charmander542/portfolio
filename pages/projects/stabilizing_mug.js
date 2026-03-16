@@ -5,7 +5,7 @@ import TextImageSection from "@/components/ProjectLayout/TextImageSection";
 import TechStackSection from "@/components/ProjectLayout/TechStackSection";
 import SplineSection from "@/components/ProjectLayout/SplineSection";
 
-const PROJECT_NAME = "Self-Stabilizing Mug";
+const PROJECT_NAME = "Stabilizing Mug";
 const SPLINE_URL = "https://my.spline.design/balancecup-SU4QvqrptYavHZyFHtNCt8KW/";
 
 const StabilizingMug = () => (

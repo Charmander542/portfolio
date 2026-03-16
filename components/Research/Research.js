@@ -1,13 +1,18 @@
 import { useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import { MENULINKS, RESEARCH } from "../../constants";
 import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const ResearchCard = ({ item, index }) => {
-  const { title, authors, venue, year, description, tags, links } = item;
+  const { title, authors, venue, year, description, tags, links, slug } = item;
+  const router = useRouter();
 
   return (
-    <article className="research-card relative flex flex-col gap-4 rounded-2xl border border-gray-dark-1 bg-gray-dark-3 p-6 sm:p-8">
+    <article
+      className="research-card relative flex flex-col gap-4 rounded-2xl border border-gray-dark-1 bg-gray-dark-3 p-6 sm:p-8 cursor-pointer transition-all duration-200 hover:border-yellow hover:-translate-y-1"
+      onClick={() => slug && router.push(`/research/${slug}`)}
+    >
       {/* Index number watermark */}
       <span className="absolute top-6 right-7 text-7xl font-bold text-white opacity-[0.03] select-none leading-none">
         {String(index + 1).padStart(2, "0")}

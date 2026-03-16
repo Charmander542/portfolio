@@ -123,7 +123,7 @@ const Hero = () => {
     gsap.from(targetSection.current.querySelectorAll(".seq"), {
       opacity: 0,
       y: 30,
-      duration: 1,
+      duration: 0.44,
       stagger: 0.16,
       ease: "power3.out",
       delay: 0.15,
@@ -175,7 +175,7 @@ const Hero = () => {
       {isDesktop && (
         <div
           className="pic pt-2 absolute w-1/2 h-[30rem]"
-          style={{ opacity: 0, animation: "heroRobotIn 0.7s ease-out 1s forwards" }}
+          style={{ opacity: 0, animation: "heroRobotIn 0.7s ease-out 0.55s forwards" }}
         >
           <Canvas>
             <ambientLight />

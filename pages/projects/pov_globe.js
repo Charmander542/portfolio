@@ -32,7 +32,12 @@ const PersistanceOfVisionGlobe = () => (
       </div>
     </SectionWrapper>
 
-    <SectionWrapper label="Design" title="Design Process">
+    <TextImageSection
+      label="Design"
+      title="Design Process"
+      image="/projects/pov_globe/photos/globecad.png"
+      imageAlt="POV Globe CAD model"
+    >
       <div className="space-y-4 text-gray-light-2 text-lg leading-relaxed max-w-3xl">
         <p>
           The globe utilises a central rotational axis equipped with four distinct arms, each holding
@@ -46,7 +51,7 @@ const PersistanceOfVisionGlobe = () => (
           spinning arms without wire entanglement.
         </p>
       </div>
-    </SectionWrapper>
+    </TextImageSection>
 
     <SectionWrapper label="Electronics" title="Software & Electronics">
       <div className="space-y-4 text-gray-light-2 text-lg leading-relaxed max-w-3xl">
