@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 
@@ -17,14 +16,53 @@ const GallerySection = ({ label, title, images = [], cols = 2 }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
           >
-              <Image
-                src={img.src}
-                alt={img.alt || ""}
-                fill
-                className={`object-${img.fit || "cover"}`}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                style={img.rotate ? { transform: `rotate(${img.rotate}deg)` } : undefined}
-              />
+            {(() => {
+              const src = img.src;
+              const lastDot = src.lastIndexOf(".");
+              const base = lastDot !== -1 ? src.slice(0, lastDot) : src;
+              const ext = lastDot !== -1 ? src.slice(lastDot + 1) : "jpg";
+              const isPreconverted = ext === "webp" || ext === "avif";
+              const fit = img.fit || "cover";
+              const style = img.rotate
+                ? { transform: `rotate(${img.rotate}deg)` }
+                : undefined;
+
+              if (isPreconverted) {
+                return (
+                  <img
+                    src={src}
+                    alt={img.alt || ""}
+                    loading="lazy"
+                    decoding="async"
+                    className={`absolute inset-0 w-full h-full object-${fit}`}
+                    style={style}
+                  />
+                );
+              }
+
+              return (
+                <picture>
+                  <source
+                    type="image/avif"
+                    srcSet={`${base}-400.avif 400w, ${base}-800.avif 800w, ${base}-1200.avif 1200w`}
+                  />
+                  <source
+                    type="image/webp"
+                    srcSet={`${base}-400.webp 400w, ${base}-800.webp 800w, ${base}-1200.webp 1200w`}
+                  />
+                  <img
+                    src={`${base}.${ext}`}
+                    srcSet={`${base}-400.${ext} 400w, ${base}-800.${ext} 800w, ${base}-1200.${ext} 1200w`}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
+                    decoding="async"
+                    alt={img.alt || ""}
+                    className={`absolute inset-0 w-full h-full object-${fit}`}
+                    style={style}
+                  />
+                </picture>
+              );
+            })()}
           </motion.div>
         ))}
       </div>
