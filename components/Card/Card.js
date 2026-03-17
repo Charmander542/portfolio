@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from 'next/router';
 
@@ -24,22 +24,53 @@ const Card = ({ data }) => {
     return () => mq.removeEventListener("change", handler);
   }, []);
 
+  // Derive base path for AVIF / WebP / JPG variants
+  const lastDot = image.lastIndexOf(".");
+  const base = lastDot !== -1 ? image.slice(0, lastDot) : image;
+  const ext = lastDot !== -1 ? image.slice(lastDot + 1) : "jpg";
+  const isPreconverted = ext === "webp" || ext === "avif";
+
   return (
     <motion.a
       className="relative block rounded-2xl overflow-hidden cursor-pointer select-none"
-      style={{ height: '22rem' }}
+      style={{ height: '22rem', willChange: 'transform' }}
       variants={isMobile ? undefined : cardV}
       initial={isMobile ? false : "rest"}
       whileHover={isMobile ? undefined : "hover"}
       animate={isMobile ? undefined : "rest"}
       onClick={() => router.push(formattedName)}
     >
-      {/* Image — static, no zoom */}
-      <img
-        src={image}
-        alt={name}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      {/* Image — optimized with AVIF/WebP + responsive srcSet where applicable */}
+      {isPreconverted ? (
+        // If the source is already a WebP/AVIF, just use it directly
+        <img
+          src={image}
+          loading="lazy"
+          decoding="async"
+          alt={name}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      ) : (
+        <picture>
+          <source
+            type="image/avif"
+            srcSet={`${base}-400.avif 400w, ${base}-800.avif 800w, ${base}-1200.avif 1200w`}
+          />
+          <source
+            type="image/webp"
+            srcSet={`${base}-400.webp 400w, ${base}-800.webp 800w, ${base}-1200.webp 1200w`}
+          />
+          <img
+            src={`${base}.${ext}`}
+            srcSet={`${base}-400.${ext} 400w, ${base}-800.${ext} 800w, ${base}-1200.${ext} 1200w`}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            loading="lazy"
+            decoding="async"
+            alt={name}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </picture>
+      )}
 
       {/* Gradient overlay — lightens on hover so image breathes through */}
       <motion.div
@@ -103,4 +134,4 @@ const Card = ({ data }) => {
   );
 };
 
-export default Card;
+export default React.memo(Card);
