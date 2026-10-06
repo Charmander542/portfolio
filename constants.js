@@ -6,14 +6,14 @@ export const METADATA = {
   siteUrl: "",
   keywords: [
     "Charles Van Hook",
-    "Frontend Developer",
-    "Web Developer",
-    "React Native Developer",
-    "Software Developer",
-    "Software Engineer",
+    "Electrical Engineering",
+    "PhD",
+    "Robotics",
+    "FPGA",
+    "Chip Design",
+    "Embedded Systems",
+    "Control Systems",
     "Portfolio",
-    "Devfolio",
-    "Folio",
   ].join(", "),
   language: "English",
 };
@@ -68,6 +68,7 @@ export const SOCIAL_LINKS = [
 
 export const SKILL_NAMES = {
   cpp:         "C++",
+  c:           "C",
   python:      "Python",
   verilog:     "Verilog",
   matlab:      "MATLAB",
@@ -129,9 +130,9 @@ export const MAINPROJECTS = [
     tech: ["python", "fusion360", "cpp", "opencv", "arduino"],
   },
   {
-    name: "LiDaR Robot",
+    name: "LiDAR Robot",
     image: "/projects/cheesebot.png",
-    description: "Nvidia Jetson Controled Robot with Autonomous Maping and Navigation",
+    description: "Nvidia Jetson Controlled Robot with Autonomous Mapping and Navigation",
     gradient: ["#FFA62E", "#EA4D2C"],
     url: "/projects/lidar_robot",
     tech: ["fusion360", "ros", "nvidia", "cpp"],
@@ -139,7 +140,7 @@ export const MAINPROJECTS = [
   {
     name: "Robotic Arm",
     image: "/projects/arm.png",
-    description: "3D Printed 8DOF Robotic Arm with ROS Move:it controls",
+    description: "3D Printed 7-DOF Robotic Arm with ROS MoveIt controls",
     gradient: ["#000066", "#6699FF"],
     url: "/projects/robot_arm",
     tech: ["fusion360", "ros", "cpp"],
@@ -157,11 +158,11 @@ export const MAINPROJECTS = [
 export const RESEARCH = [
   {
     title: "Fault Detection and Response for Safe Control of Artificial Muscles in Soft Robots",
-    authors: "C. Van Hook, R. Jing, I. Yang, A. P. Sabelhaus",
+    authors: "R. Jing*, C. Van Hook*, I. Yang, A. P. Sabelhaus (*equal contribution)",
     venue: "IEEE Control Systems Letters",
     year: "2025",
     description:
-      "Fault detetion system for soft robots using artificial muscles. Combining redundant sensing, model-based state estimation, and Gaussion Process regression.",
+      "This paper presents a fault detection system for soft robots using artificial muscles, combining redundant sensing, model-based state estimation, and Gaussian Process regression.",
     tags: ["Robotics", "Machine Learning", "Soft Robots"],
     links: {
       paper: "https://ieeexplore.ieee.org/document/11165112",
@@ -176,7 +177,7 @@ export const RESEARCH = [
     venue: "IEEE ICC 2026 - IOT",
     year: "2026",
     description:
-      "Parallel decoding of LoRa channels using GNU Radio. Combining channel estimation, demodulation, and decoding in a single flow.",
+      "This work scales up parallel decoding of LoRa channels using GNU Radio by combining channel estimation, demodulation, and decoding in a single flow.",
     tags: ["GNU Radio", "LoRa", "Software Defined Radio"],
     links: {
       pdf: "/Multiplexing.pdf",
@@ -206,7 +207,7 @@ export const PROJECTS = [
     done: true,
   },
   {
-    name: "LiDaR Robot",
+    name: "LiDAR Robot",
     image: "/projects/cheesebot/photos/inprogress.png",
     url: "/projects/lidar_robot",
     tech: ["fusion360", "ros", "nvidia", "cpp"],
@@ -260,7 +261,7 @@ export const PROJECTS = [
     done: true,
   },
   {
-    name: "Accesability Controller",
+    name: "Accessibility Controller",
     image: "/projects/controller/photos/front.jpg", 
     url: "/projects/accesability_controller",
     tech: ["onshape", "cpp"],
@@ -287,7 +288,7 @@ export const PROJECTS = [
     done: true,
   },
   {
-    name: "Persistance of Vision Globe",
+    name: "Persistence of Vision Globe",
     image: "/projects/pov_globe/photos/globe.jpg",
     url: "/projects/pov_globe",
     tech: ["onshape", "arduino", "python"],

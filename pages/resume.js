@@ -52,7 +52,7 @@ export default function Resume() {
                     <div className="text-right">
                         <p>Boston, MA</p>
                         <p> 4.0 GPA</p>
-                        <p className="italic">May, 2026</p>
+                        <p className="italic">May 2026</p>
                     </div>
                 </div>
                 <div className="flex justify-between mb-4">
@@ -62,7 +62,7 @@ export default function Resume() {
                     </div>
                     <div className="text-right">
                         <p>Los Angeles, CA</p>
-                        <p className="italic">June, 2023</p>
+                        <p className="italic">June 2023</p>
                     </div>
                 </div>
             </section>
@@ -112,7 +112,7 @@ communicated with senior engineers to test them in labs</p>
                 <div className="flex justify-between mb-8">
                     <div>
                         <h2 className="text-mush-light text-4xl font-semibold">Hackathon First Place</h2>
-                        <a onClick={() => {router.push(`/projects/accesability_controller`);}}><p className="text-blue cursor-pointer text-lg font-medium">Accesability Controller</p></a>
+                        <a onClick={() => {router.push(`/projects/accesability_controller`);}}><p className="text-blue cursor-pointer text-lg font-medium">Accessibility Controller</p></a>
                     </div>
                     <div className="text-right">
                         <p>Boston University Hardware Hackathon</p>

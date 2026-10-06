@@ -6,7 +6,7 @@ import GallerySection from "@/components/ProjectLayout/GallerySection";
 import TechStackSection from "@/components/ProjectLayout/TechStackSection";
 import SplineSection from "@/components/ProjectLayout/SplineSection";
 
-const PROJECT_NAME = "Accesability Controller";
+const PROJECT_NAME = "Accessibility Controller";
 const SPLINE_URL = "";
 
 const AccessabilityController = () => (

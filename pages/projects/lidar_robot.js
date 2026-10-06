@@ -7,7 +7,7 @@ import TechStackSection from "@/components/ProjectLayout/TechStackSection";
 import SplineSection from "@/components/ProjectLayout/SplineSection";
 import EmbedSection from "@/components/ProjectLayout/EmbedSection";
 
-const PROJECT_NAME = "LiDaR Robot";
+const PROJECT_NAME = "LiDAR Robot";
 const SPLINE_URL = "";
 const FUSION_URL =
   "https://windwardschool11.autodesk360.com/shares/public/SH30dd5QT870c25f12fc96150d84c057b268?mode=embed";
@@ -16,7 +16,7 @@ const LidarRobot = () => (
   <ProjectLayout projectName={PROJECT_NAME}>
     <HeroSection
       image="/projects/cheesebot/photos/inprogress.png"
-      title="LiDaR Robot"
+      title="LiDAR Robot"
       subtitle="Autonomous campus-mapping robot powered by an Nvidia Jetson Nano and ROS"
       tags={["Robotics", "ROS", "SLAM", "Autonomous Navigation"]}
       gradient={["#FFA62E", "#EA4D2C"]}
@@ -79,7 +79,7 @@ const LidarRobot = () => (
       </p>
     </SectionWrapper>
 
-    {SPLINE_URL && <SplineSection url={SPLINE_URL} title="LiDaR Robot 3D Model" />}
+    {SPLINE_URL && <SplineSection url={SPLINE_URL} title="LiDAR Robot 3D Model" />}
 
     <GallerySection
       label="Gallery"
@@ -92,7 +92,7 @@ const LidarRobot = () => (
     <EmbedSection
       url={FUSION_URL}
       label="3D Model"
-      title="LiDaR Robot — Fusion 360"
+      title="LiDAR Robot — Fusion 360"
       height="600px"
       hint="Scroll to zoom · Click and drag to orbit · Right-click to pan"
     />
