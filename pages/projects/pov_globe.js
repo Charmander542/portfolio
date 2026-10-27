@@ -5,10 +5,10 @@ import TextImageSection from "@/components/ProjectLayout/TextImageSection";
 import TechStackSection from "@/components/ProjectLayout/TechStackSection";
 import SplineSection from "@/components/ProjectLayout/SplineSection";
 
-const PROJECT_NAME = "Persistance of Vision Globe";
+const PROJECT_NAME = "Persistence of Vision Globe";
 const SPLINE_URL = "https://my.spline.design/untitled-b08c21b62a072526aa315f35f5b99e86/";
 
-const PersistanceOfVisionGlobe = () => (
+const PersistenceOfVisionGlobe = () => (
   <ProjectLayout projectName={PROJECT_NAME}>
     <HeroSection
       video="/projects/pov_globe/globevideo.mp4"
@@ -91,4 +91,4 @@ const PersistanceOfVisionGlobe = () => (
   </ProjectLayout>
 );
 
-export default PersistanceOfVisionGlobe;
+export default PersistenceOfVisionGlobe;

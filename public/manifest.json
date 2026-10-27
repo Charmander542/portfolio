@@ -1,10 +1,32 @@
 {
-  "theme_color": "#000000",
+  "theme_color": "#1c0f1f",
   "background_color": "#1c0f1f",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Portfolio | Charles Van Hook",
+  "name": "Charles Van Hook | EE PhD Portfolio",
   "short_name": "Charles Van Hook",
-  "description": "Charles Van Hook's Portfolio Website."
+  "description": "Stanford EE PhD — chip design, robotics, and embedded systems.",
+  "icons": [
+    {
+      "src": "/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
 }

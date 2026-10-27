@@ -15,7 +15,7 @@ const GriffithObservatory = () => (
     <HeroSection
       image="/projects/griffith_observatory/photos/celestial.jpg"
       title="Griffith Observatory Celestial Globe"
-      subtitle="Mechanical design, mesh preparation, and structural optimisation of 88 cast-bronze constellation figures for the Celestial Globe in Griffith Observatory's Gravity's Stairway — Engineering Intern, 2020–2023"
+      subtitle="Mechanical design, mesh preparation, and structural optimisation of 88 cast-bronze constellation figures for the Celestial Globe in Griffith Observatory's Gravity's Stairway — Engineering Consultant, 2020–2023"
       tags={["Structural Engineering", "Nonlinear Programming", "Mesh Repair", "Mechanical Design", "Foundry Prep"]}
       gradient={["#0a0a1a", "#1a1a3d"]}
     />
@@ -26,7 +26,7 @@ const GriffithObservatory = () => (
         The Celestial Globe in Griffith Observatory&apos;s Gravity&apos;s Stairway is a massive rotating
         sculpture by Cindy Ingraham Keefer, accurately mapping the ancient Greek constellations
         from the Farnese Atlas onto a sphere that spins as the Greeks imagined the sky turning in
-        Atlas&apos;s grip. I worked on this project as an intern from May 2020 to November 2023,
+        Atlas&apos;s grip. I worked on this project as an engineering consultant from 2020 to 2023,
         contributing across mechanical design, mesh preparation, and structural optimisation to
         take the artist&apos;s 3D models all the way to foundry-ready bronze castings.
       </p>

@@ -58,22 +58,22 @@ const FPGAMicrocontroller = () => (
     <HeroSection
       image="/projects/fpga_microcontroller/photos/fpga.jpg"
       title="FPGA Microcontroller"
-      subtitle="Full MIPS-inspired microcontroller implemented in Verilog on a Zynq A7 FPGA — complete with custom compiler and UART programmer"
-      tags={["Embedded Systems", "FPGA", "Verilog", "Computer Architecture"]}
+      subtitle="Five-stage MIPS-like CPU in Verilog on a Xilinx Artix-7 FPGA — custom ISA, hazard handling, compiler, and UART programmer"
+      tags={["RTL", "FPGA", "Verilog", "Artix-7", "Computer Architecture", "Vivado"]}
       gradient={["#0a0a2e", "#1a1a5c"]}
     />
 
-<SectionWrapper label="Overview" title="Project Summary" accent>
+    <SectionWrapper label="Overview" title="Project Summary" accent>
       <div className="space-y-4 text-gray-light-2 text-lg leading-relaxed max-w-3xl">
         <p>
           This project served as the final capstone for a logic design course, undertaken with a team
-          of two electrical engineers and one computer engineer over one month (November–December 2024).
-          The primary goal was to design, implement, and program a complete MIPS processor entirely on
-          an AMD Zynq A7 FPGA platform.
+          of electrical and computer engineers over one month (November–December 2024). The goal was to
+          design, implement, and program a complete MIPS-like processor in Verilog on a Xilinx
+          Artix-7 FPGA (A7-class device), brought up with Xilinx Vivado.
         </p>
         <p>
-          The result is a fully functional microcontroller — microprocessor, interrupt handler, and
-          peripheral bus — synthesised and running on real FPGA hardware, programmable over UART from
+          The result is a fully functional microcontroller — pipelined microprocessor, interrupt handler,
+          and peripheral bus — synthesised and running on real FPGA hardware, programmable over UART from
           code written in a custom higher-level language compiled by our own toolchain.
         </p>
       </div>
@@ -166,7 +166,7 @@ const FPGAMicrocontroller = () => (
       </a>
     </SectionWrapper>
 
-    <TechStackSection tech={["cpp", "python", "xilinx"]} />
+    <TechStackSection tech={["verilog", "vivado", "xilinx", "python"]} />
   </ProjectLayout>
 );
 

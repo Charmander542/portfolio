@@ -56,9 +56,8 @@ const Skills = () => {
               My Skills
             </h1>
             <h2 className="text-[1.65rem] font-medium md:max-w-xl w-full mt-2">
-              Leveraging a diverse array of software skills, I have successfully
-              brought numerous projects to life. Here&apos;s a snapshot of the
-              technical expertise I utilized in my creations:{" "}
+              From RTL and EDA tools to robotics stacks and embedded firmware —
+              a snapshot of the languages and platforms behind my work.
             </h2>
           </motion.div>
 
@@ -87,7 +86,7 @@ const Skills = () => {
           <motion.div className="flex flex-wrap mt-10" variants={fadeUp} custom={3}>
             <div className="mr-16 xs:mr-20 mb-6">
               <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4">
-                ENGINEERING SOFTWARE
+                HARDWARE / EDA &amp; CAD
               </h3>
               <div className="flex flex-wrap gap-6 transform-gpu">
                 {SKILLS.software.map((skill) => (

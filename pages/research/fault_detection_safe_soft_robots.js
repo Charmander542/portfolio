@@ -52,10 +52,14 @@ const FaultDetectionSoftRobots = () => (
       </div>
     </SectionWrapper>
 
-    <SectionWrapper label="Publication" title="Paper & Code">
+    <SectionWrapper label="Publication" title="Paper">
       <p className="text-gray-light-2 text-lg leading-relaxed max-w-3xl">
-        This work appears in <span className="font-semibold">IEEE Control Systems Letters</span>.
-        You can read the paper on IEEE Xplore and explore the accompanying code on GitHub.
+        This work appears in <span className="font-semibold">IEEE Control Systems Letters</span>{" "}
+        (vol. 9, 2025). Authors:{" "}
+        <span className="text-white">
+          R. Jing*, C. Van Hook*, I. Yang, A. P. Sabelhaus (*equal contribution)
+        </span>
+        . Read it on IEEE Xplore or download the open-access PDF.
       </p>
       <div className="flex flex-wrap gap-3 mt-4">
         <a
@@ -64,15 +68,15 @@ const FaultDetectionSoftRobots = () => (
           rel="noreferrer"
           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono font-medium border border-yellow text-yellow hover:bg-yellow hover:text-gray-dark-5 transition-all duration-200"
         >
-          Paper
+          IEEE Xplore
         </a>
         <a
-          href="https://github.com/softroboticscontrollab/SMA-resistance-Measurement"
+          href="/research/fault/paper.pdf"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono font-medium border border-gray-dark-1 text-gray-light-2 hover:border-yellow hover:text-yellow transition-all duration-200"
         >
-          Code
+          PDF
         </a>
       </div>
     </SectionWrapper>
@@ -83,11 +87,11 @@ const FaultDetectionSoftRobots = () => (
       cols={2}
       images={[
         {
-          src: "/research/fault_soft_robots/diagram_1.png",
+          src: "/research/fault/diagram_1.png",
           alt: "Fault detection architecture diagram",
         },
         {
-          src: "/research/fault_soft_robots/diagram_2.png",
+          src: "/research/fault/diagram_2.png",
           alt: "Soft robot and sensing layout",
         },
       ]}

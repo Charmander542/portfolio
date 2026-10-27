@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ProjectTile from "./ProjectTile/ProjectTile";
 import Button from "../Button/Button";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = ({ isDesktop }) => {
   const targetSection = useRef(null);

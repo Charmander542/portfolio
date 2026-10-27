@@ -4,6 +4,8 @@ import { MENULINKS, RESEARCH } from "../../constants";
 import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const ResearchCard = ({ item, index }) => {
   const { title, authors, venue, year, description, tags, links, slug } = item;
   const router = useRouter();
@@ -63,6 +65,7 @@ const ResearchCard = ({ item, index }) => {
               href={links.paper}
               target="_blank"
               rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono font-medium border border-yellow text-yellow hover:bg-yellow hover:text-gray-dark-5 transition-all duration-200"
             >
               {/* Document icon */}
@@ -80,6 +83,7 @@ const ResearchCard = ({ item, index }) => {
               href={links.pdf}
               target="_blank"
               rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono font-medium border border-yellow text-yellow hover:bg-yellow hover:text-gray-dark-5 transition-all duration-200"
             >
               {/* Eye icon */}
@@ -96,6 +100,7 @@ const ResearchCard = ({ item, index }) => {
             <a
               href={links.pdf}
               download
+              onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono font-medium border border-gray-dark-1 text-gray-light-2 hover:border-yellow hover:text-yellow transition-all duration-200"
             >
               {/* Download icon */}
@@ -114,6 +119,7 @@ const ResearchCard = ({ item, index }) => {
               href={links.code}
               target="_blank"
               rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono font-medium border border-gray-dark-1 text-gray-light-2 hover:border-yellow hover:text-yellow transition-all duration-200"
             >
               {/* Code icon */}
@@ -171,7 +177,7 @@ const Research = () => {
             My Research
           </h1>
           <h2 className="text-[1.65rem] font-medium md:max-w-xl w-full mt-2">
-            Academic work, publications, and ongoing investigations at the intersection of robotics, AI, and embedded systems.
+            Academic work in soft robotics, wireless systems, and embedded sensing — with a growing focus on chip design and efficient hardware.
           </h2>
         </div>
 

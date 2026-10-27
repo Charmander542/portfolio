@@ -7,6 +7,25 @@ const nextConfig = {
   },
   // Explicitly opt into Turbopack (default in Next.js 16).
   turbopack: {},
+  async redirects() {
+    return [
+      {
+        source: "/projects/accesability_controller",
+        destination: "/projects/accessibility_controller",
+        permanent: true,
+      },
+      {
+        source: "/projects/robot_arm",
+        destination: "/projects/robotic_arm",
+        permanent: true,
+      },
+      {
+        source: "/projects/chessboard",
+        destination: "/projects/ai_chessboard",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

@@ -149,13 +149,20 @@ const Hero = () => {
       `}</style>
       <div className="flex flex-col pt-40 md:pt-0 select-none">
         <h1 className={`${styles.intro} font-mono font-bold text-5xl seq`}>
-          Hello, <br /> I&apos;m&nbsp;
+          Hello, <br /> I&apos;m{" "}
+          <span className="text-5xl text-mush-light font-mono leading-relaxed">
+            Charles Van Hook
+          </span>
+        </h1>
+        <p className="font-mono text-2xl sm:text-3xl mt-3 seq text-gray-light-2">
+          <span className="text-mush-light">I&apos;m&nbsp;</span>
           <span
             ref={typedEl}
-            className="text-5xl text-mush-light font-mono leading-relaxed"
-          ></span>
-        </h1>
-        <p></p>
+            className="text-mush-light font-mono leading-relaxed"
+          >
+            an Engineer
+          </span>
+        </p>
         <div className="seq">
           <Profiles />
         </div>

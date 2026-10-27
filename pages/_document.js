@@ -5,10 +5,14 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="manifest" href="/manifest.json" />
-          <link rel="icon" href="/favicons/favicon.ico" />
-          <link rel="apple-touch-icon" href="/favicons/favicon192x192.png" />
-          <meta name="theme-color" content="#7000FF" />
+          <link rel="manifest" href="/site.webmanifest" />
+          <link rel="icon" href="/favicons/favicon.ico" sizes="any" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicons/apple-touch-icon.png"
+          />
+          <meta name="theme-color" content="#1c0f1f" />
         </Head>
         <body>
           <Main />

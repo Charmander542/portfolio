@@ -1,19 +1,26 @@
 export const METADATA = {
   author: "Charles Van Hook",
-  title: "Charles Van Hook | Portfolio",
+  title: "Charles Van Hook | EE PhD · Chip Design & Robotics",
   description:
-    "Portfolio of Charles Van Hook, engineer and researcher showcasing robotics, embedded systems, and software projects.",
-  siteUrl: "",
+    "Portfolio of Charles Van Hook — Stanford EE PhD student. Chip design, ASIC/RTL, Verilog, robotics, and embedded systems. Former Tesla Robotics Engineer.",
+  siteUrl: "https://charlesvanhook.com",
+  image: "/logo.svg",
+  twitterHandle: "",
   keywords: [
     "Charles Van Hook",
-    "Frontend Developer",
-    "Web Developer",
-    "React Native Developer",
-    "Software Developer",
-    "Software Engineer",
+    "Electrical Engineering",
+    "Stanford EE PhD",
+    "Chip Design",
+    "ASIC",
+    "RTL",
+    "SystemVerilog",
+    "Verilog",
+    "FPGA",
+    "Cadence Virtuoso",
+    "Robotics",
+    "Soft Robots",
+    "Tesla",
     "Portfolio",
-    "Devfolio",
-    "Folio",
   ].join(", "),
   language: "English",
 };
@@ -41,16 +48,17 @@ export const MENULINKS = [
   },
 ];
 
+// Roles only — the name stays as fixed text in the hero for SEO / no-JS.
 export const TYPED_STRINGS = [
-  " Charles Van Hook",
-  " an Engineer",
-  " a Researcher"
+  "an Engineer",
+  "a Researcher",
+  "a Chip Designer",
 ];
 
 export const SOCIAL_LINKS = [
   {
     name: "mail",
-    url: "mailto:cvanhook@bu.edu",
+    url: "mailto:cvanhook@stanford.edu",
   },
   {
     name: "linkedin",
@@ -68,6 +76,7 @@ export const SOCIAL_LINKS = [
 
 export const SKILL_NAMES = {
   cpp:         "C++",
+  c:           "C",
   python:      "Python",
   verilog:     "Verilog",
   matlab:      "MATLAB",
@@ -89,17 +98,21 @@ export const SKILL_NAMES = {
   onshape:     "Onshape",
   solidworks:  "SolidWorks",
   xilinx:      "Xilinx",
+  cadence:     "Cadence Virtuoso",
+  synopsys:    "Synopsys",
+  vivado:      "Vivado",
+  spice:       "SPICE",
 };
 
 export const SKILLS = {
   languagesAndTools: [
     "cpp",
     "python",
+    "c",
     "verilog",
     "matlab",
     "javascript",
     "git",
-    "c"
   ],
   librariesAndFrameworks: [
     "tensorflow",
@@ -110,16 +123,28 @@ export const SKILLS = {
     "linux",
   ],
   software: [
+    "cadence",
+    "synopsys",
+    "vivado",
+    "spice",
+    "xilinx",
     "altium",
     "fusion360",
     "onshape",
     "solidworks",
-    "xilinx",
     "arduino",
   ],
 };
 
 export const MAINPROJECTS = [
+  {
+    name: "FPGA Microcontroller",
+    image: "/projects/fpga_microcontroller/photos/fpga.jpg",
+    description: "Five-stage MIPS-like CPU in Verilog on a Xilinx Artix-7 FPGA",
+    gradient: ["#0a0a2e", "#1a1a5c"],
+    url: "/projects/fpga_microcontroller",
+    tech: ["verilog", "vivado", "xilinx", "python"],
+  },
   {
     name: "Hexapod",
     image: "/projects/spider.png",
@@ -131,7 +156,7 @@ export const MAINPROJECTS = [
   {
     name: "LiDaR Robot",
     image: "/projects/cheesebot.png",
-    description: "Nvidia Jetson Controled Robot with Autonomous Maping and Navigation",
+    description: "Nvidia Jetson Controlled Robot with Autonomous Mapping and Navigation",
     gradient: ["#FFA62E", "#EA4D2C"],
     url: "/projects/lidar_robot",
     tech: ["fusion360", "ros", "nvidia", "cpp"],
@@ -139,41 +164,33 @@ export const MAINPROJECTS = [
   {
     name: "Robotic Arm",
     image: "/projects/arm.png",
-    description: "3D Printed 8DOF Robotic Arm with ROS Move:it controls",
+    description: "3D Printed 7-DOF Robotic Arm with ROS MoveIt controls",
     gradient: ["#000066", "#6699FF"],
-    url: "/projects/robot_arm",
+    url: "/projects/robotic_arm",
     tech: ["fusion360", "ros", "cpp"],
-  },
-  {
-    name: "AI Chessboard",
-    image: "/projects/chessboard.png",
-    description: "An AI Controlled Chessboard that Emulates Players",
-    gradient: ["#142D46", "#2E4964"],
-    url: "/projects/chessboard",
-    tech: ["fusion360", "altium", "cpp"],
   },
 ];
 
 export const RESEARCH = [
   {
     title: "Fault Detection and Response for Safe Control of Artificial Muscles in Soft Robots",
-    authors: "C. Van Hook, R. Jing, I. Yang, A. P. Sabelhaus",
+    authors: "R. Jing*, C. Van Hook*, I. Yang, A. P. Sabelhaus (*equal contribution)",
     venue: "IEEE Control Systems Letters",
     year: "2025",
     description:
-      "Fault detetion system for soft robots using artificial muscles. Combining redundant sensing, model-based state estimation, and Gaussion Process regression.",
+      "Fault detection system for soft robots using artificial muscles. Combining redundant sensing, model-based state estimation, and Gaussian Process regression.",
     tags: ["Robotics", "Machine Learning", "Soft Robots"],
     links: {
       paper: "https://ieeexplore.ieee.org/document/11165112",
-      code: "https://github.com/softroboticscontrollab/SMA-resistance-Measurement",
-      // pdf: "/your-paper.pdf",  ← drop a PDF into /public and set the path here
+      pdf: "/research/fault/paper.pdf",
+      // Code repo previously linked 404s; omit until a public repo is available.
     },
     slug: "fault_detection_safe_soft_robots",
   },
   {
     title: "Scaling Up Parallel Decoding of LoRa Channels",
     authors: "C. Van Hook, T. Adler, D. Starobinski",
-    venue: "IEEE ICC 2026 - IOT",
+    venue: "IEEE ICC 2026 - IoT",
     year: "2026",
     description:
       "Parallel decoding of LoRa channels using GNU Radio. Combining channel estimation, demodulation, and decoding in a single flow.",
@@ -187,6 +204,15 @@ export const RESEARCH = [
 ];
 
 export const PROJECTS = [
+  {
+    name: "FPGA Microcontroller",
+    image: "/projects/fpga_microcontroller/photos/fpga.jpg",
+    url: "/projects/fpga_microcontroller",
+    tech: ["verilog", "vivado", "xilinx", "python"],
+    category: ["Engineering", "Code"],
+    tags: ["FPGA", "Verilog", "RTL", "Computer Architecture", "Artix-7"],
+    done: true,
+  },
   {
     name: "Griffith Observatory Celestial Globe",
     image: "/projects/griffith_observatory/photos/celestial.jpg",
@@ -260,9 +286,9 @@ export const PROJECTS = [
     done: true,
   },
   {
-    name: "Accesability Controller",
-    image: "/projects/controller/photos/front.jpg", 
-    url: "/projects/accesability_controller",
+    name: "Accessibility Controller",
+    image: "/projects/controller/photos/front.jpg",
+    url: "/projects/accessibility_controller",
     tech: ["onshape", "cpp"],
     category: ['Engineering', 'Code'],
     tags: ["Embedded Systems", "Hackathon", "3D Printing", "HID"],
@@ -287,30 +313,13 @@ export const PROJECTS = [
     done: true,
   },
   {
-    name: "Persistance of Vision Globe",
+    name: "Persistence of Vision Globe",
     image: "/projects/pov_globe/photos/globe.jpg",
     url: "/projects/pov_globe",
     tech: ["onshape", "arduino", "python"],
     category: ['Engineering', '3D Printing'],
     tags: ["Embedded Systems", "3D Printing", "Persistence of Vision", "Laser Cutting"],
     done: true,
-  },
-  {
-    name: "FPGA Microcontroller",
-    image: "/projects/fpga_microcontroller/photos/fpga.jpg",
-    url: "/projects/fpga_microcontroller",
-    tech: ["cpp", "python"],
-    category: ['Engineering', 'Code'],
-    tags: ["Embedded Systems", "FPGA", "Verilog", "Computer Architecture"],
-    done: true,
-  },
-  {
-    name: "Password Manager",
-    image: "/projects/password_manager/photos/password_manager.png",
-    tech: ["cpp", "altium"],
-    category: ['Engineering', 'PCB Design', 'Code'],
-    tags: ["Embedded Systems", "PCB Design", "Security", "Cryptography"],
-    done: false,
   },
   {
     name: "Electronic Twister",
@@ -322,28 +331,21 @@ export const PROJECTS = [
     done: true
   },
   {
+    name: "Password Manager",
+    image: "/projects/inprogress.png",
+    url: "/projects/password_manager",
+    tech: ["cpp", "altium"],
+    category: ['Engineering', 'PCB Design', 'Code'],
+    tags: ["Embedded Systems", "PCB Design", "Security", "Cryptography"],
+    done: false,
+  },
+  {
     name: "Electronic Pickleball PCB",
-    image: "/projects/electronic_pickleball_pcb/photos/electronic_pickleball_pcb.png",
+    image: "/projects/inprogress.png",
+    url: "/projects/electronic_pickleball_pcb",
     tech: ["altium"],
     category: ['Engineering', 'PCB Design'],
     tags: ["Embedded Systems", "PCB Design", "Sports Technology"],
     done: false,
-  }
-
-
-]
-/*
-  {
-    name: "POV Globe",
-    image: "/projects/cncmachine/photos/full.png",
-    tech: ["onshape", "arduino"],
-    category: ['Engineering', 'Code'],
-    done: true,
   },
-  {
-    name: "Altoids Speaker",
-    image: "/projects/speaker/photos/full.png",
-    tech: ["onshape", "altium"],
-    category: ['Engineering', 'PCB Design'],
-    done: true,
-  },*/
+];
