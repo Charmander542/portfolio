@@ -140,7 +140,7 @@ export const MAINPROJECTS = [
   {
     name: "FPGA Microcontroller",
     image: "/projects/fpga_microcontroller/photos/fpga.jpg",
-    description: "Five-stage MIPS-like CPU in Verilog on a Xilinx Artix-7 FPGA",
+    description: "Five-stage MIPS-like CPU in Verilog on a Digilent Nexys A7 (Artix-7)",
     gradient: ["#0a0a2e", "#1a1a5c"],
     url: "/projects/fpga_microcontroller",
     tech: ["verilog", "vivado", "xilinx", "python"],
