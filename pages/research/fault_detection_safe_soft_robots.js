@@ -87,11 +87,11 @@ const FaultDetectionSoftRobots = () => (
       cols={2}
       images={[
         {
-          src: "/research/fault/diagram_1.png",
+          src: "/research/fault/diagram_1.webp",
           alt: "Fault detection architecture diagram",
         },
         {
-          src: "/research/fault/diagram_2.png",
+          src: "/research/fault/diagram_2.webp",
           alt: "Soft robot and sensing layout",
         },
       ]}
