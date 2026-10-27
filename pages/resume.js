@@ -218,8 +218,8 @@ export default function Resume() {
                 </p>
                 <p>
                   Implemented a five-stage pipelined MIPS-like CPU in Verilog on
-                  a Xilinx Artix-7 FPGA, covering fetch/decode/execute/memory/
-                  writeback and hazard handling.
+                  a Digilent Nexys A7 (Artix-7) FPGA, covering
+                  fetch/decode/execute/memory/writeback and hazard handling.
                 </p>
               </div>
               <div className="mb-8">

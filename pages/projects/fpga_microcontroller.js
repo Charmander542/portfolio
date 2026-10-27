@@ -58,8 +58,8 @@ const FPGAMicrocontroller = () => (
     <HeroSection
       image="/projects/fpga_microcontroller/photos/fpga.jpg"
       title="FPGA Microcontroller"
-      subtitle="Five-stage MIPS-like CPU in Verilog on a Xilinx Artix-7 FPGA — custom ISA, hazard handling, compiler, and UART programmer"
-      tags={["RTL", "FPGA", "Verilog", "Artix-7", "Computer Architecture", "Vivado"]}
+      subtitle="Five-stage MIPS-like CPU in Verilog on a Digilent Nexys A7 (Artix-7) — custom ISA, hazard handling, compiler, and UART programmer"
+      tags={["RTL", "FPGA", "Verilog", "Nexys A7", "Artix-7", "Computer Architecture", "Vivado"]}
       gradient={["#0a0a2e", "#1a1a5c"]}
     />
 
@@ -68,8 +68,8 @@ const FPGAMicrocontroller = () => (
         <p>
           This project served as the final capstone for a logic design course, undertaken with a team
           of electrical and computer engineers over one month (November–December 2024). The goal was to
-          design, implement, and program a complete MIPS-like processor in Verilog on a Xilinx
-          Artix-7 FPGA (A7-class device), brought up with Xilinx Vivado.
+          design, implement, and program a complete MIPS-like processor in Verilog on a Digilent
+          Nexys A7 (Xilinx Artix-7 FPGA), brought up with Xilinx Vivado.
         </p>
         <p>
           The result is a fully functional microcontroller — pipelined microprocessor, interrupt handler,
