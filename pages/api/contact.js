@@ -1,5 +1,5 @@
 const SERVICE_ID = process.env.EMAILJS_SERVICE_ID || "service_62rt0cn";
-const TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID || "template_ept3zjr";
+const TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID || "template_8tk215o";
 const PUBLIC_KEY =
   process.env.EMAILJS_PUBLIC_KEY || "dDJ3Cldk8CqHGyqyk";
 const PRIVATE_KEY = process.env.EMAILJS_PRIVATE_KEY || "";

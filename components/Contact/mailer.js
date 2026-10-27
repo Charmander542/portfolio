@@ -6,7 +6,7 @@ export const CONTACT_EMAIL =
 const SERVICE_ID =
   process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_62rt0cn";
 const TEMPLATE_ID =
-  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_ept3zjr";
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_8tk215o";
 const PUBLIC_KEY =
   process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "dDJ3Cldk8CqHGyqyk";
 
