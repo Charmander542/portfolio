@@ -12,7 +12,7 @@ const SPLINE_URL = "https://my.spline.design/untitled-b720bd546b27eb17e1c7371763
 const Chessboard = () => (
   <ProjectLayout projectName={PROJECT_NAME}>
     <HeroSection
-      image="/projects/chessboard/photos/full.png"
+      image="/projects/chessboard/photos/full.jpg"
       title="AI Chessboard"
       subtitle="Self-playing chessboard with a core-XY gantry and personalized AI opponent"
       tags={["Robotics", "PCB Design", "AI", "Embedded Systems"]}
@@ -31,7 +31,7 @@ const Chessboard = () => (
     <TextImageSection
       label="Build"
       title="Design Process"
-      image="/projects/chessboard/photos/corexy.png"
+      image="/projects/chessboard/photos/corexy.jpg"
       imageAlt="CoreXY gantry diagram"
       objectFit="contain"
     >
@@ -46,15 +46,15 @@ const Chessboard = () => (
     <GallerySection
       label="Gallery"
       images={[
-        { src: "/projects/chessboard/photos/reedswitches.png", alt: "Reed switches" },
-        { src: "/projects/chessboard/photos/open.png", alt: "Board open showing gantry" },
+        { src: "/projects/chessboard/photos/reedswitches.jpg", alt: "Reed switches" },
+        { src: "/projects/chessboard/photos/open.jpg", alt: "Board open showing gantry" },
       ]}
     />
 
     <TextImageSection
       label="Software & Hardware"
       title="Software & Hardware"
-      image="/projects/chessboard/photos/board.png"
+      image="/projects/chessboard/photos/board.jpg"
       imageAlt="Control PCB"
       reversed
     >

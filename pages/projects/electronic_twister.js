@@ -20,7 +20,7 @@ const ElectronicTwister = () => (
     <TextImageSection
       label="Overview"
       title="Project Summary"
-      image="/projects/electronic_twister/photos/twisterfull.JPG"
+      image="/projects/electronic_twister/photos/twisterfull.jpg"
       imageAlt="Full Electronic Twister board"
       accent
     >
@@ -43,7 +43,7 @@ const ElectronicTwister = () => (
     <TextImageSection
       label="Hardware"
       title="Buttons & Physical Build"
-      image="/projects/electronic_twister/photos/twister.JPG"
+      image="/projects/electronic_twister/photos/twister.jpg"
       imageAlt="3D-printed button array"
       reversed
     >
@@ -64,7 +64,7 @@ const ElectronicTwister = () => (
     <TextImageSection
       label="Software"
       title="Kernel-Space Game Engine"
-      image="/projects/electronic_twister/photos/twisterscreen.JPG"
+      image="/projects/electronic_twister/photos/twisterscreen.jpg"
       imageAlt="Game display output"
     >
       <div className="space-y-4 text-gray-light-2 text-lg leading-relaxed">
@@ -105,9 +105,9 @@ const ElectronicTwister = () => (
       title="Photos"
       cols={3}
       images={[
-        { src: "/projects/electronic_twister/photos/twisterfull.JPG", alt: "Full board assembled" },
-        { src: "/projects/electronic_twister/photos/twister.JPG", alt: "Button array detail" },
-        { src: "/projects/electronic_twister/photos/twisterscreen.JPG", alt: "Display showing game output" },
+        { src: "/projects/electronic_twister/photos/twisterfull.jpg", alt: "Full board assembled" },
+        { src: "/projects/electronic_twister/photos/twister.jpg", alt: "Button array detail" },
+        { src: "/projects/electronic_twister/photos/twisterscreen.jpg", alt: "Display showing game output" },
       ]}
     />
 

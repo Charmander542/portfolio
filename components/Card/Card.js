@@ -62,7 +62,6 @@ const Card = ({ data }) => {
           />
           <img
             src={`${base}.${ext}`}
-            srcSet={`${base}-400.${ext} 400w, ${base}-800.${ext} 800w, ${base}-1200.${ext} 1200w`}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             loading="lazy"
             decoding="async"

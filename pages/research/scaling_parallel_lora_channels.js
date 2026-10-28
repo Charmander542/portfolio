@@ -19,7 +19,7 @@ const ScalingParallelLoRa = () => (
       subtitle="Software-defined radio pipeline for decoding multiple LoRa channels in parallel using GNU Radio."
       gradient={["#0F172A", "#22C55E"]}
       tags={["LoRa", "GNU Radio", "Software Defined Radio", "Signal Processing"]}
-      image="/research/lora/flowgraph.png"
+      image="/research/lora/flowgraph.jpg"
     />
 
     <SectionWrapper label="Overview" title="Research Summary" accent>

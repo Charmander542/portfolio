@@ -12,7 +12,7 @@ const SPLINE_URL = "";
 const RoboticArm = () => (
   <ProjectLayout projectName={PROJECT_NAME}>
     <HeroSection
-      image="/projects/robotarm/photos/parts.png"
+      image="/projects/robotarm/photos/parts.jpg"
       title="Robotic Arm"
       subtitle="Seven-DOF 3D-printed arm designed in Fusion 360 with ROS MoveIt! integration"
       tags={["Robotics", "3D Printing", "ROS", "CAD"]}
@@ -45,7 +45,7 @@ const RoboticArm = () => (
     <GallerySection
       label="Gallery"
       images={[
-        { src: "/projects/robotarm/photos/moveit.png", alt: "MoveIt! simulation" },
+        { src: "/projects/robotarm/photos/moveit.jpg", alt: "MoveIt! simulation" },
         { src: "/projects/robotarm/photos/dofdiagram.png", alt: "DOF diagram" },
       ]}
     />

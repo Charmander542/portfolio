@@ -30,7 +30,7 @@ const ElectricSkateboard = () => (
     <TextImageSection
       label="Build"
       title="Design Process"
-      image="/projects/skateboard/photos/version1.png"
+      image="/projects/skateboard/photos/version1.jpg"
       imageAlt="Version 1 with independent suspension"
     >
       <p className="text-gray-light-2 text-lg leading-relaxed">
@@ -46,7 +46,7 @@ const ElectricSkateboard = () => (
     <TextImageSection
       label="Electronics"
       title="Software & Electronics"
-      image="/projects/skateboard/photos/battery.png"
+      image="/projects/skateboard/photos/battery.jpg"
       imageAlt="Custom battery pack"
       reversed
     >
@@ -71,10 +71,10 @@ const ElectricSkateboard = () => (
       title="Photos & Gallery"
       cols={2}
       images={[
-        { src: "/projects/skateboard/photos/truckclose.png", alt: "CNC-machined truck detail", fit: "contain" },
-        { src: "/projects/skateboard/photos/front.png", alt: "Front control board" },
-        { src: "/projects/skateboard/photos/open.png", alt: "Battery compartment open" },
-        { src: "/projects/skateboard/photos/P1.png", alt: "Version 1 assembled" },
+        { src: "/projects/skateboard/photos/truckclose.jpg", alt: "CNC-machined truck detail", fit: "contain" },
+        { src: "/projects/skateboard/photos/front.jpg", alt: "Front control board" },
+        { src: "/projects/skateboard/photos/open.jpg", alt: "Battery compartment open" },
+        { src: "/projects/skateboard/photos/P1.jpg", alt: "Version 1 assembled" },
       ]}
     />
 

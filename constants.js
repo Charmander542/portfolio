@@ -224,7 +224,7 @@ export const PROJECTS = [
   },
   {
     name: "Hexapod",
-    image: "/projects/hexapod/photos/full.png",
+    image: "/projects/hexapod/photos/full.jpg",
     url: "/projects/hexapod",
     tech: ["python", "fusion360", "cpp", "opencv", "arduino"],
     category: ['Engineering', 'PCB Design', 'Code'],
@@ -233,7 +233,7 @@ export const PROJECTS = [
   },
   {
     name: "LiDaR Robot",
-    image: "/projects/cheesebot/photos/inprogress.png",
+    image: "/projects/cheesebot/photos/inprogress.jpg",
     url: "/projects/lidar_robot",
     tech: ["fusion360", "ros", "nvidia", "cpp"],
     category: ['Engineering', 'Code'],
@@ -242,7 +242,7 @@ export const PROJECTS = [
   },
   {
     name: "Robotic Arm",
-    image: "/projects/robotarm/photos/parts.png",
+    image: "/projects/robotarm/photos/parts.jpg",
     url: "/projects/robotic_arm",
     tech: ["fusion360", "ros", "cpp"],
     category: ['Engineering', 'Code'],
@@ -251,7 +251,7 @@ export const PROJECTS = [
   },
   {
     name: "AI Chessboard",
-    image: "/projects/chessboard/photos/full.png",
+    image: "/projects/chessboard/photos/full.jpg",
     url: "/projects/ai_chessboard",
     tech: ["altium", "cpp", "fusion360"],
     category: ['Engineering', 'PCB Design', 'Code'],
@@ -260,7 +260,7 @@ export const PROJECTS = [
   },
   {
     name: "Electric Skateboard",
-    image: "/projects/skateboard/photos/full.png",
+    image: "/projects/skateboard/photos/full.jpg",
     url: "/projects/electric_skateboard",
     tech: ["altium", "fusion360"],
     category: ['Engineering', 'PCB Design'],
@@ -269,7 +269,7 @@ export const PROJECTS = [
   },
   {
     name: "Arcade Cabinet",
-    image: "/projects/arcade/photos/off2.png",
+    image: "/projects/arcade/photos/off2.jpg",
     url: "/projects/arcade_cabinet",
     tech: ["fusion360"],
     category: ['Engineering'],
@@ -278,7 +278,7 @@ export const PROJECTS = [
   },
   {
     name: "CNC Machine",
-    image: "/projects/cncmachine/photos/full.png",
+    image: "/projects/cncmachine/photos/full.jpg",
     url: "/projects/cnc_machine",
     tech: ["fusion360"],
     category: ['Engineering', 'Code', 'PCB Design'],
@@ -296,7 +296,7 @@ export const PROJECTS = [
   },
   {
     name: "Stabilizing Mug",
-    image: "/projects/stabilizing_mug/photos/cup.JPG",
+    image: "/projects/stabilizing_mug/photos/cup.jpg",
     url: "/projects/stabilizing_mug",
     tech: ["onshape", "cpp"],
     category: ['Engineering', '3D Printing'],
@@ -323,7 +323,7 @@ export const PROJECTS = [
   },
   {
     name: "Electronic Twister",
-    image: "/projects/electronic_twister/photos/twisterfull.JPG",
+    image: "/projects/electronic_twister/photos/twisterfull.jpg",
     url: "/projects/electronic_twister",
     tech: ["cpp", "python"],
     category: ['Engineering', 'Code'],

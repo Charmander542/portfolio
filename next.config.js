@@ -5,6 +5,18 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
+  // Keep large static media out of serverless Function tracing/bundles.
+  // Files in public/ are still served as static assets.
+  outputFileTracingExcludes: {
+    "*": [
+      "dist/**",
+      "out/**",
+      "scripts/**",
+      ".venv/**",
+      "public/projects/**/*.mp4",
+      "public/research/**/*.mp4",
+    ],
+  },
   // Explicitly opt into Turbopack (default in Next.js 16).
   turbopack: {},
   async redirects() {

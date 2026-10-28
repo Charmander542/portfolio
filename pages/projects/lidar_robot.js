@@ -15,7 +15,7 @@ const FUSION_URL =
 const LidarRobot = () => (
   <ProjectLayout projectName={PROJECT_NAME}>
     <HeroSection
-      image="/projects/cheesebot/photos/inprogress.png"
+      image="/projects/cheesebot/photos/inprogress.jpg"
       title="LiDaR Robot"
       subtitle="Autonomous campus-mapping robot powered by an Nvidia Jetson Nano and ROS"
       tags={["Robotics", "ROS", "SLAM", "Autonomous Navigation"]}
@@ -40,7 +40,7 @@ const LidarRobot = () => (
     <TextImageSection
       label="Build"
       title="Design Process"
-      image="/projects/cheesebot/photos/cadinsides.png"
+      image="/projects/cheesebot/photos/cadinsides.jpg"
       imageAlt="Internal CAD view"
     >
       <p className="text-gray-light-2 text-lg leading-relaxed">
@@ -84,7 +84,7 @@ const LidarRobot = () => (
     <GallerySection
       label="Gallery"
       images={[
-        { src: "/projects/cheesebot/photos/turtlebot.png", alt: "Prototype robot", fit: "contain" },
+        { src: "/projects/cheesebot/photos/turtlebot.jpg", alt: "Prototype robot", fit: "contain" },
         { src: "/projects/cheesebot.png", alt: "Full assembled robot" },
       ]}
     />

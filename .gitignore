@@ -1,7 +1,12 @@
 node_modules
 .next
+dist
+out
 .vscode
 .venv
 .env
 .env.*
 !.env.example
+*.opt.jpg
+*.opt.png
+.DS_Store

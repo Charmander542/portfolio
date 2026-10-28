@@ -38,7 +38,7 @@ const AccessabilityController = () => (
     <TextImageSection
       label="Software"
       title="Software & Firmware"
-      image="/projects/controller/photos/controllermount.png"
+      image="/projects/controller/photos/controllermount.jpg"
       imageAlt="Controller mount with sensors"
     >
       <p className="text-gray-light-2 text-lg leading-relaxed">
@@ -69,8 +69,8 @@ const AccessabilityController = () => (
       title="Photos & Gallery"
       cols={3}
       images={[
-        { src: "/projects/controller/photos/circuits.png", alt: "Circuit board" },
-        { src: "/projects/controller/photos/open.png", alt: "Inside the controller" },
+        { src: "/projects/controller/photos/circuits.jpg", alt: "Circuit board" },
+        { src: "/projects/controller/photos/open.jpg", alt: "Inside the controller" },
         { src: "/projects/controller/photos/front.jpg", alt: "Front of controller" },
       ]}
     />

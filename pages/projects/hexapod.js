@@ -57,7 +57,7 @@ const Hexapod = () => (
     <TextImageSection
       label="Software"
       title="Software"
-      image="/projects/hexapod/photos/dof.png"
+      image="/projects/hexapod/photos/dof.jpg"
       imageAlt="Degrees of freedom diagram"
       reversed
       objectFit="contain"
@@ -85,10 +85,10 @@ const Hexapod = () => (
       images={[
         { src: "/projects/spider.png", alt: "Hexapod full view", fit: "contain" },
         { src: "/projects/hexapod/photos/spider_arm.png", alt: "Hexapod arm in action" },
-        { src: "/projects/hexapod/photos/1.png", alt: "Hexapod detail 1" },
-        { src: "/projects/hexapod/photos/2.png", alt: "Hexapod detail 2" },
-        { src: "/projects/hexapod/photos/3.png", alt: "Hexapod detail 3" },
-        { src: "/projects/hexapod/photos/walking.png", alt: "Hexapod walking" },
+        { src: "/projects/hexapod/photos/1.jpg", alt: "Hexapod detail 1" },
+        { src: "/projects/hexapod/photos/2.jpg", alt: "Hexapod detail 2" },
+        { src: "/projects/hexapod/photos/3.jpg", alt: "Hexapod detail 3" },
+        { src: "/projects/hexapod/photos/walking.jpg", alt: "Hexapod walking" },
       ]}
     />
 

@@ -21,11 +21,12 @@ SOURCE_EXTS = {".jpg", ".jpeg", ".png"}
 # Target widths in pixels
 TARGET_WIDTHS = [400, 800, 1200]
 
-# Output formats
+# Output formats — modern only. Do not emit sized PNG/JPEG derivatives;
+# those previously added hundreds of MB to deployments while AVIF/WebP
+# cover browsers via <picture> sources. Originals are compressed separately.
 OUTPUT_FORMATS = [
     ("avif", "image/avif"),   # requires Pillow with AVIF support
     ("webp", "image/webp"),
-    # Also emit resized originals (jpg/png) using the same size suffix
 ]
 
 
@@ -79,10 +80,7 @@ def build_target_paths(src: Path) -> Iterable[Tuple[Path, int, str]]:
         # Size-specific stem: image-400, image-800, ...
         size_stem = f"{stem}-{width}"
 
-        # New originals (jpg/png) with size suffix
-        yield parent / f"{size_stem}.{src_ext}", width, src_ext
-
-        # AVIF & WebP versions
+        # AVIF & WebP versions only
         for fmt_ext, _mime in OUTPUT_FORMATS:
             yield parent / f"{size_stem}.{fmt_ext}", width, fmt_ext
 

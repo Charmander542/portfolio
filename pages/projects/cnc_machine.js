@@ -30,7 +30,7 @@ const CNCMachine = () => (
     <TextImageSection
       label="Build"
       title="Design Process"
-      image="/projects/cncmachine/photos/full.png"
+      image="/projects/cncmachine/photos/full.jpg"
       imageAlt="Full CNC machine"
     >
       <p className="text-gray-light-2 text-lg leading-relaxed">
@@ -43,15 +43,15 @@ const CNCMachine = () => (
     <GallerySection
       label="Build Gallery"
       images={[
-        { src: "/projects/cncmachine/photos/box.png", alt: "Electronics enclosure" },
-        { src: "/projects/cncmachine/photos/close.png", alt: "Spindle close-up" },
+        { src: "/projects/cncmachine/photos/box.jpg", alt: "Electronics enclosure" },
+        { src: "/projects/cncmachine/photos/close.jpg", alt: "Spindle close-up" },
       ]}
     />
 
     <TextImageSection
       label="Electronics"
       title="Software & Hardware"
-      image="/projects/cncmachine/photos/open.png"
+      image="/projects/cncmachine/photos/open.jpg"
       imageAlt="Control board internals"
       reversed
     >
@@ -75,10 +75,10 @@ const CNCMachine = () => (
       title="Stuff I Made"
       cols={2}
       images={[
-        { src: "/projects/cncmachine/photos/caliperscase.png", alt: "Calipers case" },
-        { src: "/projects/cncmachine/photos/costers.png", alt: "Coaster gift set" },
-        { src: "/projects/cncmachine/photos/dnddice.png", alt: "D&D dice holder" },
-        { src: "/projects/cncmachine/photos/coastercam.png", alt: "CAM setup for coasters" },
+        { src: "/projects/cncmachine/photos/caliperscase.jpg", alt: "Calipers case" },
+        { src: "/projects/cncmachine/photos/costers.jpg", alt: "Coaster gift set" },
+        { src: "/projects/cncmachine/photos/dnddice.jpg", alt: "D&D dice holder" },
+        { src: "/projects/cncmachine/photos/coastercam.jpg", alt: "CAM setup for coasters" },
       ]}
     />
 

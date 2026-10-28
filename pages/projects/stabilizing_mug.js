@@ -35,7 +35,7 @@ const StabilizingMug = () => (
     <TextImageSection
       label="Hardware"
       title="Mechanical Design"
-      image="/projects/stabilizing_mug/photos/cup.JPG"
+      image="/projects/stabilizing_mug/photos/cup.jpg"
       imageAlt="Self-Stabilizing Mug"
     >
       <p className="text-gray-light-2 text-lg leading-relaxed">

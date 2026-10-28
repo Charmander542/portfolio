@@ -12,7 +12,7 @@ const SPLINE_URL = "";
 const ArcadeCabinet = () => (
   <ProjectLayout projectName={PROJECT_NAME}>
     <HeroSection
-      image="/projects/arcade/photos/off1.png"
+      image="/projects/arcade/photos/off1.jpg"
       title="Arcade Cabinet"
       subtitle="Full-size retro arcade cabinet CNC-cut from plywood with custom controller hardware and emulation OS"
       tags={["Engineering", "CNC", "Woodworking", "Emulation"]}
@@ -31,7 +31,7 @@ const ArcadeCabinet = () => (
     <TextImageSection
       label="Build"
       title="Design Process"
-      image="/projects/arcade/photos/back.png"
+      image="/projects/arcade/photos/back.jpg"
       imageAlt="Cabinet rear showing internals"
     >
       <p className="text-gray-light-2 text-lg leading-relaxed">
@@ -44,15 +44,15 @@ const ArcadeCabinet = () => (
     <GallerySection
       label="Construction"
       images={[
-        { src: "/projects/arcade/photos/sanding.png", alt: "Sanding the panels" },
-        { src: "/projects/arcade/photos/pieces.png", alt: "Cut pieces laid out" },
+        { src: "/projects/arcade/photos/sanding.jpg", alt: "Sanding the panels" },
+        { src: "/projects/arcade/photos/pieces.jpg", alt: "Cut pieces laid out" },
       ]}
     />
 
     <TextImageSection
       label="Electronics"
       title="Electronics & Software"
-      image="/projects/arcade/photos/buttonpanel.png"
+      image="/projects/arcade/photos/buttonpanel.jpg"
       imageAlt="Custom button panel"
       reversed
     >
@@ -69,10 +69,10 @@ const ArcadeCabinet = () => (
       title="Completed Cabinet"
       cols={2}
       images={[
-        { src: "/projects/arcade/photos/on1.png", alt: "Boot screen" },
-        { src: "/projects/arcade/photos/step5.png", alt: "All assembled" },
-        { src: "/projects/arcade/photos/off2.png", alt: "Cabinet powered off" },
-        { src: "/projects/arcade/photos/on2.png", alt: "Playing a game" },
+        { src: "/projects/arcade/photos/on1.jpg", alt: "Boot screen" },
+        { src: "/projects/arcade/photos/step5.jpg", alt: "All assembled" },
+        { src: "/projects/arcade/photos/off2.jpg", alt: "Cabinet powered off" },
+        { src: "/projects/arcade/photos/on2.jpg", alt: "Playing a game" },
       ]}
     />
 
