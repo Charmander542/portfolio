@@ -14,7 +14,7 @@ const STORE_URL = "https://www.picklemania.store";
 const ElectronicPickleballPCB = () => (
   <ProjectLayout projectName={PROJECT_NAME}>
     <HeroSection
-      image="/projects/pickleball/photos/pk1_paddle.jpg"
+      image="/projects/pickleball/photos/pk1_paddle.webp"
       title="PK Controller"
       subtitle="Custom ESP32 paddle PCB and firmware for Picklemania — IMU swing sensing over Wi‑Fi UDP into an Unreal match"
       tags={["Embedded Systems", "PCB Design", "ESP32", "IMU", "Sports Technology"]}

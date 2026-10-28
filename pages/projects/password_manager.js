@@ -13,7 +13,7 @@ const BU_ARTICLE_URL =
 const PasswordManager = () => (
   <ProjectLayout projectName={PROJECT_NAME}>
     <HeroSection
-      image="/projects/password_manager/photos/device.png"
+      image="/projects/password_manager/photos/device.webp"
       title="U-Password"
       subtitle="Offline hardware password vault — encrypted credentials on a USB device you own, with fingerprint unlock and keyboard-style autofill"
       tags={["Embedded Systems", "PCB Design", "Security", "Cryptography", "USB HID"]}
@@ -68,7 +68,7 @@ const PasswordManager = () => (
     <TextImageSection
       label="Hardware"
       title="USB Vault Form Factor"
-      image="/projects/password_manager/photos/device.png"
+      image="/projects/password_manager/photos/device.webp"
       imageAlt="CAD render of the U-Password enclosure"
       reversed
       objectFit="contain"
@@ -154,7 +154,7 @@ const PasswordManager = () => (
       cols={2}
       images={[
         {
-          src: "/projects/password_manager/photos/device.png",
+          src: "/projects/password_manager/photos/device.webp",
           alt: "CAD render of the U-Password hardware enclosure",
           fit: "contain",
         },
