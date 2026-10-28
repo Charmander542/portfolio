@@ -340,12 +340,12 @@ export const PROJECTS = [
     done: true,
   },
   {
-    name: "Electronic Pickleball PCB",
-    image: "/projects/inprogress.png",
+    name: "PK Controller",
+    image: "/projects/pickleball/photos/pk1_paddle.jpg",
     url: "/projects/electronic_pickleball_pcb",
-    tech: ["altium"],
-    category: ['Engineering', 'PCB Design'],
-    tags: ["Embedded Systems", "PCB Design", "Sports Technology"],
-    done: false,
+    tech: ["cpp", "altium", "python"],
+    category: ['Engineering', 'PCB Design', 'Code'],
+    tags: ["Embedded Systems", "PCB Design", "ESP32", "IMU", "Sports Technology"],
+    done: true,
   },
 ];
