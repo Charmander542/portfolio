@@ -138,14 +138,6 @@ export const SKILLS = {
 
 export const MAINPROJECTS = [
   {
-    name: "FPGA Microcontroller",
-    image: "/projects/fpga_microcontroller/photos/fpga.jpg",
-    description: "Five-stage MIPS-like CPU in Verilog on a Digilent Nexys A7 (Artix-7)",
-    gradient: ["#0a0a2e", "#1a1a5c"],
-    url: "/projects/fpga_microcontroller",
-    tech: ["verilog", "vivado", "xilinx", "python"],
-  },
-  {
     name: "Hexapod",
     image: "/projects/spider.png",
     description: "Robotic Hexapod with AI Controlled Arm",
@@ -332,7 +324,7 @@ export const PROJECTS = [
   },
   {
     name: "U-Password",
-    image: "/projects/password_manager/photos/device.png",
+    image: "/projects/password_manager/photos/device.webp",
     url: "/projects/password_manager",
     tech: ["cpp", "javascript", "altium", "onshape"],
     category: ['Engineering', 'PCB Design', 'Code'],
@@ -341,7 +333,7 @@ export const PROJECTS = [
   },
   {
     name: "PK Controller",
-    image: "/projects/pickleball/photos/pk1_paddle.jpg",
+    image: "/projects/pickleball/photos/pk1_paddle.webp",
     url: "/projects/electronic_pickleball_pcb",
     tech: ["cpp", "altium", "python"],
     category: ['Engineering', 'PCB Design', 'Code'],
