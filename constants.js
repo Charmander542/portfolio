@@ -297,11 +297,11 @@ export const PROJECTS = [
   },
   {
     name: "Braille Ebook",
-    image: "/projects/braille_ebook/photos/braille.webp",
+    image: "/projects/braille_ebook/photos/imagineering_demo.webp",
     url: "/projects/braille_ebook",
-    tech: ["onshape", "cpp", "altium"],
-    category: ['Engineering', '3D Printing'],
-    tags: ["Embedded Systems", "3D Printing", "Braille", "PCB Design"],
+    tech: ["cpp", "python", "altium", "onshape"],
+    category: ['Engineering', 'PCB Design', 'Code'],
+    tags: ["Microfluidics", "Accessibility", "Braille", "PCB Design", "Assistive Tech"],
     done: true,
   },
   {
