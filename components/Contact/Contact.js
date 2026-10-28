@@ -18,19 +18,48 @@ const toastStyle = {
   color: "#fff",
 };
 
+function makeCaptcha() {
+  const ops = [
+    () => {
+      const a = 2 + Math.floor(Math.random() * 9);
+      const b = 1 + Math.floor(Math.random() * 9);
+      return { prompt: `${a} + ${b}`, answer: a + b };
+    },
+    () => {
+      const a = 6 + Math.floor(Math.random() * 9);
+      const b = 1 + Math.floor(Math.random() * 5);
+      return { prompt: `${a} − ${b}`, answer: a - b };
+    },
+    () => {
+      const a = 2 + Math.floor(Math.random() * 5);
+      const b = 2 + Math.floor(Math.random() * 4);
+      return { prompt: `${a} × ${b}`, answer: a * b };
+    },
+  ];
+  return ops[Math.floor(Math.random() * ops.length)]();
+}
+
 const Contact = () => {
   const initialState = { name: "", email: "", message: "", company: "" };
   const [formData, setFormData] = useState(initialState);
-  const [isHuman, setIsHuman] = useState(false);
+  const [captchaPrompt, setCaptchaPrompt] = useState("");
+  const [captchaInput, setCaptchaInput] = useState("");
   const [isSending, setIsSending] = useState(false);
   const buttonEl = useRef(null);
   const mountedAt = useRef(Date.now());
   const animating = useRef(false);
-  // Token minted only after a real checkbox interaction in this session
-  const humanToken = useRef("");
+  const captchaAnswer = useRef(null);
+
+  const refreshCaptcha = () => {
+    const next = makeCaptcha();
+    captchaAnswer.current = next.answer;
+    setCaptchaPrompt(next.prompt);
+    setCaptchaInput("");
+  };
 
   useEffect(() => {
     mountedAt.current = Date.now();
+    refreshCaptcha();
   }, []);
 
   const handleChange = ({ target }) => {
@@ -43,14 +72,9 @@ const Contact = () => {
     });
   };
 
-  const handleHumanCheck = (e) => {
-    const checked = e.target.checked;
-    setIsHuman(checked);
-    // Only a real UI toggle mints the token — bots that just POST won't have it
-    humanToken.current = checked
-      ? `h_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`
-      : "";
-  };
+  const captchaPassed =
+    captchaInput.trim() !== "" &&
+    Number(captchaInput.trim()) === captchaAnswer.current;
 
   const isValidEmail = (email) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email).trim());
@@ -186,11 +210,6 @@ const Contact = () => {
     });
   };
 
-  const resetHumanCheck = () => {
-    setIsHuman(false);
-    humanToken.current = "";
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSending || animating.current) return;
@@ -223,11 +242,12 @@ const Contact = () => {
       return;
     }
 
-    if (!isHuman || !humanToken.current.startsWith("h_")) {
-      toast.error("Please confirm you're human before sending.", {
-        id: "human",
+    if (!captchaPassed) {
+      toast.error("Solve the captcha to send your message.", {
+        id: "captcha",
         style: toastStyle,
       });
+      refreshCaptcha();
       return;
     }
 
@@ -262,7 +282,7 @@ const Contact = () => {
           playSuccessAnimation();
         }
         setFormData(initialState);
-        resetHumanCheck();
+        refreshCaptcha();
         mountedAt.current = Date.now();
       } else {
         throw new Error(res?.text || "Unexpected response");
@@ -275,13 +295,14 @@ const Contact = () => {
           `Could not send. Please email ${CONTACT_EMAIL} directly.`,
         { id: "error", style: toastStyle, duration: 7000 }
       );
+      refreshCaptcha();
     } finally {
       setIsSending(false);
     }
   };
 
   const canSubmit =
-    isHuman &&
+    captchaPassed &&
     formData.name.trim() !== "" &&
     formData.email.trim() !== "" &&
     formData.message.trim() !== "" &&
@@ -400,33 +421,61 @@ const Contact = () => {
           </motion.div>
 
           <div className="mt-6 flex flex-col items-center gap-4">
-            <label
-              htmlFor="human-check"
-              className="flex items-center gap-3 cursor-pointer select-none font-mono text-sm text-gray-light-2 px-4 py-3 rounded-xl border border-gray-dark-1 hover:border-yellow transition-colors"
+            <div
+              className="w-full max-w-sm rounded-xl border border-gray-dark-1 px-4 py-3"
               style={{ background: "rgba(255,255,0,0.04)" }}
             >
-              <input
-                id="human-check"
-                type="checkbox"
-                checked={isHuman}
-                onChange={handleHumanCheck}
-                className="w-4 h-4 accent-yellow cursor-pointer"
-              />
-              <span>I&apos;m human — not a bot</span>
-              {isHuman && (
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#FFFF00"
-                  strokeWidth="2.5"
+              <div className="flex items-center justify-between gap-3 mb-2">
+                <p className="font-mono text-xs uppercase tracking-widest text-gray-light-3">
+                  Captcha
+                </p>
+                <button
+                  type="button"
+                  onClick={refreshCaptcha}
+                  className="font-mono text-xs text-yellow hover:underline"
+                  aria-label="Refresh captcha"
+                >
+                  Refresh
+                </button>
+              </div>
+              <div className="flex items-center gap-3">
+                <div
+                  className="flex-1 font-mono text-lg sm:text-xl text-yellow select-none px-3 py-2 rounded-lg border border-yellow/40 text-center tracking-wider"
+                  style={{
+                    background:
+                      "repeating-linear-gradient(-45deg, rgba(255,255,0,0.06), rgba(255,255,0,0.06) 6px, transparent 6px, transparent 12px)",
+                  }}
                   aria-hidden="true"
                 >
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
+                  {captchaPrompt || "…"} = ?
+                </div>
+                <input
+                  id="captcha"
+                  name="captcha"
+                  type="text"
+                  inputMode="numeric"
+                  autoComplete="off"
+                  placeholder="Answer"
+                  value={captchaInput}
+                  onChange={(e) =>
+                    setCaptchaInput(e.target.value.replace(/[^\d-]/g, ""))
+                  }
+                  className="w-24 h-12 px-3 font-mono text-lg outline-none border-2 border-yellow bg-transparent rounded-lg text-center focus:bg-gray-dark-5"
+                  aria-label="Captcha answer"
+                  required
+                />
+              </div>
+              {captchaInput && !captchaPassed && (
+                <p className="mt-2 font-mono text-xs text-red-400">
+                  Incorrect — try again or refresh.
+                </p>
               )}
-            </label>
+              {captchaPassed && (
+                <p className="mt-2 font-mono text-xs" style={{ color: "rgba(255,255,0,0.75)" }}>
+                  Captcha passed
+                </p>
+              )}
+            </div>
 
             <button
               type="submit"
