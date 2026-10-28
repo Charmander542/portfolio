@@ -23,7 +23,7 @@ const PasswordManager = () => (
     <TextImageSection
       label="Overview"
       title="Project Summary"
-      image="/projects/password_manager/photos/linkedin_award.jpg"
+      image="/projects/password_manager/photos/linkedin_award.webp"
       imageAlt="Presenting U-Password at the Dean's Imagineering Competition"
       accent
     >
@@ -159,7 +159,7 @@ const PasswordManager = () => (
           fit: "contain",
         },
         {
-          src: "/projects/password_manager/photos/linkedin_award.jpg",
+          src: "/projects/password_manager/photos/linkedin_award.webp",
           alt: "Presenting U-Password at the Dean's Imagineering Competition",
         },
       ]}
