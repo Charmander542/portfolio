@@ -331,13 +331,13 @@ export const PROJECTS = [
     done: true
   },
   {
-    name: "Password Manager",
-    image: "/projects/inprogress.png",
+    name: "U-Password",
+    image: "/projects/password_manager/photos/device.png",
     url: "/projects/password_manager",
-    tech: ["cpp", "altium"],
+    tech: ["cpp", "javascript", "altium", "onshape"],
     category: ['Engineering', 'PCB Design', 'Code'],
-    tags: ["Embedded Systems", "PCB Design", "Security", "Cryptography"],
-    done: false,
+    tags: ["Embedded Systems", "PCB Design", "Security", "Cryptography", "USB HID"],
+    done: true,
   },
   {
     name: "Electronic Pickleball PCB",
