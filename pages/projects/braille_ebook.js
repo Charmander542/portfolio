@@ -189,11 +189,6 @@ const BrailleEbook = () => (
           alt: "Presenting the Imagineering entry",
         },
         {
-          src: "/projects/braille_ebook/photos/module_portrait.webp",
-          alt: "Refreshable Braille module",
-          fit: "contain",
-        },
-        {
           src: "/projects/braille_ebook/photos/BrailleVue.png",
           alt: "Early BrailleVue render",
           fit: "contain",
