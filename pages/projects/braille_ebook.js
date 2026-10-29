@@ -76,9 +76,8 @@ const BrailleEbook = () => (
     <TextImageSection
       label="Hardware"
       title="Electroosmotic Braille Cells"
-      image="/projects/braille_ebook/photos/module_portrait.webp"
-      imageAlt="Refreshable Braille module hardware"
-      objectFit="contain"
+      image="/projects/braille_ebook/photos/concept_board.webp"
+      imageAlt="Braille cell hardware bring-up board"
     >
       <div className="space-y-4 text-gray-light-2 text-lg leading-relaxed">
         <p>
