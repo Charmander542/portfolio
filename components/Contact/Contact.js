@@ -243,7 +243,7 @@ const Contact = () => {
     }
 
     if (!captchaPassed) {
-      toast.error("Solve the captcha to send your message.", {
+      toast.error("Complete the verification to send your message.", {
         id: "captcha",
         style: toastStyle,
       });
@@ -420,61 +420,106 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          <div className="mt-6 flex flex-col items-center gap-4">
-            <div
-              className="w-full max-w-sm rounded-xl border border-gray-dark-1 px-4 py-3"
-              style={{ background: "rgba(255,255,0,0.04)" }}
-            >
-              <div className="flex items-center justify-between gap-3 mb-2">
-                <p className="font-mono text-xs uppercase tracking-widest text-gray-light-3">
-                  Captcha
+          <div className="mt-14 flex flex-col items-center gap-8">
+            <div className="w-full">
+              <div className="flex items-center justify-between mb-3">
+                <p className="font-mono text-sm text-gray-light-2">
+                  Verification
                 </p>
                 <button
                   type="button"
                   onClick={refreshCaptcha}
-                  className="font-mono text-xs text-yellow hover:underline"
-                  aria-label="Refresh captcha"
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-dark-1 text-gray-light-3 transition-colors hover:border-yellow hover:text-yellow"
+                  aria-label="New verification question"
+                  title="New question"
                 >
-                  Refresh
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="23 4 23 10 17 10" />
+                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                  </svg>
                 </button>
               </div>
-              <div className="flex items-center gap-3">
+
+              <div className="relative flex items-center gap-3">
+                <div className="relative flex-1">
+                  <input
+                    id="captcha"
+                    name="captcha"
+                    type="text"
+                    inputMode="numeric"
+                    autoComplete="off"
+                    value={captchaInput}
+                    onChange={(e) =>
+                      setCaptchaInput(e.target.value.replace(/[^\d-]/g, ""))
+                    }
+                    className="block w-full h-12 sm:h-14 px-4 text-xl sm:text-2xl font-mono outline-none border-2 border-yellow bg-transparent rounded-[0.6rem] transition-all duration-200 focus:bg-gray-dark-5 active:bg-gray-dark-5"
+                    aria-describedby="captcha-status"
+                    aria-label={`Verification: what is ${captchaPrompt || "the answer"}`}
+                    required
+                  />
+                  <label
+                    htmlFor="captcha"
+                    className="absolute top-0 left-0 h-full flex items-center pl-4 text-lg font-mono transform transition-all pointer-events-none"
+                  >
+                    {captchaPrompt ? `${captchaPrompt} =` : "Verification"}
+                  </label>
+                </div>
+
                 <div
-                  className="flex-1 font-mono text-lg sm:text-xl text-yellow select-none px-3 py-2 rounded-lg border border-yellow/40 text-center tracking-wider"
-                  style={{
-                    background:
-                      "repeating-linear-gradient(-45deg, rgba(255,255,0,0.06), rgba(255,255,0,0.06) 6px, transparent 6px, transparent 12px)",
-                  }}
+                  className="flex-shrink-0 w-8 h-8 flex items-center justify-center"
                   aria-hidden="true"
                 >
-                  {captchaPrompt || "…"} = ?
+                  {captchaPassed ? (
+                    <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#9ae6b4"
+                      strokeWidth="2.25"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                  ) : captchaInput ? (
+                    <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fc8181"
+                      strokeWidth="2.25"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                  ) : null}
                 </div>
-                <input
-                  id="captcha"
-                  name="captcha"
-                  type="text"
-                  inputMode="numeric"
-                  autoComplete="off"
-                  placeholder="Answer"
-                  value={captchaInput}
-                  onChange={(e) =>
-                    setCaptchaInput(e.target.value.replace(/[^\d-]/g, ""))
-                  }
-                  className="w-24 h-12 px-3 font-mono text-lg outline-none border-2 border-yellow bg-transparent rounded-lg text-center focus:bg-gray-dark-5"
-                  aria-label="Captcha answer"
-                  required
-                />
               </div>
-              {captchaInput && !captchaPassed && (
-                <p className="mt-2 font-mono text-xs text-red-400">
-                  Incorrect — try again or refresh.
-                </p>
-              )}
-              {captchaPassed && (
-                <p className="mt-2 font-mono text-xs" style={{ color: "rgba(255,255,0,0.75)" }}>
-                  Captcha passed
-                </p>
-              )}
+
+              <p
+                id="captcha-status"
+                className="mt-2 font-mono text-xs text-gray-light-3 min-h-[1rem]"
+                role="status"
+              >
+                {captchaInput && !captchaPassed
+                  ? "That doesn’t match — try again or generate a new question."
+                  : captchaPassed
+                    ? "Verified"
+                    : "A quick check before sending."}
+              </p>
             </div>
 
             <button
